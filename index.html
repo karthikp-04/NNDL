@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SolarGuard AI – Solar Panel Degradation Detection Case Study</title>
+  <meta name="description" content="SolarGuard AI case study: Solar Panel Degradation Detection using Deep Convolutional Neural Networks trained on the PVEL-AD dataset from IEEE Dataport." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <span class="logo-icon">☀</span>
+        <span class="logo-text">SolarGuard <em>AI</em></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#dataset">Dataset</a></li>
+        <li><a href="#novelty">Novelty</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#sdg">SDG</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <header class="hero" id="hero">
+    <div class="hero-bg-glow"></div>
+    <div class="hero-particles" id="heroParticles"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        CASE STUDY REPORT · JULY 17, 2026
+      </div>
+      <h1 class="hero-title">
+        Solar<span class="gradient-text">Guard</span> AI
+      </h1>
+      <p class="hero-tagline">Powering Smarter Solar Maintenance with AI</p>
+      <p class="hero-subtitle">
+        Solar Panel Degradation Detection Using Deep Convolutional Neural Networks
+        trained on the <strong>IEEE Dataport PVEL-AD</strong> dataset
+      </p>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-number" data-target="36543">0</div>
+          <div class="stat-label">EL Images</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="10">0</div>
+          <div class="stat-label">Defect Categories</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="37000">0</div>
+          <div class="stat-label">Bounding Boxes</div>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a href="#intro" class="btn-primary" id="exploreBtn">Explore Report</a>
+        <a href="#dataset" class="btn-ghost">View Dataset →</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="panel-grid">
+        <div class="panel-cell crack"></div>
+        <div class="panel-cell hotspot"></div>
+        <div class="panel-cell healthy"></div>
+        <div class="panel-cell inactive"></div>
+        <div class="panel-cell crack"></div>
+        <div class="panel-cell healthy"></div>
+        <div class="panel-cell hotspot"></div>
+        <div class="panel-cell healthy"></div>
+        <div class="panel-cell inactive"></div>
+        <div class="panel-cell healthy"></div>
+        <div class="panel-cell crack"></div>
+        <div class="panel-cell healthy"></div>
+        <div class="panel-cell healthy"></div>
+        <div class="panel-cell hotspot"></div>
+        <div class="panel-cell healthy"></div>
+        <div class="panel-cell crack"></div>
+      </div>
+      <div class="detection-overlay">
+        <div class="bbox bbox-1"><span class="bbox-label">Crack</span></div>
+        <div class="bbox bbox-2"><span class="bbox-label">Hotspot</span></div>
+        <div class="bbox bbox-3"><span class="bbox-label">Inactive</span></div>
+      </div>
+      <div class="scan-line"></div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ─── SECTION 1: INTRODUCTION ─── -->
+    <section class="section" id="intro">
+      <div class="section-inner">
+        <div class="section-label">01 — Introduction</div>
+        <h2 class="section-title">Why Solar Needs <span class="gradient-text">Intelligent</span> Eyes</h2>
+        <div class="two-col">
+          <div class="col-text">
+            <p>Solar energy has become one of the fastest-growing renewable energy sources worldwide. However, photovoltaic (PV) modules gradually lose efficiency due to <strong>cracks, hotspots, corrosion, dust accumulation, discoloration,</strong> and weather-related wear.</p>
+            <p>Manual inspection is expensive and time-consuming. <strong>SolarGuard AI</strong> employs Deep Convolutional Neural Networks (DCNNs) trained using the <em>IEEE Dataport PVEL-AD</em> dataset to automatically identify degradation-related anomalies from electroluminescence images, enabling timely maintenance and improved energy generation.</p>
+            <div class="info-card">
+              <div class="info-icon">⚡</div>
+              <div>
+                <strong>Key Innovation</strong>
+                <p>Automated EL image analysis replacing costly manual inspection cycles entirely.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-visual">
+            <img src="assets/el_panel_detection.png" alt="EL image showing defect detection on solar panel" class="rounded-img" />
+            <div class="img-caption">Electroluminescence image with AI-detected defect bounding boxes</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECTION 2: PROBLEM STATEMENT ─── -->
+    <section class="section section-dark" id="problem">
+      <div class="section-inner">
+        <div class="section-label">02 — Problem Statement</div>
+        <h2 class="section-title">The <span class="gradient-text">Challenges</span> We Solve</h2>
+        <p class="section-lead">Traditional inspection methods rely on manual inspection or thermal imaging, requiring significant time, cost, and expertise.</p>
+        <div class="problems-grid">
+          <div class="problem-card" id="pc1">
+            <div class="problem-icon">🔍</div>
+            <h3>Early-Stage Detection</h3>
+            <p>Difficulty in identifying micro-defects before they escalate into severe efficiency losses.</p>
+          </div>
+          <div class="problem-card" id="pc2">
+            <div class="problem-icon">💸</div>
+            <h3>High Maintenance Cost</h3>
+            <p>Skilled personnel and equipment required for recurring physical inspections drive costs up.</p>
+          </div>
+          <div class="problem-card" id="pc3">
+            <div class="problem-icon">👁️</div>
+            <h3>Human Inspection Errors</h3>
+            <p>Subjectivity and fatigue introduce inconsistencies in manual fault diagnosis reports.</p>
+          </div>
+          <div class="problem-card" id="pc4">
+            <div class="problem-icon">⏱️</div>
+            <h3>Delayed Diagnosis</h3>
+            <p>Weeks or months may pass between inspections, allowing faults to compound undetected.</p>
+          </div>
+          <div class="problem-card" id="pc5">
+            <div class="problem-icon">📉</div>
+            <h3>Reduced Energy Output</h3>
+            <p>Undetected degradation silently reduces power generation and system ROI over time.</p>
+          </div>
+          <div class="problem-card" id="pc6">
+            <div class="problem-icon">🤖</div>
+            <h3>Lack of Automation</h3>
+            <p>Absence of intelligent, scalable monitoring solutions for large-scale solar installations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECTION 3: MOTIVATION & RESEARCH ─── -->
+    <section class="section" id="research">
+      <div class="section-inner">
+        <div class="section-label">03 — Motivation & Research</div>
+        <h2 class="section-title">Research <span class="gradient-text">Questions</span> & Gaps</h2>
+        <div class="rq-grid">
+          <div class="rq-half">
+            <h3 class="rq-heading"><span class="rq-icon rq-q">?</span> Research Questions</h3>
+            <ol class="rq-list">
+              <li>How accurately can CNNs detect degradation using the PVEL-AD dataset?</li>
+              <li>Which CNN architecture provides the best trade-off between accuracy and efficiency?</li>
+              <li>Can degradation be detected before noticeable power loss occurs?</li>
+              <li>How well does the model generalize under different environmental conditions?</li>
+            </ol>
+          </div>
+          <div class="rq-half">
+            <h3 class="rq-heading"><span class="rq-icon rq-g">!</span> Research Gaps</h3>
+            <ul class="gap-list">
+              <li><span class="gap-dot"></span>Existing methods depend entirely on manual inspection</li>
+              <li><span class="gap-dot"></span>Limited benchmark datasets for PV defect classification</li>
+              <li><span class="gap-dot"></span>Reduced performance under varying environmental conditions</li>
+              <li><span class="gap-dot"></span>Few lightweight real-time CNN solutions available</li>
+              <li><span class="gap-dot"></span>Limited localization of microscopic defects in EL images</li>
+            </ul>
+          </div>
+        </div>
+        <div class="cnn-visual">
+          <img src="assets/ai_neural_network.png" alt="Deep CNN architecture visualization" class="cnn-img" />
+          <div class="cnn-caption">DCNN architecture processing EL images for multi-class defect detection</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECTION 4: DATASET ─── -->
+    <section class="section section-dark" id="dataset">
+      <div class="section-inner">
+        <div class="section-label">04 — Dataset</div>
+        <h2 class="section-title">IEEE Dataport <span class="gradient-text">PVEL-AD</span></h2>
+        <p class="section-lead">The PV EL Anomaly Detection dataset — a comprehensive benchmark for photovoltaic defect research.</p>
+
+        <div class="dataset-cards">
+          <div class="ds-card ds-card-main">
+            <div class="ds-card-header">
+              <span class="ds-icon">📦</span>
+              <h3>Dataset Overview</h3>
+            </div>
+            <div class="ds-stats-row">
+              <div class="ds-stat"><span class="ds-num">36,543</span><span class="ds-lbl">Total Images</span></div>
+              <div class="ds-stat"><span class="ds-num">10</span><span class="ds-lbl">Defect Types</span></div>
+              <div class="ds-stat"><span class="ds-num">37,000+</span><span class="ds-lbl">Annotations</span></div>
+            </div>
+            <p>Contains electroluminescence images of photovoltaic cells including healthy cells and ten defect categories. Expert-annotated bounding boxes make it ideal for classification, object detection, and defect localization tasks.</p>
+          </div>
+        </div>
+
+        <h3 class="challenge-heading">Dataset Challenges Addressed</h3>
+        <div class="challenges-row">
+          <div class="challenge-item" id="ch1">
+            <div class="challenge-num">01</div>
+            <div class="challenge-body">
+              <h4>Background Heterogeneity</h4>
+              <p>EL images contain varying textures and noise, requiring robust preprocessing and feature extraction pipelines.</p>
+            </div>
+          </div>
+          <div class="challenge-item" id="ch2">
+            <div class="challenge-num">02</div>
+            <div class="challenge-body">
+              <h4>Micro-defect Localization</h4>
+              <p>Expert bounding boxes enable precise localization of cracks and sub-millimeter damaged regions at cell level.</p>
+            </div>
+          </div>
+          <div class="challenge-item" id="ch3">
+            <div class="challenge-num">03</div>
+            <div class="challenge-body">
+              <h4>Class Imbalance</h4>
+              <p>Data augmentation and balanced sampling strategies improve performance on rare defect categories significantly.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Defect Type Visual Bar -->
+        <div class="defect-bar-section">
+          <h3 class="challenge-heading">Defect Category Distribution</h3>
+          <div class="defect-bars">
+            <div class="defect-row"><span class="defect-name">Cracks</span><div class="defect-track"><div class="defect-fill" data-pct="88" style="--pct:88%"></div></div><span class="defect-pct">High</span></div>
+            <div class="defect-row"><span class="defect-name">Hotspots</span><div class="defect-track"><div class="defect-fill" data-pct="72" style="--pct:72%"></div></div><span class="defect-pct">High</span></div>
+            <div class="defect-row"><span class="defect-name">Inactive Cells</span><div class="defect-track"><div class="defect-fill" data-pct="65" style="--pct:65%"></div></div><span class="defect-pct">Med</span></div>
+            <div class="defect-row"><span class="defect-name">Corrosion</span><div class="defect-track"><div class="defect-fill" data-pct="55" style="--pct:55%"></div></div><span class="defect-pct">Med</span></div>
+            <div class="defect-row"><span class="defect-name">Discoloration</span><div class="defect-track"><div class="defect-fill" data-pct="48" style="--pct:48%"></div></div><span class="defect-pct">Med</span></div>
+            <div class="defect-row"><span class="defect-name">Dust Accumulation</span><div class="defect-track"><div class="defect-fill" data-pct="40" style="--pct:40%"></div></div><span class="defect-pct">Low</span></div>
+            <div class="defect-row"><span class="defect-name">Finger Interruption</span><div class="defect-track"><div class="defect-fill" data-pct="35" style="--pct:35%"></div></div><span class="defect-pct">Low</span></div>
+            <div class="defect-row"><span class="defect-name">Snail Trails</span><div class="defect-track"><div class="defect-fill" data-pct="28" style="--pct:28%"></div></div><span class="defect-pct">Low</span></div>
+            <div class="defect-row"><span class="defect-name">Micro-cracks</span><div class="defect-track"><div class="defect-fill" data-pct="20" style="--pct:20%"></div></div><span class="defect-pct">Rare</span></div>
+            <div class="defect-row"><span class="defect-name">Delamination</span><div class="defect-track"><div class="defect-fill" data-pct="14" style="--pct:14%"></div></div><span class="defect-pct">Rare</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECTION 5: NOVELTY ─── -->
+    <section class="section" id="novelty">
+      <div class="section-inner">
+        <div class="section-label">05 — Novelty</div>
+        <h2 class="section-title">What Makes SolarGuard <span class="gradient-text">Different</span></h2>
+        <div class="novelty-grid">
+          <div class="novelty-card" id="nv1">
+            <div class="novelty-icon-wrap">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+                <rect x="4" y="4" width="32" height="32" rx="6" stroke="currentColor" stroke-width="2"/>
+                <rect x="10" y="14" width="8" height="12" rx="2" fill="currentColor" opacity="0.3"/>
+                <rect x="22" y="10" width="8" height="16" rx="2" fill="currentColor" opacity="0.7"/>
+                <circle cx="20" cy="20" r="4" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>AI-based Defect Localization</h3>
+            <p>Accurately pinpoints degradation regions with bounding boxes instead of only classifying panels at module level.</p>
+          </div>
+          <div class="novelty-card" id="nv2">
+            <div class="novelty-icon-wrap">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+                <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="2"/>
+                <path d="M20 8v4M20 28v4M8 20h4M28 20h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="20" cy="20" r="5" fill="currentColor" opacity="0.5"/>
+              </svg>
+            </div>
+            <h3>Early Degradation Detection</h3>
+            <p>Identifies cracks, hotspots, and inactive cells before significant efficiency loss occurs — protecting revenue.</p>
+          </div>
+          <div class="novelty-card" id="nv3">
+            <div class="novelty-icon-wrap">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+                <path d="M6 34L14 14l8 12 6-8 6 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="34" cy="10" r="4" fill="currentColor" opacity="0.5"/>
+              </svg>
+            </div>
+            <h3>Industrial Scalability</h3>
+            <p>Supports drone-based and automated inspection pipelines for utility-scale solar farm deployment.</p>
+          </div>
+          <div class="novelty-card" id="nv4">
+            <div class="novelty-icon-wrap">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+                <path d="M8 32V20l6-6 6 4 6-10 6 6v18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 32h32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Predictive Maintenance</h3>
+            <p>Reduces maintenance costs and improves photovoltaic system reliability through proactive AI-driven alerts.</p>
+          </div>
+        </div>
+
+        <div class="solar-farm-banner">
+          <img src="assets/solar_farm_aerial.png" alt="Aerial view of solar farm being monitored by SolarGuard AI" />
+          <div class="banner-overlay">
+            <p class="banner-text">Scalable from rooftop installations to gigawatt-scale solar farms</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECTION 6: PRODUCTS ─── -->
+    <section class="section section-dark" id="products">
+      <div class="section-inner">
+        <div class="section-label">06 — Related Products</div>
+        <h2 class="section-title">Competitive <span class="gradient-text">Landscape</span></h2>
+        <p class="section-lead">How SolarGuard AI compares to existing solutions in the market.</p>
+        <div class="products-table-wrap">
+          <table class="products-table" id="productsTable">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Key Features</th>
+                <th>Limitations</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="product-name">
+                    <span class="product-dot ibm"></span>
+                    <a href="https://www.ibm.com/products/maximo" target="_blank" rel="noopener">IBM Maximo</a>
+                  </div>
+                </td>
+                <td>AI asset monitoring, predictive maintenance</td>
+                <td>Not designed for PV image-based degradation detection</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="product-name">
+                    <span class="product-dot dji"></span>
+                    <a href="https://www.dji.com" target="_blank" rel="noopener">DJI Thermal Inspection</a>
+                  </div>
+                </td>
+                <td>Drone inspection with thermal imaging</td>
+                <td>Requires expensive drone hardware investment</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="product-name">
+                    <span class="product-dot raptor"></span>
+                    <a href="https://raptormaps.com" target="_blank" rel="noopener">Raptor Maps</a>
+                  </div>
+                </td>
+                <td>Drone analytics and solar inspection</td>
+                <td>Mainly suitable for utility-scale solar farms only</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="product-name">
+                    <span class="product-dot solaredge"></span>
+                    <a href="https://www.solaredge.com" target="_blank" rel="noopener">SolarEdge Monitoring</a>
+                  </div>
+                </td>
+                <td>Panel-level monitoring and diagnostics</td>
+                <td>Focuses on electrical monitoring, not CNN image analysis</td>
+              </tr>
+              <tr class="solarguard-row">
+                <td>
+                  <div class="product-name">
+                    <span class="product-dot solarguard"></span>
+                    <strong>SolarGuard AI ✦</strong>
+                  </div>
+                </td>
+                <td>DCNN-based EL image analysis, defect localization, early detection, scalable</td>
+                <td class="advantage">No critical limitations — designed specifically for this problem</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECTION 7: SDG ─── -->
+    <section class="section" id="sdg">
+      <div class="section-inner">
+        <div class="section-label">07 — SDG Mapping</div>
+        <h2 class="section-title">United Nations <span class="gradient-text">Sustainable Development</span> Goals</h2>
+        <p class="section-lead">SolarGuard AI directly contributes to three of the 17 UN Sustainable Development Goals.</p>
+        <div class="sdg-grid">
+          <div class="sdg-card" id="sdg7">
+            <div class="sdg-badge sdg7-badge">SDG 7</div>
+            <div class="sdg-icon">⚡</div>
+            <h3>Affordable and Clean Energy</h3>
+            <p>Early degradation detection maintains peak renewable energy generation output, improving energy affordability and clean energy access globally.</p>
+            <div class="sdg-bar"><div class="sdg-fill" style="width:92%"></div></div>
+            <span class="sdg-impact">High Impact</span>
+          </div>
+          <div class="sdg-card" id="sdg9">
+            <div class="sdg-badge sdg9-badge">SDG 9</div>
+            <div class="sdg-icon">🏗️</div>
+            <h3>Industry, Innovation & Infrastructure</h3>
+            <p>AI modernizes industrial solar infrastructure through intelligent predictive maintenance — fostering sustainable industrial innovation.</p>
+            <div class="sdg-bar"><div class="sdg-fill" style="width:85%"></div></div>
+            <span class="sdg-impact">High Impact</span>
+          </div>
+          <div class="sdg-card" id="sdg12">
+            <div class="sdg-badge sdg12-badge">SDG 12</div>
+            <div class="sdg-icon">♻️</div>
+            <h3>Responsible Consumption & Production</h3>
+            <p>Precise defect localization enables targeted repair of damaged cells rather than full panel replacement, reducing electronic waste significantly.</p>
+            <div class="sdg-bar"><div class="sdg-fill" style="width:78%"></div></div>
+            <span class="sdg-impact">High Impact</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECTION 8: CONCLUSION ─── -->
+    <section class="section section-dark conclusion-section">
+      <div class="section-inner conclusion-inner">
+        <h2 class="section-title center">Building a <span class="gradient-text">Sustainable</span> Energy Future</h2>
+        <p class="conclusion-text">SolarGuard AI demonstrates that deep learning, applied to publicly available electroluminescence imagery from the IEEE Dataport PVEL-AD dataset, can revolutionize solar panel maintenance. By automating defect detection and localization, we reduce inspection costs, extend panel lifespans, and optimize renewable energy output at scale.</p>
+        <div class="conclusion-metrics">
+          <div class="cm-item">
+            <div class="cm-icon">🔬</div>
+            <div class="cm-label">Micro-defect Detection</div>
+          </div>
+          <div class="cm-divider">→</div>
+          <div class="cm-item">
+            <div class="cm-icon">🛰️</div>
+            <div class="cm-label">Drone-scale Deployment</div>
+          </div>
+          <div class="cm-divider">→</div>
+          <div class="cm-item">
+            <div class="cm-icon">💡</div>
+            <div class="cm-label">Maximum Energy Yield</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-icon">☀</span>
+        <span class="logo-text">SolarGuard <em>AI</em></span>
+      </div>
+      <p class="footer-copy">© 2026 SolarGuard AI · Case Study Report · IEEE Dataport PVEL-AD Dataset</p>
+      <p class="footer-sub">Deep CNN-based Solar Panel Degradation Detection</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

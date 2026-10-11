@@ -1,0 +1,21 @@
+
+# Ignore large datasets
+Dataset/
+Datasets/
+
+# Ignore dependencies
+node_modules/
+
+# Ignore Python cache and environments
+__pycache__/
+.venv/
+venv/
+
+# Ignore secrets
+.env
+.env.*
+
+# Ignore model weights
+*.pth
+*.pt
+*.ckpt

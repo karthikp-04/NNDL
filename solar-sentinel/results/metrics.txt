@@ -1,0 +1,34 @@
+Evaluation Results
+===============================
+
+Test Images           : 4006
+Accuracy              : 91.71 %
+Balanced Accuracy     : 93.40 %
+Cohen's Kappa         : 0.8943
+
+Precision (Macro)     : 82.47 %
+Recall (Macro)        : 93.40 %
+F1 Score (Macro)      : 85.77 %
+
+Precision (Micro)     : 91.71 %
+Recall (Micro)        : 91.71 %
+F1 Score (Micro)      : 91.71 %
+
+Precision (Weighted)  : 91.98 %
+Recall (Weighted)     : 91.71 %
+F1 Score (Weighted)   : 91.67 %
+
+ROC-AUC (Macro, OvR)  : 0.9938
+
+Avg inference time    : 186.97 ms/image
+
+Per-class accuracy:
+   crack       : 79.71 %
+   finger      : 94.54 %
+   black_core  : 99.80 %
+   thick_line  : 94.43 %
+   star_crack  : 90.41 %
+   corner      : 100.00 %
+   fragment    : 100.00 %
+   scratch     : 100.00 %
+   normal      : 81.67 %
