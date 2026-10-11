@@ -6,7 +6,13 @@ export default function Topbar({ page }) {
   const handleModelChange = (e) => {
     const val = e.target.value
     setSelectedModel(val)
-    const label = val === 'densenet121' ? 'DenseNet-121' : val === 'resnet50' ? 'ResNet-50' : 'Dual Model Compare'
+    const label = val === 'densenet121'
+      ? 'DenseNet-121'
+      : val === 'resnet50'
+      ? 'ResNet-50'
+      : val === 'efficientnet_b0'
+      ? 'EfficientNet-B0'
+      : 'Tri-Model Compare'
     addToast?.(`Selected model: ${label}`, 'info')
   }
 
@@ -32,7 +38,7 @@ export default function Topbar({ page }) {
             id="topbar-model-select"
             style={{
               background: 'transparent',
-              color: selectedModel === 'densenet121' ? '#60A5FA' : selectedModel === 'resnet50' ? '#A78BFA' : '#F59E0B',
+              color: selectedModel === 'densenet121' ? '#60A5FA' : selectedModel === 'resnet50' ? '#A78BFA' : selectedModel === 'efficientnet_b0' ? '#10B981' : '#F59E0B',
               border: 'none',
               fontWeight: 700,
               cursor: 'pointer',
@@ -46,8 +52,11 @@ export default function Topbar({ page }) {
             <option value="resnet50" style={{ background: '#1E293B', color: '#fff' }}>
               ResNet-50
             </option>
+            <option value="efficientnet_b0" style={{ background: '#1E293B', color: '#fff' }}>
+              EfficientNet-B0 (Edge)
+            </option>
             <option value="compare" style={{ background: '#1E293B', color: '#fff' }}>
-              Dual Model Compare
+              Tri-Model Compare
             </option>
           </select>
         </div>

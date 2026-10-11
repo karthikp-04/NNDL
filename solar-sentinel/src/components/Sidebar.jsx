@@ -63,7 +63,7 @@ export default function Sidebar({ activePage, navigate, historyCount, hasResult 
       <div className="sidebar-footer">
         <div className="model-status">
           <div className="status-dot"></div>
-          <span>CNN Model Ready · PVEL-AD v2</span>
+          <span>3 CNN Models Ready · PVEL-AD v2</span>
         </div>
       </div>
     </aside>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SolarSentinel AI - EfficientNet-B0 System Architecture</title>
+<style>
+  :root {
+    --bg-color: #0b0c10;
+    --card-bg: #12141d;
+    --text-main: #ffffff;
+    --text-muted: #9aa0a6;
+    
+    --data-border: #f39c12;
+    --data-bg: rgba(243, 156, 18, 0.05);
+    
+    --dl-border: #9b59b6;
+    --dl-bg: rgba(155, 89, 182, 0.05);
+    
+    --web-border: #3498db;
+    --web-bg: rgba(52, 152, 219, 0.05);
+    
+    --api-border: #2ecc71;
+    --api-bg: rgba(46, 204, 113, 0.05);
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  h1 {
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    color: #e0e0e0;
+  }
+
+  .diagram-container {
+    position: relative;
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .top-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+
+  .module-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .module-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .module-card.data-layer {
+    border: 2px solid var(--data-border);
+    background-color: var(--data-bg);
+    box-shadow: 0 0 15px rgba(243, 156, 18, 0.15);
+  }
+
+  .module-card.dl-pipeline {
+    border: 2px solid var(--dl-border);
+    background-color: var(--dl-bg);
+    box-shadow: 0 0 15px rgba(155, 89, 182, 0.15);
+  }
+
+  .module-card.web-app {
+    border: 2px solid var(--web-border);
+    background-color: var(--web-bg);
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.15);
+  }
+
+  .module-card.backend-api {
+    border: 2px solid var(--api-border);
+    background-color: var(--api-bg);
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.15);
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .data-layer .card-header { color: var(--data-border); }
+  .dl-pipeline .card-header { color: var(--dl-border); }
+  .web-app .card-header { color: var(--web-border); }
+  .backend-api .card-header { color: var(--api-border); }
+
+  .sub-block {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .sub-block:last-child {
+    margin-bottom: 0;
+  }
+
+  .sub-block.circle-block {
+    border-radius: 40px;
+    justify-content: center;
+    border: 1.5px solid var(--dl-border);
+    background: rgba(155, 89, 182, 0.1);
+    margin: 16px 20px;
+    padding: 12px;
+  }
+
+  .icon {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .block-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .block-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+
+  .block-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .down-arrow {
+    display: flex;
+    justify-content: center;
+    margin: -8px 0 8px 0;
+    color: #666;
+    font-size: 14px;
+  }
+
+  .split-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .split-row .sub-block {
+    margin-bottom: 0;
+  }
+
+  /* Connecting SVG lines */
+  .connector-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<h1>SolarSentinel AI — EfficientNet-B0 System Architecture</h1>
+
+<div class="diagram-container">
+  
+  <!-- TOP SECTION (DATA & PIPELINE | FRONTEND) -->
+  <div class="top-row">
+    
+    <!-- LEFT STACK: DATA LAYER & DL PIPELINE -->
+    <div style="display: flex; flex-direction: column; gap: 35px;">
+      
+      <!-- 1. DATA LAYER -->
+      <div class="module-card data-layer">
+        <div class="card-header">
+          <span class="icon">🛢️</span>
+          <span>1. DATA LAYER</span>
+        </div>
+        
+        <div class="sub-block">
+          <span class="icon">🛢️</span>
+          <div class="block-text">
+            <span class="block-title">Raw PVEL-AD Dataset</span>
+            <span class="block-desc">13,414 Electroluminescence (EL) Cell Images</span>
+          </div>
+        </div>
+
+        <div class="down-arrow">↓</div>
+
+        <div class="sub-block">
+          <span class="icon">🖼️</span>
+          <div class="block-text">
+            <span class="block-title">Data Augmentation & Normalization</span>
+            <span class="block-desc">Resize (224×224), Flips, 15° Rotation, ColorJitter</span>
+          </div>
+        </div>
+
+        <div class="down-arrow">↓</div>
+
+        <div class="sub-block">
+          <span class="icon">📊</span>
+          <div class="block-text">
+            <span class="block-title">Processed 8-Class Dataset</span>
+            <span class="block-desc">Multi-Label Matrix (`crack`, `good`, `material`, etc.)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. DEEP LEARNING PIPELINE -->
+      <div class="module-card dl-pipeline">
+        <div class="card-header">
+          <span class="icon">🧠</span>
+          <span>2. DEEP LEARNING PIPELINE</span>
+        </div>
+
+        <div class="sub-block">
+          <span class="icon">⚡</span>
+          <div class="block-text">
+            <span class="block-title">EfficientNet-B0 Training Pipeline</span>
+            <span class="block-desc">MBConv Backbone (4.02M Params, 0.39 GFLOPs)</span>
+          </div>
+        </div>
+
+        <div class="down-arrow">↓</div>
+
+        <div class="sub-block circle-block">
+          <span class="icon">🎯</span>
+          <div class="block-text" style="text-align: center;">
+            <span class="block-title">BCEWithLogitsLoss + Pos Weight</span>
+            <span class="block-desc">AdamW Optimizer + Cosine Annealing</span>
+          </div>
+        </div>
+
+        <div class="down-arrow">↓</div>
+
+        <div class="sub-block">
+          <span class="icon">📄</span>
+          <div class="block-text">
+            <span class="block-title">Trained Weights (.pth / .onnx)</span>
+            <span class="block-desc">PyTorch (48.7 MB) / ONNX Export (16.0 MB)</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT STACK: FRONTEND WEB APP -->
+    <div>
+      <div class="module-card web-app" style="height: calc(100% - 48px);">
+        <div class="card-header">
+          <span class="icon">💻</span>
+          <span>3. FRONTEND WEB APP</span>
+        </div>
+
+        <div class="split-row">
+          <div class="sub-block">
+            <span class="icon">📊</span>
+            <div class="block-text">
+              <span class="block-title">Results Dashboard</span>
+            </div>
+          </div>
+          <div class="sub-block">
+            <span class="icon">☁️</span>
+            <div class="block-text">
+              <span class="block-title">User Image Upload</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="down-arrow">↓</div>
+
+        <div class="sub-block" style="padding: 24px 18px; justify-content: center;">
+          <span class="icon" style="font-size: 28px;">⚛️</span>
+          <div class="block-text" style="text-align: center;">
+            <span class="block-title" style="font-size: 16px;">SolarSentinel Web Application</span>
+            <span class="block-desc">Responsive HTML5 / CSS3 / Asynchronous JS</span>
+          </div>
+        </div>
+
+        <div class="down-arrow">↓</div>
+
+        <div class="sub-block">
+          <span class="icon">&lt;/&gt;</span>
+          <div class="block-text">
+            <span class="block-title">REST API JSON & Overlays</span>
+            <span class="block-desc">Multi-Label Predictions & Defect Maps</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM SECTION: BACKEND INFERENCE API -->
+  <div class="module-card backend-api">
+    <div class="card-header">
+      <span class="icon">🗄️</span>
+      <span>4. BACKEND INFERENCE API</span>
+    </div>
+
+    <div class="sub-block">
+      <span class="icon">🔌</span>
+      <div class="block-text">
+        <span class="block-title">Flask / FastAPI Server</span>
+        <span class="block-desc">Python REST Endpoint Router</span>
+      </div>
+    </div>
+
+    <div class="down-arrow">↓</div>
+
+    <div class="sub-block">
+      <span class="icon">🔥</span>
+      <div class="block-text">
+        <span class="block-title">PyTorch & ONNX Runtime Engine</span>
+        <span class="block-desc">High-Performance CPU Latency (140.6 ms)</span>
+      </div>
+    </div>
+
+    <div class="down-arrow">↓</div>
+
+    <div class="sub-block">
+      <span class="icon">🎯</span>
+      <div class="block-text">
+        <span class="block-title">Grad-CAM Heatmap Generator</span>
+        <span class="block-desc">Class Activation Mapping for Defect Localization</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

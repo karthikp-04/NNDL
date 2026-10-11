@@ -110,7 +110,7 @@ export default function Upload() {
         <div style={{ fontSize: '.75rem', fontWeight: 700, color: 'var(--dim)', textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: '.4rem' }}>
           Select Architecture for Inference & Evaluation:
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '.6rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '.6rem' }}>
           {/* DenseNet-121 */}
           <div
             onClick={() => setSelectedModel('densenet121')}
@@ -161,7 +161,32 @@ export default function Upload() {
             </div>
           </div>
 
-          {/* Dual Compare Mode */}
+          {/* EfficientNet-B0 (Ours) */}
+          <div
+            onClick={() => setSelectedModel('efficientnet_b0')}
+            style={{
+              padding: '.75rem .9rem', borderRadius: 'var(--radius)', cursor: 'pointer',
+              border: `2px solid ${selectedModel === 'efficientnet_b0' ? '#10B981' : 'var(--border)'}`,
+              background: selectedModel === 'efficientnet_b0' ? 'rgba(16,185,129,0.14)' : 'var(--bg2)',
+              transition: 'all .2s ease'
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '.2rem' }}>
+              <span style={{ fontWeight: 700, color: '#fff', fontSize: '.92rem' }}>EfficientNet-B0</span>
+              <span style={{ fontSize: '.65rem', fontWeight: 700, padding: '2px 6px', borderRadius: 999, background: '#10B981', color: '#fff' }}>
+                EDGE DRONE
+              </span>
+            </div>
+            <div style={{ fontSize: '.74rem', color: 'var(--muted)', marginBottom: '.3rem' }}>
+              MBConv & SE Attention · 4.02M Params
+            </div>
+            <div style={{ display: 'flex', gap: '.8rem', fontSize: '.72rem', color: '#6EE7B7' }}>
+              <span>⚡ 14.80 ms</span>
+              <span>🎯 86.4% Acc</span>
+            </div>
+          </div>
+
+          {/* Tri-Model Compare Mode */}
           <div
             onClick={() => setSelectedModel('compare')}
             style={{
@@ -172,17 +197,17 @@ export default function Upload() {
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '.2rem' }}>
-              <span style={{ fontWeight: 700, color: '#fff', fontSize: '.92rem' }}>Dual Model Compare</span>
+              <span style={{ fontWeight: 700, color: '#fff', fontSize: '.92rem' }}>Multi-Model Compare</span>
               <span style={{ fontSize: '.65rem', fontWeight: 700, padding: '2px 6px', borderRadius: 999, background: '#F59E0B', color: '#000' }}>
-                COMPARATIVE
+                TRI-MODEL
               </span>
             </div>
             <div style={{ fontSize: '.74rem', color: 'var(--muted)', marginBottom: '.3rem' }}>
-              Simultaneous Forward Pass on Both
+              All 3 Networks Side-by-Side
             </div>
             <div style={{ display: 'flex', gap: '.8rem', fontSize: '.72rem', color: '#FCD34D' }}>
-              <span>📊 Side-by-side</span>
-              <span>⏱️ Speedup Profiling</span>
+              <span>📊 3 Models</span>
+              <span>⏱️ Speedup Stats</span>
             </div>
           </div>
         </div>
@@ -276,7 +301,9 @@ export default function Upload() {
                       id="btn-run-analysis"
                       style={{ flex: 1, padding: '.8rem 1.2rem', fontSize: '.95rem', fontWeight: 700 }}
                     >
-                      {selectedModel === 'compare' ? 'Run Dual Model Comparison' : `Run ${selectedModel === 'densenet121' ? 'DenseNet-121' : 'ResNet-50'} Inference`}
+                      {selectedModel === 'compare'
+                        ? 'Run Multi-Model Comparison (DenseNet vs ResNet vs EfficientNet)'
+                        : `Run ${selectedModel === 'densenet121' ? 'DenseNet-121' : selectedModel === 'efficientnet_b0' ? 'EfficientNet-B0' : 'ResNet-50'} Inference`}
                     </button>
                     <button
                       className="btn btn-outline"

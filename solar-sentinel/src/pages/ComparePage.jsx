@@ -132,13 +132,26 @@ export default function ComparePage() {
               onClick={() => handleTestInUI('compare')}
               style={{ display: 'flex', alignItems: 'center', gap: '.4rem' }}
             >
-              Test Dual Model Mode
+              Test Tri-Model Mode
             </button>
             <button
               className="btn btn-outline"
               onClick={() => handleTestInUI('densenet121')}
             >
               Test DenseNet-121
+            </button>
+            <button
+              className="btn btn-outline"
+              onClick={() => handleTestInUI('resnet50')}
+            >
+              Test ResNet-50
+            </button>
+            <button
+              className="btn btn-outline"
+              onClick={() => handleTestInUI('efficientnet_b0')}
+              style={{ borderColor: 'rgba(16,185,129,0.5)', color: '#6EE7B7' }}
+            >
+              Test EfficientNet-B0
             </button>
           </div>
         </div>
@@ -196,7 +209,7 @@ export default function ComparePage() {
                   </div>
                   <button
                     className="btn btn-outline"
-                    onClick={() => handleTestInUI(m.key === 'densenet' ? 'densenet121' : 'resnet50')}
+                    onClick={() => handleTestInUI(m.key === 'densenet' ? 'densenet121' : m.key === 'efficientnet' ? 'efficientnet_b0' : 'resnet50')}
                     style={{ fontSize: '.75rem', padding: '.3rem .7rem' }}
                   >
                     Select in UI →
@@ -330,6 +343,7 @@ export default function ComparePage() {
                     <PolarRadiusAxis angle={30} domain={[0, 100]} stroke="rgba(255,255,255,0.2)" />
                     <Radar name="DenseNet-121" dataKey="DenseNet" stroke="#3B82F6" fill="#3B82F6" fillOpacity={0.25} />
                     <Radar name="ResNet-50" dataKey="ResNet" stroke="#8B5CF6" fill="#8B5CF6" fillOpacity={0.2} />
+                    <Radar name="EfficientNet-B0" dataKey="EfficientNet" stroke="#10B981" fill="#10B981" fillOpacity={0.2} />
                     <Legend wrapperStyle={{ fontSize: 11 }} />
                   </RadarChart>
                 </ResponsiveContainer>

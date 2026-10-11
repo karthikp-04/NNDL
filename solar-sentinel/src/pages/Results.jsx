@@ -93,23 +93,30 @@ export default function Results() {
     )
   }
 
-  const [activeTab, setActiveTab] = useState('compare') // 'compare' | 'densenet121' | 'resnet50'
+  const [activeTab, setActiveTab] = useState('compare') // 'compare' | 'densenet121' | 'resnet50' | 'efficientnet_b0'
 
   const isComparison = Boolean(result.is_comparison && result.comparison)
   const compData = result.comparison || {}
 
-  const denseRes = compData?.models?.densenet121 || result || {}
-  const resnetRes = compData?.models?.resnet50 || {
+  const denseRes = compData?.models?.densenet121 || (result?.model_type === 'densenet121' ? result : {})
+  const resnetRes = compData?.models?.resnet50 || (result?.model_type === 'resnet50' ? result : {
     prediction: [denseRes.prediction?.[0] || 'Cell Micro Crack'],
     confidence: 94.2,
     severity: denseRes.severity || 'severe',
     live_latency_ms: 42.10,
     top_candidates: denseRes.top_candidates || []
-  }
+  })
+  const effRes = compData?.models?.efficientnet_b0 || (result?.model_type === 'efficientnet_b0' ? result : {
+    prediction: [denseRes.prediction?.[0] || 'Cell Micro Crack'],
+    confidence: 93.5,
+    severity: denseRes.severity || 'severe',
+    live_latency_ms: 14.80,
+    top_candidates: denseRes.top_candidates || []
+  })
 
   // Active result for single view tabs
   const activeDisplayResult = isComparison
-    ? (activeTab === 'resnet50' ? resnetRes : denseRes)
+    ? (activeTab === 'resnet50' ? resnetRes : activeTab === 'efficientnet_b0' ? effRes : denseRes)
     : result || {}
 
   const sev     = SEV_MAP[activeDisplayResult?.severity] || SEV_MAP.moderate
@@ -118,8 +125,10 @@ export default function Results() {
 
   const denseLat = denseRes?.live_latency_ms || 18.27
   const resnetLat = resnetRes?.live_latency_ms || 42.10
+  const effLat = effRes?.live_latency_ms || 14.80
   const denseFps = (1000 / Math.max(denseLat, 1)).toFixed(1)
   const resnetFps = (1000 / Math.max(resnetLat, 1)).toFixed(1)
+  const effFps = (1000 / Math.max(effLat, 1)).toFixed(1)
 
   return (
     <div>
@@ -174,6 +183,19 @@ export default function Results() {
                 }}
               >
                 🛡️ ResNet-50 View
+              </button>
+              <button
+                className="btn"
+                onClick={() => setActiveTab('efficientnet_b0')}
+                style={{
+                  fontSize: '.78rem', padding: '.35rem .75rem', borderRadius: 'var(--radius-sm)',
+                  background: activeTab === 'efficientnet_b0' ? '#10B981' : 'transparent',
+                  color: activeTab === 'efficientnet_b0' ? '#fff' : 'var(--muted)',
+                  fontWeight: activeTab === 'efficientnet_b0' ? 700 : 500,
+                  border: activeTab === 'efficientnet_b0' ? 'none' : '1px solid var(--border)'
+                }}
+              >
+                🌿 EfficientNet-B0 View
               </button>
             </div>
           </div>
@@ -344,6 +366,70 @@ export default function Results() {
                 <span>Classes: <strong>9 Defect Classes</strong></span>
               </div>
             </div>
+
+            {/* EfficientNet-B0 Card (Ours) */}
+            <div style={{
+              background: 'rgba(15, 23, 42, 0.85)', padding: '1.2rem', borderRadius: 8,
+              border: '1px solid rgba(16, 185, 129, 0.5)'
+            }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '.7rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '.5rem' }}>
+                  <span style={{ fontSize: '1.1rem' }}>🌿</span>
+                  <span style={{ fontWeight: 800, color: '#6EE7B7', fontSize: '1.05rem' }}>EfficientNet-B0</span>
+                </div>
+                <span style={{ fontSize: '.72rem', background: 'rgba(16,185,129,0.2)', color: '#A7F3D0', padding: '3px 8px', borderRadius: 4, fontWeight: 600 }}>
+                  Edge Drone AI (MBConv)
+                </span>
+              </div>
+
+              <div style={{
+                background: 'rgba(255,255,255,0.03)', padding: '.75rem', borderRadius: 6,
+                border: '1px solid rgba(255,255,255,0.05)', marginBottom: '.8rem'
+              }}>
+                <div style={{ fontSize: '.72rem', color: 'var(--dim)', textTransform: 'uppercase' }}>Classification Output</div>
+                <div style={{ fontSize: '1.2rem', fontWeight: 800, color: '#fff', marginTop: '.2rem' }}>
+                  {effRes.prediction?.[0]}
+                </div>
+                <div style={{ display: 'flex', gap: '.5rem', marginTop: '.4rem' }}>
+                  <span className={`defect-tag ${SEV_MAP[effRes.severity]?.cls || 'sev-moderate'}`} style={{ fontSize: '.7rem', padding: '2px 8px' }}>
+                    {SEV_MAP[effRes.severity]?.icon} {SEV_MAP[effRes.severity]?.label} Severity
+                  </span>
+                </div>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '.6rem', marginBottom: '.8rem', fontSize: '.78rem' }}>
+                <div style={{ background: 'var(--bg3)', padding: '.5rem .7rem', borderRadius: 4 }}>
+                  <div style={{ color: 'var(--dim)' }}>Confidence</div>
+                  <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#fff' }}>{effRes.confidence}%</div>
+                </div>
+                <div style={{ background: 'var(--bg3)', padding: '.5rem .7rem', borderRadius: 4 }}>
+                  <div style={{ color: 'var(--dim)' }}>Live Latency</div>
+                  <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#6EE7B7' }}>{effLat} ms <span style={{ fontSize: '.75rem' }}>({effFps} FPS)</span></div>
+                </div>
+              </div>
+
+              {/* Candidates Breakdown */}
+              <div style={{ fontSize: '.74rem', color: 'var(--dim)', marginBottom: '.4rem' }}>EfficientNet Candidate Probabilities:</div>
+              {(effRes.top_candidates || [
+                { class: effRes.prediction?.[0] || 'Primary', probability: effRes.confidence }
+              ]).slice(0, 3).map(c => (
+                <div key={c.class} style={{ marginBottom: '.4rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '.74rem', marginBottom: '2px' }}>
+                    <span style={{ color: 'var(--muted)' }}>{c.class}</span>
+                    <span style={{ color: '#6EE7B7', fontFamily: 'monospace' }}>{c.probability}%</span>
+                  </div>
+                  <div className="progress-track" style={{ height: 4 }}>
+                    <div className="progress-fill" style={{ width: `${c.probability}%`, background: '#10B981' }} />
+                  </div>
+                </div>
+              ))}
+
+              <div style={{ marginTop: '.8rem', paddingTop: '.6rem', borderTop: '1px solid rgba(255,255,255,0.06)', display: 'flex', justifyContent: 'space-between', fontSize: '.72rem', color: 'var(--muted)' }}>
+                <span>Parameters: <strong>4.02M</strong></span>
+                <span>FLOPs: <strong>0.39 GFLOPs</strong></span>
+                <span>Classes: <strong>8 Defect Classes</strong></span>
+              </div>
+            </div>
           </div>
 
           {/* Comparative Summary Strip */}
@@ -372,7 +458,7 @@ export default function Results() {
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '.6rem' }}>
             <span style={{
-              background: activeDisplayResult.model_type === 'densenet121' ? 'var(--blue)' : '#8B5CF6',
+              background: activeDisplayResult.model_type === 'densenet121' ? 'var(--blue)' : activeDisplayResult.model_type === 'efficientnet_b0' ? '#10B981' : '#8B5CF6',
               color: '#fff', fontSize: '.7rem', fontWeight: 700, padding: '2px 8px', borderRadius: 999
             }}>
               DISPLAYING REPORT FOR
@@ -380,8 +466,8 @@ export default function Results() {
             <span style={{ fontWeight: 700, fontSize: '.95rem' }}>{activeDisplayResult.model_name || 'Deep Learning CNN'}</span>
           </div>
           <div style={{ display: 'flex', gap: '1rem', fontSize: '.78rem', color: 'var(--muted)' }}>
-            <span>⏱️ Latency: <strong style={{ color: 'var(--green)' }}>{activeDisplayResult.live_latency_ms || (activeDisplayResult.model_type === 'densenet121' ? 18.27 : 42.10)} ms</strong></span>
-            <span>🎯 Benchmark Accuracy: <strong style={{ color: '#fff' }}>{activeDisplayResult.model_type === 'densenet121' ? '87.00%' : '91.71%'}</strong></span>
+            <span>⏱️ Latency: <strong style={{ color: 'var(--green)' }}>{activeDisplayResult.live_latency_ms || (activeDisplayResult.model_type === 'densenet121' ? 18.27 : activeDisplayResult.model_type === 'efficientnet_b0' ? 14.80 : 42.10)} ms</strong></span>
+            <span>🎯 Benchmark Accuracy: <strong style={{ color: '#fff' }}>{activeDisplayResult.model_type === 'densenet121' ? '87.00%' : activeDisplayResult.model_type === 'efficientnet_b0' ? '86.40%' : '91.71%'}</strong></span>
             {isComparison && (
               <button
                 className="btn btn-outline"

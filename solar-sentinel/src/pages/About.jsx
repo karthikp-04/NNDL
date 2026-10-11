@@ -11,10 +11,12 @@ const DATASET_FACTS = [
 
 const MODEL_FACTS = [
   { label: 'DenseNet-121 Latency', value: '18.27 ms (54.7 FPS on CUDA)' },
+  { label: 'EfficientNet-B0 Latency', value: '14.80 ms (67.5 FPS Edge / CUDA)' },
   { label: 'DenseNet-121 Parameters', value: '6.97 Million' },
   { label: 'ResNet-50 Parameters', value: '25.56 Million' },
+  { label: 'EfficientNet-B0 Parameters', value: '4.02 Million (0.39 GFLOPs)' },
   { label: 'Input Resolution', value: '224 × 224 px Standardized' },
-  { label: 'Test Set Accuracy', value: '91.71% (ResNet) / 87.00% (DenseNet)' },
+  { label: 'Test Set Accuracy', value: '91.71% (ResNet) / 87.00% (DenseNet) / 86.40% (EfficientNet)' },
   { label: 'PVEL-AD Test Split', value: '2,881 Stratified Images' },
 ]
 
@@ -30,10 +32,13 @@ const DEFECT_CLASSES = [
 ]
 
 const TEAM = [
-  { initials:'M', name:'Madhav', roll:'CB.EN.U4CSE23661', role:'Deep Learning & UI Lead', color:'#3B82F6' },
+  { initials:'A', name:'Ashin Varghese', roll:'CB.EN.U4CSE23661', role:'DenseNet-121 Lead (In-Line AOI)', color:'#3B82F6' },
+  { initials:'M', name:'Madhav Sreejith', roll:'CB.EN.U4CSE23735', role:'EfficientNet-B0 Lead (Edge Drone AI)', color:'#10B981' },
+  { initials:'K', name:'Karthik P', roll:'CB.EN.U4CSE23522', role:'ResNet-50 Lead (Diagnostic Web & Focal Loss)', color:'#8B5CF6' },
 ]
 
 const REFS = [
+  'Tan, M. & Le, Q.V. (2019). EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks. ICML.',
   'Deitsch, S. et al. (2019). Automatic classification of defective photovoltaic module cells in electroluminescence images. Solar Energy.',
   'Pratt, L. et al. (2020). PVEL-AD: A Large-Scale Open-World Dataset for Photovoltaic Cell Anomaly Detection. IEEE PVSC.',
   'Selvaraju, R.R. et al. (2020). Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization. IJCV.',
