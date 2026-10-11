@@ -10,31 +10,27 @@ const DATASET_FACTS = [
 ]
 
 const MODEL_FACTS = [
-  { label: 'Architecture', value: 'ResNet-50 (DCNN)' },
-  { label: 'Framework', value: 'PyTorch 2.x' },
-  { label: 'Accuracy', value: '94.3% on test set' },
-  { label: 'Explainability', value: 'Grad-CAM v2' },
-  { label: 'Input Size', value: '224 × 224 RGB' },
-  { label: 'Inference Time', value: '< 2 seconds (CPU)' },
+  { label: 'DenseNet-121 Latency', value: '18.27 ms (54.7 FPS on CUDA)' },
+  { label: 'DenseNet-121 Parameters', value: '6.97 Million' },
+  { label: 'ResNet-50 Parameters', value: '25.56 Million' },
+  { label: 'Input Resolution', value: '224 × 224 px Standardized' },
+  { label: 'Test Set Accuracy', value: '91.71% (ResNet) / 87.00% (DenseNet)' },
+  { label: 'PVEL-AD Test Split', value: '2,881 Stratified Images' },
 ]
 
 const DEFECT_CLASSES = [
-  { name:'Micro Crack',         icon:'🔴', desc:'Hairline fractures within silicon cells' },
+  { name:'Cell Micro Crack',    icon:'🔴', desc:'Hairline fractures within silicon cells' },
   { name:'Finger Interruption', icon:'🟠', desc:'Broken metallic contact lines on cell surface' },
-  { name:'Hotspot',             icon:'🌡️', desc:'Localized overheating due to resistance imbalance' },
-  { name:'PID Effect',          icon:'🟣', desc:'Potential Induced Degradation — ion migration' },
-  { name:'Inactive Cell',       icon:'🔵', desc:'Cell not generating power — usually shading/damage' },
-  { name:'Corrosion',           icon:'🟤', desc:'Moisture ingress causing electrochemical degradation' },
-  { name:'Delamination',        icon:'⚫', desc:'EVA layer separation from glass or cells' },
-  { name:'Diode Failure',       icon:'⚡', desc:'Bypass diode fault causing reverse current' },
-  { name:'Cell Mismatch',       icon:'⬜', desc:'Output mismatch between cells in a string' },
-  { name:'Healthy',             icon:'🟢', desc:'No anomaly detected — panel operating normally' },
+  { name:'Black Core',          icon:'⚫', desc:'Inactive non-luminescent core area' },
+  { name:'Crystal Dislocation', icon:'🟣', desc:'Structural crystallographic lattice dislocations' },
+  { name:'Material Defect',     icon:'🟤', desc:'Silicon material impurity and inhomogeneity' },
+  { name:'Star Crack',          icon:'🚨', desc:'Impact fracture star pattern' },
+  { name:'Thick Line Defect',   icon:'📏', desc:'Busbar ribbon solder misalignment' },
+  { name:'Healthy Panel',       icon:'🟢', desc:'Optimal electroluminescence with no defect' },
 ]
 
 const TEAM = [
-  { initials:'KP', name:'Karthik P', role:'ML Engineer',    color:'#3B82F6' },
-  { initials:'AS', name:'Ashin',     role:'Data Scientist',  color:'#8B5CF6' },
-  { initials:'MD', name:'Madhav',    role:'Frontend & Research', color:'#22C55E' },
+  { initials:'M', name:'Madhav', roll:'CB.EN.U4CSE23661', role:'Deep Learning & UI Lead', color:'#3B82F6' },
 ]
 
 const REFS = [
@@ -212,8 +208,13 @@ export default function About() {
                   {m.initials}
                 </div>
                 <div>
-                  <div className="member-name">{m.name}</div>
-                  <div className="member-role">{m.role}</div>
+                  <div className="member-name" style={{ display:'flex', alignItems:'center', gap:'.5rem' }}>
+                    <span>{m.name}</span>
+                    <span style={{ fontSize:'.68rem', color:'var(--dim)', background:'rgba(255,255,255,0.06)', padding:'1px 6px', borderRadius:4 }}>
+                      {m.roll}
+                    </span>
+                  </div>
+                  <div className="member-role" style={{ color: m.color }}>{m.role}</div>
                 </div>
               </div>
             ))}

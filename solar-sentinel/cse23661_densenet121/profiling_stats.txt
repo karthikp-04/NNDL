@@ -1,0 +1,7 @@
+Total FLOPs: 2.8960 GFLOPs
+Total Parameters: 6.97 Million
+Inference Latency average: 18.27 ms
+Inference Latency median: 16.10 ms
+Inference Latency std dev: 5.74 ms
+Inference Latency min: 12.31 ms
+Inference Latency max: 39.21 ms

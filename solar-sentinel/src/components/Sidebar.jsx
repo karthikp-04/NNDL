@@ -1,12 +1,13 @@
 import { useApp } from '../context/AppContext'
 
 const navItems = [
-  { id: 'upload',    icon: '📤', label: 'Upload',    section: 'ANALYSIS',   requiresResult: false },
-  { id: 'results',   icon: '📊', label: 'Results',   section: null,         requiresResult: true  },
-  { id: 'heatmap',   icon: '🔥', label: 'Grad-CAM',  section: null,         requiresResult: true  },
-  { id: 'dashboard', icon: '📈', label: 'Dashboard', section: 'MONITORING', requiresResult: false },
-  { id: 'history',   icon: '📜', label: 'History',   section: null,         requiresResult: false },
-  { id: 'about',     icon: 'ℹ️', label: 'About',     section: 'INFO',       requiresResult: false },
+  { id: 'upload',    icon: '📤', label: 'Upload & Test',   section: 'ANALYSIS',   requiresResult: false },
+  { id: 'results',   icon: '📊', label: 'Results',         section: null,         requiresResult: true  },
+  { id: 'heatmap',   icon: '🔥', label: 'Grad-CAM',        section: null,         requiresResult: true  },
+  { id: 'compare',   icon: '⚖️', label: 'Model Benchmarks', section: 'BENCHMARKS', requiresResult: false },
+  { id: 'dashboard', icon: '📈', label: 'Dashboard',       section: 'MONITORING', requiresResult: false },
+  { id: 'history',   icon: '📜', label: 'History',         section: null,         requiresResult: false },
+  { id: 'about',     icon: 'ℹ️', label: 'About',            section: 'INFO',       requiresResult: false },
 ]
 
 export default function Sidebar({ activePage, navigate, historyCount, hasResult }) {
