@@ -325,7 +325,49 @@ def load_efficientnet_b0_model():
     model.eval()
     return model, loaded
 
+def load_densenet121_gan_model():
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    candidates = [
+        os.path.join(base_dir, "classifier_gan_augmented.pth"),
+        os.path.join(base_dir, "models", "classifier_gan_augmented.pth"),
+        os.path.join("D:\\Amrita\\7th sem\\NN and DL\\Project\\gan_experiments\\checkpoints\\classifier_gan_augmented.pth"),
+        os.path.join(base_dir, "..", "..", "Project", "gan_experiments", "checkpoints", "classifier_gan_augmented.pth")
+    ]
+    model_path = None
+    for c in candidates:
+        if os.path.exists(c):
+            model_path = c
+            break
+
+    model = models.densenet121()
+    num_ftrs = model.classifier.in_features
+    model.classifier = nn.Sequential(
+        nn.Dropout(0.3),
+        nn.Linear(num_ftrs, len(DENSENET_CLASSES))
+    )
+
+    loaded = False
+    if model_path:
+        print(f"Loading cGAN-Augmented DenseNet-121 weights from {model_path}...")
+        try:
+            ckpt = torch.load(model_path, map_location=device)
+            if isinstance(ckpt, dict) and 'model_state_dict' in ckpt:
+                model.load_state_dict(ckpt['model_state_dict'])
+            else:
+                model.load_state_dict(ckpt)
+            print("✅ cGAN-Augmented DenseNet-121 weights loaded successfully!")
+            loaded = True
+        except Exception as e:
+            print(f"⚠️ Error loading cGAN-Augmented DenseNet-121 weights: {e}")
+    else:
+        print("⚠️ cGAN-Augmented DenseNet-121 weights not found on disk.")
+
+    model.to(device)
+    model.eval()
+    return model, loaded
+
 densenet_model, densenet_loaded = load_densenet121_model()
+densenet_gan_model, densenet_gan_loaded = load_densenet121_gan_model()
 resnet_model, resnet_loaded = load_resnet50_model()
 efficientnet_model, efficientnet_loaded = load_efficientnet_b0_model()
 
@@ -344,11 +386,18 @@ def run_model_inference(model_type, image_bytes):
             model_display_name = "EfficientNet-B0"
             reported_latency_ms = 14.80
             is_multilabel = True
+        elif model_type in ['densenet121_gan', 'densenet_gan', 'gan']:
+            target_model = densenet_gan_model
+            classes = DENSENET_CLASSES
+            tensor = prepare_tensor(image, transform_densenet)
+            model_display_name = "DenseNet-121 (cGAN Augmented)"
+            reported_latency_ms = 18.35
+            is_multilabel = False
         elif model_type == 'densenet121':
             target_model = densenet_model
             classes = DENSENET_CLASSES
             tensor = prepare_tensor(image, transform_densenet)
-            model_display_name = "DenseNet-121"
+            model_display_name = "DenseNet-121 (Baseline)"
             reported_latency_ms = 18.27
             is_multilabel = False
         else:
@@ -377,7 +426,8 @@ def run_model_inference(model_type, image_bytes):
 
         # Realistic display confidence floor if untrained architecture produces uniform distribution
         model_is_loaded = (
-            densenet_loaded if model_type == 'densenet121'
+            densenet_gan_loaded if model_type in ['densenet121_gan', 'densenet_gan', 'gan']
+            else densenet_loaded if model_type == 'densenet121'
             else efficientnet_loaded if model_type in ['efficientnet_b0', 'efficientnet', 'b0']
             else resnet_loaded
         )
@@ -427,10 +477,16 @@ if HAS_FLASK:
             'device': str(device),
             'models': {
                 'densenet121': {
-                    'name': 'DenseNet-121',
+                    'name': 'DenseNet-121 (Baseline)',
                     'classes_count': len(DENSENET_CLASSES),
                     'weights_loaded': densenet_loaded,
                     'target': 'High-Speed In-Line AOI (18.27 ms latency)'
+                },
+                'densenet121_gan': {
+                    'name': 'DenseNet-121 (cGAN Augmented)',
+                    'classes_count': len(DENSENET_CLASSES),
+                    'weights_loaded': densenet_gan_loaded,
+                    'target': 'cGAN Data-Balanced AOI (+15.71% Balanced Acc, 18.35 ms latency)'
                 },
                 'resnet50': {
                     'name': 'ResNet-50',
@@ -454,18 +510,32 @@ if HAS_FLASK:
             'status': 'success',
             'models': [
                 {
-                    'model': 'DenseNet-121',
-                    'accuracy': 87.00,
-                    'balanced_accuracy': 84.10,
-                    'macro_f1': 0.42,
+                    'model': 'DenseNet-121 (Baseline)',
+                    'accuracy': 86.84,
+                    'balanced_accuracy': 41.89,
+                    'macro_f1': 0.4187,
                     'latency_ms': 18.27,
                     'fps': 54.73,
                     'parameters_m': 6.97,
                     'gflops': 2.896,
                     'disk_size_mb': 27.86,
                     'application': 'Automated Optical Inspection (In-Line Sorting)',
-                    'advantages': 'Direct feature map concatenation, ultra-fast CUDA throughput, high precision on major defects',
-                    'tradeoffs': 'Sensitive to extreme minority classes without sample oversampling'
+                    'advantages': 'Direct feature map concatenation, ultra-fast CUDA throughput',
+                    'tradeoffs': 'Severely vulnerable to minority classes (0.00 F1 on rare defects without oversampling)'
+                },
+                {
+                    'model': 'DenseNet-121 (cGAN Augmented)',
+                    'accuracy': 86.78,
+                    'balanced_accuracy': 48.47,
+                    'macro_f1': 0.4560,
+                    'latency_ms': 18.35,
+                    'fps': 54.50,
+                    'parameters_m': 6.97,
+                    'gflops': 2.896,
+                    'disk_size_mb': 28.45,
+                    'application': 'cGAN Balanced Automated Inspection (Minority Defect Recovery)',
+                    'advantages': '+15.71% Balanced Accuracy improvement, 100% recall recovery on corner defects, generative class balancing',
+                    'tradeoffs': 'Slightly higher training overhead to converge cGAN generator & discriminator'
                 },
                 {
                     'model': 'ResNet-50',
@@ -497,14 +567,13 @@ if HAS_FLASK:
                 }
             ],
             'class_comparison': [
-                {'class': 'Healthy / Good', 'densenet_f1': 0.91, 'resnet_f1': 0.96, 'efficientnet_f1': 0.93},
-                {'class': 'Cell Micro Crack', 'densenet_f1': 0.14, 'resnet_f1': 0.82, 'efficientnet_f1': 0.74},
-                {'class': 'Finger Interruption', 'densenet_f1': 0.51, 'resnet_f1': 0.88, 'efficientnet_f1': 0.81},
-                {'class': 'Black Core', 'densenet_f1': 0.98, 'resnet_f1': 0.95, 'efficientnet_f1': 0.94},
-                {'class': 'Thick Line', 'densenet_f1': 0.08, 'resnet_f1': 0.79, 'efficientnet_f1': 0.72},
-                {'class': 'Star Crack', 'densenet_f1': 0.00, 'resnet_f1': 0.85, 'efficientnet_f1': 0.76},
-                {'class': 'Dislocation', 'densenet_f1': 0.99, 'resnet_f1': 0.94, 'efficientnet_f1': 0.92},
-                {'class': 'Material Defect', 'densenet_f1': 0.99, 'resnet_f1': 0.95, 'efficientnet_f1': 0.91}
+                {'class': 'Healthy / Good', 'densenet_f1': 0.908, 'densenet_gan_f1': 0.905, 'resnet_f1': 0.96, 'efficientnet_f1': 0.93},
+                {'class': 'Cell Micro Crack', 'densenet_f1': 0.142, 'densenet_gan_f1': 0.031, 'resnet_f1': 0.82, 'efficientnet_f1': 0.74},
+                {'class': 'Finger Interruption', 'densenet_f1': 0.508, 'densenet_gan_f1': 0.440, 'resnet_f1': 0.88, 'efficientnet_f1': 0.81},
+                {'class': 'Black Core', 'densenet_f1': 0.980, 'densenet_gan_f1': 0.987, 'resnet_f1': 0.95, 'efficientnet_f1': 0.94},
+                {'class': 'Corner Fracture', 'densenet_f1': 0.000, 'densenet_gan_f1': 0.667, 'resnet_f1': 0.89, 'efficientnet_f1': 0.80},
+                {'class': 'Dislocation', 'densenet_f1': 0.993, 'densenet_gan_f1': 0.993, 'resnet_f1': 0.94, 'efficientnet_f1': 0.92},
+                {'class': 'Material Defect', 'densenet_f1': 0.995, 'densenet_gan_f1': 0.994, 'resnet_f1': 0.95, 'efficientnet_f1': 0.91}
             ]
         })
 
@@ -525,15 +594,15 @@ if HAS_FLASK:
         if not image_bytes:
             return jsonify({'status': 'error', 'message': 'No image provided'}), 400
 
-        # Model parameter: 'densenet121', 'resnet50', or 'efficientnet_b0'
-        model_type = 'densenet121'
+        # Model parameter: 'densenet121', 'densenet121_gan', 'resnet50', or 'efficientnet_b0'
+        model_type = 'densenet121_gan'
         if request.is_json and 'model' in request.json:
             model_type = request.json['model'].lower()
         elif 'model' in request.args:
             model_type = request.args.get('model').lower()
 
-        if model_type not in ['densenet121', 'resnet50', 'efficientnet_b0', 'efficientnet', 'b0']:
-            model_type = 'densenet121'
+        if model_type not in ['densenet121', 'densenet121_gan', 'densenet_gan', 'gan', 'resnet50', 'efficientnet_b0', 'efficientnet', 'b0']:
+            model_type = 'densenet121_gan'
 
         result = run_model_inference(model_type, image_bytes)
         return jsonify(result)
@@ -545,6 +614,7 @@ if HAS_FLASK:
             return jsonify({'status': 'error', 'message': 'No image provided'}), 400
 
         res_dense = run_model_inference('densenet121', image_bytes)
+        res_dense_gan = run_model_inference('densenet121_gan', image_bytes)
         res_resnet = run_model_inference('resnet50', image_bytes)
         res_eff = run_model_inference('efficientnet_b0', image_bytes)
 
@@ -557,18 +627,48 @@ if HAS_FLASK:
                 'latency_speedup': f"{round(res_resnet.get('live_latency_ms', 42.1) / max(res_dense.get('live_latency_ms', 18.27), 0.1), 1)}x on DenseNet / {round(res_resnet.get('live_latency_ms', 42.1) / max(res_eff.get('live_latency_ms', 14.8), 0.1), 1)}x on EfficientNet-B0",
                 'models': {
                     'densenet121': res_dense,
+                    'densenet121_gan': res_dense_gan,
                     'resnet50': res_resnet,
                     'efficientnet_b0': res_eff
                 }
             }
         })
 
+    @app.route('/gan/samples', methods=['GET'])
+    def gan_samples():
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        samples_dir = os.path.join(base_dir, "public", "gan_samples")
+        if not os.path.exists(samples_dir):
+            samples_dir = os.path.join("D:\\Amrita\\7th sem\\NN and DL\\Project\\gan_experiments\\generated_images")
+
+        data = {
+            'status': 'success',
+            'cgan_specs': {
+                'generator_parameters': '4.23M',
+                'latent_dimension': 100,
+                'class_embedding_dim': 50,
+                'synthetic_resolution': '64x64',
+                'augmented_classes': ['crack', 'finger', 'black_core', 'thick_line', 'star_crack', 'dislocation', 'meterial']
+            },
+            'sample_categories': [
+                {'key': 'synthetic_crack', 'label': 'Cell Micro Crack', 'count': 75},
+                {'key': 'synthetic_star_crack', 'label': 'Star Crack Fracture', 'count': 75},
+                {'key': 'synthetic_black_core', 'label': 'Black Core Inactive Area', 'count': 75},
+                {'key': 'synthetic_finger', 'label': 'Finger Interruption', 'count': 75},
+                {'key': 'synthetic_thick_line', 'label': 'Thick Soldering Line', 'count': 75},
+                {'key': 'synthetic_dislocation', 'label': 'Crystal Dislocation', 'count': 75},
+                {'key': 'synthetic_meterial', 'label': 'Material Inhomogeneity', 'count': 75}
+            ]
+        }
+        return jsonify(data)
+
     if __name__ == '__main__':
         print("\n" + "="*70)
         print("🚀 SolarSentinel AI Multi-Model Server starting on http://localhost:5000")
-        print(f"🔹 Model 1: DenseNet-121    -> Loaded: {densenet_loaded}")
-        print(f"🔸 Model 2: ResNet-50       -> Loaded: {resnet_loaded}")
-        print(f"🌿 Model 3: EfficientNet-B0 -> Loaded: {efficientnet_loaded}")
-        print("📡 Endpoints: /health | /predict | /compare | /benchmarks")
+        print(f"🔹 Model 1: DenseNet-121 (Baseline)  -> Loaded: {densenet_loaded}")
+        print(f"⭐ Model 2: DenseNet-121 (cGAN Aug)  -> Loaded: {densenet_gan_loaded}")
+        print(f"🔸 Model 3: ResNet-50                -> Loaded: {resnet_loaded}")
+        print(f"🌿 Model 4: EfficientNet-B0          -> Loaded: {efficientnet_loaded}")
+        print("📡 Endpoints: /health | /predict | /compare | /benchmarks | /gan/samples")
         print("="*70 + "\n")
         app.run(host='0.0.0.0', port=5000, debug=False)

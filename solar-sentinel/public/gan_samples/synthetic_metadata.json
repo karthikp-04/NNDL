@@ -1,0 +1,4217 @@
+{
+  "total_synthetic_images": 525,
+  "num_per_class": 75,
+  "classes_generated": {
+    "crack": 75,
+    "finger": 75,
+    "black_core": 75,
+    "thick_line": 75,
+    "star_crack": 75,
+    "dislocation": 75,
+    "meterial": 75
+  },
+  "random_seed": 42,
+  "disclaimer": "These images are synthetically generated using a Conditional GAN and MUST NOT be labeled or used as real-world observations.",
+  "manifest": [
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0001.png",
+      "filename": "synthetic_cgan_crack_0001.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0002.png",
+      "filename": "synthetic_cgan_crack_0002.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0003.png",
+      "filename": "synthetic_cgan_crack_0003.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0004.png",
+      "filename": "synthetic_cgan_crack_0004.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0005.png",
+      "filename": "synthetic_cgan_crack_0005.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0006.png",
+      "filename": "synthetic_cgan_crack_0006.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0007.png",
+      "filename": "synthetic_cgan_crack_0007.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0008.png",
+      "filename": "synthetic_cgan_crack_0008.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0009.png",
+      "filename": "synthetic_cgan_crack_0009.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0010.png",
+      "filename": "synthetic_cgan_crack_0010.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0011.png",
+      "filename": "synthetic_cgan_crack_0011.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0012.png",
+      "filename": "synthetic_cgan_crack_0012.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0013.png",
+      "filename": "synthetic_cgan_crack_0013.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0014.png",
+      "filename": "synthetic_cgan_crack_0014.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0015.png",
+      "filename": "synthetic_cgan_crack_0015.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0016.png",
+      "filename": "synthetic_cgan_crack_0016.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0017.png",
+      "filename": "synthetic_cgan_crack_0017.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0018.png",
+      "filename": "synthetic_cgan_crack_0018.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0019.png",
+      "filename": "synthetic_cgan_crack_0019.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0020.png",
+      "filename": "synthetic_cgan_crack_0020.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0021.png",
+      "filename": "synthetic_cgan_crack_0021.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0022.png",
+      "filename": "synthetic_cgan_crack_0022.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0023.png",
+      "filename": "synthetic_cgan_crack_0023.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0024.png",
+      "filename": "synthetic_cgan_crack_0024.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0025.png",
+      "filename": "synthetic_cgan_crack_0025.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0026.png",
+      "filename": "synthetic_cgan_crack_0026.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0027.png",
+      "filename": "synthetic_cgan_crack_0027.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0028.png",
+      "filename": "synthetic_cgan_crack_0028.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0029.png",
+      "filename": "synthetic_cgan_crack_0029.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0030.png",
+      "filename": "synthetic_cgan_crack_0030.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0031.png",
+      "filename": "synthetic_cgan_crack_0031.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0032.png",
+      "filename": "synthetic_cgan_crack_0032.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0033.png",
+      "filename": "synthetic_cgan_crack_0033.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0034.png",
+      "filename": "synthetic_cgan_crack_0034.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0035.png",
+      "filename": "synthetic_cgan_crack_0035.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0036.png",
+      "filename": "synthetic_cgan_crack_0036.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0037.png",
+      "filename": "synthetic_cgan_crack_0037.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0038.png",
+      "filename": "synthetic_cgan_crack_0038.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0039.png",
+      "filename": "synthetic_cgan_crack_0039.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0040.png",
+      "filename": "synthetic_cgan_crack_0040.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0041.png",
+      "filename": "synthetic_cgan_crack_0041.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0042.png",
+      "filename": "synthetic_cgan_crack_0042.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0043.png",
+      "filename": "synthetic_cgan_crack_0043.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0044.png",
+      "filename": "synthetic_cgan_crack_0044.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0045.png",
+      "filename": "synthetic_cgan_crack_0045.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0046.png",
+      "filename": "synthetic_cgan_crack_0046.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0047.png",
+      "filename": "synthetic_cgan_crack_0047.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0048.png",
+      "filename": "synthetic_cgan_crack_0048.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0049.png",
+      "filename": "synthetic_cgan_crack_0049.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0050.png",
+      "filename": "synthetic_cgan_crack_0050.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0051.png",
+      "filename": "synthetic_cgan_crack_0051.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0052.png",
+      "filename": "synthetic_cgan_crack_0052.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0053.png",
+      "filename": "synthetic_cgan_crack_0053.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0054.png",
+      "filename": "synthetic_cgan_crack_0054.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0055.png",
+      "filename": "synthetic_cgan_crack_0055.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0056.png",
+      "filename": "synthetic_cgan_crack_0056.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0057.png",
+      "filename": "synthetic_cgan_crack_0057.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0058.png",
+      "filename": "synthetic_cgan_crack_0058.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0059.png",
+      "filename": "synthetic_cgan_crack_0059.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0060.png",
+      "filename": "synthetic_cgan_crack_0060.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0061.png",
+      "filename": "synthetic_cgan_crack_0061.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0062.png",
+      "filename": "synthetic_cgan_crack_0062.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0063.png",
+      "filename": "synthetic_cgan_crack_0063.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0064.png",
+      "filename": "synthetic_cgan_crack_0064.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0065.png",
+      "filename": "synthetic_cgan_crack_0065.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0066.png",
+      "filename": "synthetic_cgan_crack_0066.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0067.png",
+      "filename": "synthetic_cgan_crack_0067.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0068.png",
+      "filename": "synthetic_cgan_crack_0068.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0069.png",
+      "filename": "synthetic_cgan_crack_0069.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0070.png",
+      "filename": "synthetic_cgan_crack_0070.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0071.png",
+      "filename": "synthetic_cgan_crack_0071.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0072.png",
+      "filename": "synthetic_cgan_crack_0072.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0073.png",
+      "filename": "synthetic_cgan_crack_0073.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0074.png",
+      "filename": "synthetic_cgan_crack_0074.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_crack\\synthetic_cgan_crack_0075.png",
+      "filename": "synthetic_cgan_crack_0075.png",
+      "class_id": 1,
+      "class_name": "crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0001.png",
+      "filename": "synthetic_cgan_finger_0001.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0002.png",
+      "filename": "synthetic_cgan_finger_0002.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0003.png",
+      "filename": "synthetic_cgan_finger_0003.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0004.png",
+      "filename": "synthetic_cgan_finger_0004.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0005.png",
+      "filename": "synthetic_cgan_finger_0005.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0006.png",
+      "filename": "synthetic_cgan_finger_0006.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0007.png",
+      "filename": "synthetic_cgan_finger_0007.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0008.png",
+      "filename": "synthetic_cgan_finger_0008.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0009.png",
+      "filename": "synthetic_cgan_finger_0009.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0010.png",
+      "filename": "synthetic_cgan_finger_0010.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0011.png",
+      "filename": "synthetic_cgan_finger_0011.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0012.png",
+      "filename": "synthetic_cgan_finger_0012.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0013.png",
+      "filename": "synthetic_cgan_finger_0013.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0014.png",
+      "filename": "synthetic_cgan_finger_0014.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0015.png",
+      "filename": "synthetic_cgan_finger_0015.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0016.png",
+      "filename": "synthetic_cgan_finger_0016.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0017.png",
+      "filename": "synthetic_cgan_finger_0017.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0018.png",
+      "filename": "synthetic_cgan_finger_0018.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0019.png",
+      "filename": "synthetic_cgan_finger_0019.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0020.png",
+      "filename": "synthetic_cgan_finger_0020.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0021.png",
+      "filename": "synthetic_cgan_finger_0021.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0022.png",
+      "filename": "synthetic_cgan_finger_0022.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0023.png",
+      "filename": "synthetic_cgan_finger_0023.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0024.png",
+      "filename": "synthetic_cgan_finger_0024.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0025.png",
+      "filename": "synthetic_cgan_finger_0025.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0026.png",
+      "filename": "synthetic_cgan_finger_0026.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0027.png",
+      "filename": "synthetic_cgan_finger_0027.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0028.png",
+      "filename": "synthetic_cgan_finger_0028.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0029.png",
+      "filename": "synthetic_cgan_finger_0029.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0030.png",
+      "filename": "synthetic_cgan_finger_0030.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0031.png",
+      "filename": "synthetic_cgan_finger_0031.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0032.png",
+      "filename": "synthetic_cgan_finger_0032.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0033.png",
+      "filename": "synthetic_cgan_finger_0033.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0034.png",
+      "filename": "synthetic_cgan_finger_0034.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0035.png",
+      "filename": "synthetic_cgan_finger_0035.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0036.png",
+      "filename": "synthetic_cgan_finger_0036.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0037.png",
+      "filename": "synthetic_cgan_finger_0037.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0038.png",
+      "filename": "synthetic_cgan_finger_0038.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0039.png",
+      "filename": "synthetic_cgan_finger_0039.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0040.png",
+      "filename": "synthetic_cgan_finger_0040.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0041.png",
+      "filename": "synthetic_cgan_finger_0041.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0042.png",
+      "filename": "synthetic_cgan_finger_0042.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0043.png",
+      "filename": "synthetic_cgan_finger_0043.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0044.png",
+      "filename": "synthetic_cgan_finger_0044.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0045.png",
+      "filename": "synthetic_cgan_finger_0045.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0046.png",
+      "filename": "synthetic_cgan_finger_0046.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0047.png",
+      "filename": "synthetic_cgan_finger_0047.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0048.png",
+      "filename": "synthetic_cgan_finger_0048.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0049.png",
+      "filename": "synthetic_cgan_finger_0049.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0050.png",
+      "filename": "synthetic_cgan_finger_0050.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0051.png",
+      "filename": "synthetic_cgan_finger_0051.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0052.png",
+      "filename": "synthetic_cgan_finger_0052.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0053.png",
+      "filename": "synthetic_cgan_finger_0053.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0054.png",
+      "filename": "synthetic_cgan_finger_0054.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0055.png",
+      "filename": "synthetic_cgan_finger_0055.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0056.png",
+      "filename": "synthetic_cgan_finger_0056.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0057.png",
+      "filename": "synthetic_cgan_finger_0057.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0058.png",
+      "filename": "synthetic_cgan_finger_0058.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0059.png",
+      "filename": "synthetic_cgan_finger_0059.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0060.png",
+      "filename": "synthetic_cgan_finger_0060.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0061.png",
+      "filename": "synthetic_cgan_finger_0061.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0062.png",
+      "filename": "synthetic_cgan_finger_0062.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0063.png",
+      "filename": "synthetic_cgan_finger_0063.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0064.png",
+      "filename": "synthetic_cgan_finger_0064.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0065.png",
+      "filename": "synthetic_cgan_finger_0065.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0066.png",
+      "filename": "synthetic_cgan_finger_0066.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0067.png",
+      "filename": "synthetic_cgan_finger_0067.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0068.png",
+      "filename": "synthetic_cgan_finger_0068.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0069.png",
+      "filename": "synthetic_cgan_finger_0069.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0070.png",
+      "filename": "synthetic_cgan_finger_0070.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0071.png",
+      "filename": "synthetic_cgan_finger_0071.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0072.png",
+      "filename": "synthetic_cgan_finger_0072.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0073.png",
+      "filename": "synthetic_cgan_finger_0073.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0074.png",
+      "filename": "synthetic_cgan_finger_0074.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_finger\\synthetic_cgan_finger_0075.png",
+      "filename": "synthetic_cgan_finger_0075.png",
+      "class_id": 2,
+      "class_name": "finger",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0001.png",
+      "filename": "synthetic_cgan_black_core_0001.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0002.png",
+      "filename": "synthetic_cgan_black_core_0002.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0003.png",
+      "filename": "synthetic_cgan_black_core_0003.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0004.png",
+      "filename": "synthetic_cgan_black_core_0004.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0005.png",
+      "filename": "synthetic_cgan_black_core_0005.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0006.png",
+      "filename": "synthetic_cgan_black_core_0006.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0007.png",
+      "filename": "synthetic_cgan_black_core_0007.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0008.png",
+      "filename": "synthetic_cgan_black_core_0008.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0009.png",
+      "filename": "synthetic_cgan_black_core_0009.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0010.png",
+      "filename": "synthetic_cgan_black_core_0010.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0011.png",
+      "filename": "synthetic_cgan_black_core_0011.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0012.png",
+      "filename": "synthetic_cgan_black_core_0012.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0013.png",
+      "filename": "synthetic_cgan_black_core_0013.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0014.png",
+      "filename": "synthetic_cgan_black_core_0014.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0015.png",
+      "filename": "synthetic_cgan_black_core_0015.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0016.png",
+      "filename": "synthetic_cgan_black_core_0016.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0017.png",
+      "filename": "synthetic_cgan_black_core_0017.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0018.png",
+      "filename": "synthetic_cgan_black_core_0018.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0019.png",
+      "filename": "synthetic_cgan_black_core_0019.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0020.png",
+      "filename": "synthetic_cgan_black_core_0020.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0021.png",
+      "filename": "synthetic_cgan_black_core_0021.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0022.png",
+      "filename": "synthetic_cgan_black_core_0022.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0023.png",
+      "filename": "synthetic_cgan_black_core_0023.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0024.png",
+      "filename": "synthetic_cgan_black_core_0024.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0025.png",
+      "filename": "synthetic_cgan_black_core_0025.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0026.png",
+      "filename": "synthetic_cgan_black_core_0026.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0027.png",
+      "filename": "synthetic_cgan_black_core_0027.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0028.png",
+      "filename": "synthetic_cgan_black_core_0028.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0029.png",
+      "filename": "synthetic_cgan_black_core_0029.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0030.png",
+      "filename": "synthetic_cgan_black_core_0030.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0031.png",
+      "filename": "synthetic_cgan_black_core_0031.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0032.png",
+      "filename": "synthetic_cgan_black_core_0032.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0033.png",
+      "filename": "synthetic_cgan_black_core_0033.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0034.png",
+      "filename": "synthetic_cgan_black_core_0034.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0035.png",
+      "filename": "synthetic_cgan_black_core_0035.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0036.png",
+      "filename": "synthetic_cgan_black_core_0036.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0037.png",
+      "filename": "synthetic_cgan_black_core_0037.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0038.png",
+      "filename": "synthetic_cgan_black_core_0038.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0039.png",
+      "filename": "synthetic_cgan_black_core_0039.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0040.png",
+      "filename": "synthetic_cgan_black_core_0040.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0041.png",
+      "filename": "synthetic_cgan_black_core_0041.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0042.png",
+      "filename": "synthetic_cgan_black_core_0042.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0043.png",
+      "filename": "synthetic_cgan_black_core_0043.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0044.png",
+      "filename": "synthetic_cgan_black_core_0044.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0045.png",
+      "filename": "synthetic_cgan_black_core_0045.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0046.png",
+      "filename": "synthetic_cgan_black_core_0046.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0047.png",
+      "filename": "synthetic_cgan_black_core_0047.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0048.png",
+      "filename": "synthetic_cgan_black_core_0048.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0049.png",
+      "filename": "synthetic_cgan_black_core_0049.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0050.png",
+      "filename": "synthetic_cgan_black_core_0050.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0051.png",
+      "filename": "synthetic_cgan_black_core_0051.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0052.png",
+      "filename": "synthetic_cgan_black_core_0052.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0053.png",
+      "filename": "synthetic_cgan_black_core_0053.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0054.png",
+      "filename": "synthetic_cgan_black_core_0054.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0055.png",
+      "filename": "synthetic_cgan_black_core_0055.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0056.png",
+      "filename": "synthetic_cgan_black_core_0056.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0057.png",
+      "filename": "synthetic_cgan_black_core_0057.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0058.png",
+      "filename": "synthetic_cgan_black_core_0058.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0059.png",
+      "filename": "synthetic_cgan_black_core_0059.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0060.png",
+      "filename": "synthetic_cgan_black_core_0060.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0061.png",
+      "filename": "synthetic_cgan_black_core_0061.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0062.png",
+      "filename": "synthetic_cgan_black_core_0062.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0063.png",
+      "filename": "synthetic_cgan_black_core_0063.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0064.png",
+      "filename": "synthetic_cgan_black_core_0064.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0065.png",
+      "filename": "synthetic_cgan_black_core_0065.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0066.png",
+      "filename": "synthetic_cgan_black_core_0066.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0067.png",
+      "filename": "synthetic_cgan_black_core_0067.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0068.png",
+      "filename": "synthetic_cgan_black_core_0068.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0069.png",
+      "filename": "synthetic_cgan_black_core_0069.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0070.png",
+      "filename": "synthetic_cgan_black_core_0070.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0071.png",
+      "filename": "synthetic_cgan_black_core_0071.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0072.png",
+      "filename": "synthetic_cgan_black_core_0072.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0073.png",
+      "filename": "synthetic_cgan_black_core_0073.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0074.png",
+      "filename": "synthetic_cgan_black_core_0074.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_black_core\\synthetic_cgan_black_core_0075.png",
+      "filename": "synthetic_cgan_black_core_0075.png",
+      "class_id": 3,
+      "class_name": "black_core",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0001.png",
+      "filename": "synthetic_cgan_thick_line_0001.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0002.png",
+      "filename": "synthetic_cgan_thick_line_0002.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0003.png",
+      "filename": "synthetic_cgan_thick_line_0003.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0004.png",
+      "filename": "synthetic_cgan_thick_line_0004.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0005.png",
+      "filename": "synthetic_cgan_thick_line_0005.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0006.png",
+      "filename": "synthetic_cgan_thick_line_0006.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0007.png",
+      "filename": "synthetic_cgan_thick_line_0007.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0008.png",
+      "filename": "synthetic_cgan_thick_line_0008.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0009.png",
+      "filename": "synthetic_cgan_thick_line_0009.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0010.png",
+      "filename": "synthetic_cgan_thick_line_0010.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0011.png",
+      "filename": "synthetic_cgan_thick_line_0011.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0012.png",
+      "filename": "synthetic_cgan_thick_line_0012.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0013.png",
+      "filename": "synthetic_cgan_thick_line_0013.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0014.png",
+      "filename": "synthetic_cgan_thick_line_0014.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0015.png",
+      "filename": "synthetic_cgan_thick_line_0015.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0016.png",
+      "filename": "synthetic_cgan_thick_line_0016.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0017.png",
+      "filename": "synthetic_cgan_thick_line_0017.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0018.png",
+      "filename": "synthetic_cgan_thick_line_0018.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0019.png",
+      "filename": "synthetic_cgan_thick_line_0019.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0020.png",
+      "filename": "synthetic_cgan_thick_line_0020.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0021.png",
+      "filename": "synthetic_cgan_thick_line_0021.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0022.png",
+      "filename": "synthetic_cgan_thick_line_0022.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0023.png",
+      "filename": "synthetic_cgan_thick_line_0023.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0024.png",
+      "filename": "synthetic_cgan_thick_line_0024.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0025.png",
+      "filename": "synthetic_cgan_thick_line_0025.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0026.png",
+      "filename": "synthetic_cgan_thick_line_0026.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0027.png",
+      "filename": "synthetic_cgan_thick_line_0027.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0028.png",
+      "filename": "synthetic_cgan_thick_line_0028.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0029.png",
+      "filename": "synthetic_cgan_thick_line_0029.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0030.png",
+      "filename": "synthetic_cgan_thick_line_0030.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0031.png",
+      "filename": "synthetic_cgan_thick_line_0031.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0032.png",
+      "filename": "synthetic_cgan_thick_line_0032.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0033.png",
+      "filename": "synthetic_cgan_thick_line_0033.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0034.png",
+      "filename": "synthetic_cgan_thick_line_0034.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0035.png",
+      "filename": "synthetic_cgan_thick_line_0035.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0036.png",
+      "filename": "synthetic_cgan_thick_line_0036.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0037.png",
+      "filename": "synthetic_cgan_thick_line_0037.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0038.png",
+      "filename": "synthetic_cgan_thick_line_0038.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0039.png",
+      "filename": "synthetic_cgan_thick_line_0039.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0040.png",
+      "filename": "synthetic_cgan_thick_line_0040.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0041.png",
+      "filename": "synthetic_cgan_thick_line_0041.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0042.png",
+      "filename": "synthetic_cgan_thick_line_0042.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0043.png",
+      "filename": "synthetic_cgan_thick_line_0043.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0044.png",
+      "filename": "synthetic_cgan_thick_line_0044.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0045.png",
+      "filename": "synthetic_cgan_thick_line_0045.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0046.png",
+      "filename": "synthetic_cgan_thick_line_0046.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0047.png",
+      "filename": "synthetic_cgan_thick_line_0047.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0048.png",
+      "filename": "synthetic_cgan_thick_line_0048.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0049.png",
+      "filename": "synthetic_cgan_thick_line_0049.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0050.png",
+      "filename": "synthetic_cgan_thick_line_0050.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0051.png",
+      "filename": "synthetic_cgan_thick_line_0051.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0052.png",
+      "filename": "synthetic_cgan_thick_line_0052.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0053.png",
+      "filename": "synthetic_cgan_thick_line_0053.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0054.png",
+      "filename": "synthetic_cgan_thick_line_0054.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0055.png",
+      "filename": "synthetic_cgan_thick_line_0055.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0056.png",
+      "filename": "synthetic_cgan_thick_line_0056.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0057.png",
+      "filename": "synthetic_cgan_thick_line_0057.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0058.png",
+      "filename": "synthetic_cgan_thick_line_0058.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0059.png",
+      "filename": "synthetic_cgan_thick_line_0059.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0060.png",
+      "filename": "synthetic_cgan_thick_line_0060.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0061.png",
+      "filename": "synthetic_cgan_thick_line_0061.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0062.png",
+      "filename": "synthetic_cgan_thick_line_0062.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0063.png",
+      "filename": "synthetic_cgan_thick_line_0063.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0064.png",
+      "filename": "synthetic_cgan_thick_line_0064.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0065.png",
+      "filename": "synthetic_cgan_thick_line_0065.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0066.png",
+      "filename": "synthetic_cgan_thick_line_0066.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0067.png",
+      "filename": "synthetic_cgan_thick_line_0067.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0068.png",
+      "filename": "synthetic_cgan_thick_line_0068.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0069.png",
+      "filename": "synthetic_cgan_thick_line_0069.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0070.png",
+      "filename": "synthetic_cgan_thick_line_0070.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0071.png",
+      "filename": "synthetic_cgan_thick_line_0071.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0072.png",
+      "filename": "synthetic_cgan_thick_line_0072.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0073.png",
+      "filename": "synthetic_cgan_thick_line_0073.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0074.png",
+      "filename": "synthetic_cgan_thick_line_0074.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_thick_line\\synthetic_cgan_thick_line_0075.png",
+      "filename": "synthetic_cgan_thick_line_0075.png",
+      "class_id": 4,
+      "class_name": "thick_line",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0001.png",
+      "filename": "synthetic_cgan_star_crack_0001.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0002.png",
+      "filename": "synthetic_cgan_star_crack_0002.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0003.png",
+      "filename": "synthetic_cgan_star_crack_0003.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0004.png",
+      "filename": "synthetic_cgan_star_crack_0004.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0005.png",
+      "filename": "synthetic_cgan_star_crack_0005.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0006.png",
+      "filename": "synthetic_cgan_star_crack_0006.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0007.png",
+      "filename": "synthetic_cgan_star_crack_0007.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0008.png",
+      "filename": "synthetic_cgan_star_crack_0008.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0009.png",
+      "filename": "synthetic_cgan_star_crack_0009.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0010.png",
+      "filename": "synthetic_cgan_star_crack_0010.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0011.png",
+      "filename": "synthetic_cgan_star_crack_0011.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0012.png",
+      "filename": "synthetic_cgan_star_crack_0012.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0013.png",
+      "filename": "synthetic_cgan_star_crack_0013.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0014.png",
+      "filename": "synthetic_cgan_star_crack_0014.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0015.png",
+      "filename": "synthetic_cgan_star_crack_0015.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0016.png",
+      "filename": "synthetic_cgan_star_crack_0016.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0017.png",
+      "filename": "synthetic_cgan_star_crack_0017.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0018.png",
+      "filename": "synthetic_cgan_star_crack_0018.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0019.png",
+      "filename": "synthetic_cgan_star_crack_0019.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0020.png",
+      "filename": "synthetic_cgan_star_crack_0020.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0021.png",
+      "filename": "synthetic_cgan_star_crack_0021.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0022.png",
+      "filename": "synthetic_cgan_star_crack_0022.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0023.png",
+      "filename": "synthetic_cgan_star_crack_0023.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0024.png",
+      "filename": "synthetic_cgan_star_crack_0024.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0025.png",
+      "filename": "synthetic_cgan_star_crack_0025.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0026.png",
+      "filename": "synthetic_cgan_star_crack_0026.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0027.png",
+      "filename": "synthetic_cgan_star_crack_0027.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0028.png",
+      "filename": "synthetic_cgan_star_crack_0028.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0029.png",
+      "filename": "synthetic_cgan_star_crack_0029.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0030.png",
+      "filename": "synthetic_cgan_star_crack_0030.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0031.png",
+      "filename": "synthetic_cgan_star_crack_0031.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0032.png",
+      "filename": "synthetic_cgan_star_crack_0032.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0033.png",
+      "filename": "synthetic_cgan_star_crack_0033.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0034.png",
+      "filename": "synthetic_cgan_star_crack_0034.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0035.png",
+      "filename": "synthetic_cgan_star_crack_0035.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0036.png",
+      "filename": "synthetic_cgan_star_crack_0036.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0037.png",
+      "filename": "synthetic_cgan_star_crack_0037.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0038.png",
+      "filename": "synthetic_cgan_star_crack_0038.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0039.png",
+      "filename": "synthetic_cgan_star_crack_0039.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0040.png",
+      "filename": "synthetic_cgan_star_crack_0040.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0041.png",
+      "filename": "synthetic_cgan_star_crack_0041.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0042.png",
+      "filename": "synthetic_cgan_star_crack_0042.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0043.png",
+      "filename": "synthetic_cgan_star_crack_0043.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0044.png",
+      "filename": "synthetic_cgan_star_crack_0044.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0045.png",
+      "filename": "synthetic_cgan_star_crack_0045.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0046.png",
+      "filename": "synthetic_cgan_star_crack_0046.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0047.png",
+      "filename": "synthetic_cgan_star_crack_0047.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0048.png",
+      "filename": "synthetic_cgan_star_crack_0048.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0049.png",
+      "filename": "synthetic_cgan_star_crack_0049.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0050.png",
+      "filename": "synthetic_cgan_star_crack_0050.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0051.png",
+      "filename": "synthetic_cgan_star_crack_0051.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0052.png",
+      "filename": "synthetic_cgan_star_crack_0052.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0053.png",
+      "filename": "synthetic_cgan_star_crack_0053.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0054.png",
+      "filename": "synthetic_cgan_star_crack_0054.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0055.png",
+      "filename": "synthetic_cgan_star_crack_0055.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0056.png",
+      "filename": "synthetic_cgan_star_crack_0056.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0057.png",
+      "filename": "synthetic_cgan_star_crack_0057.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0058.png",
+      "filename": "synthetic_cgan_star_crack_0058.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0059.png",
+      "filename": "synthetic_cgan_star_crack_0059.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0060.png",
+      "filename": "synthetic_cgan_star_crack_0060.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0061.png",
+      "filename": "synthetic_cgan_star_crack_0061.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0062.png",
+      "filename": "synthetic_cgan_star_crack_0062.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0063.png",
+      "filename": "synthetic_cgan_star_crack_0063.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0064.png",
+      "filename": "synthetic_cgan_star_crack_0064.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0065.png",
+      "filename": "synthetic_cgan_star_crack_0065.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0066.png",
+      "filename": "synthetic_cgan_star_crack_0066.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0067.png",
+      "filename": "synthetic_cgan_star_crack_0067.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0068.png",
+      "filename": "synthetic_cgan_star_crack_0068.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0069.png",
+      "filename": "synthetic_cgan_star_crack_0069.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0070.png",
+      "filename": "synthetic_cgan_star_crack_0070.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0071.png",
+      "filename": "synthetic_cgan_star_crack_0071.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0072.png",
+      "filename": "synthetic_cgan_star_crack_0072.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0073.png",
+      "filename": "synthetic_cgan_star_crack_0073.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0074.png",
+      "filename": "synthetic_cgan_star_crack_0074.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_star_crack\\synthetic_cgan_star_crack_0075.png",
+      "filename": "synthetic_cgan_star_crack_0075.png",
+      "class_id": 5,
+      "class_name": "star_crack",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0001.png",
+      "filename": "synthetic_cgan_dislocation_0001.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0002.png",
+      "filename": "synthetic_cgan_dislocation_0002.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0003.png",
+      "filename": "synthetic_cgan_dislocation_0003.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0004.png",
+      "filename": "synthetic_cgan_dislocation_0004.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0005.png",
+      "filename": "synthetic_cgan_dislocation_0005.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0006.png",
+      "filename": "synthetic_cgan_dislocation_0006.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0007.png",
+      "filename": "synthetic_cgan_dislocation_0007.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0008.png",
+      "filename": "synthetic_cgan_dislocation_0008.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0009.png",
+      "filename": "synthetic_cgan_dislocation_0009.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0010.png",
+      "filename": "synthetic_cgan_dislocation_0010.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0011.png",
+      "filename": "synthetic_cgan_dislocation_0011.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0012.png",
+      "filename": "synthetic_cgan_dislocation_0012.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0013.png",
+      "filename": "synthetic_cgan_dislocation_0013.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0014.png",
+      "filename": "synthetic_cgan_dislocation_0014.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0015.png",
+      "filename": "synthetic_cgan_dislocation_0015.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0016.png",
+      "filename": "synthetic_cgan_dislocation_0016.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0017.png",
+      "filename": "synthetic_cgan_dislocation_0017.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0018.png",
+      "filename": "synthetic_cgan_dislocation_0018.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0019.png",
+      "filename": "synthetic_cgan_dislocation_0019.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0020.png",
+      "filename": "synthetic_cgan_dislocation_0020.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0021.png",
+      "filename": "synthetic_cgan_dislocation_0021.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0022.png",
+      "filename": "synthetic_cgan_dislocation_0022.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0023.png",
+      "filename": "synthetic_cgan_dislocation_0023.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0024.png",
+      "filename": "synthetic_cgan_dislocation_0024.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0025.png",
+      "filename": "synthetic_cgan_dislocation_0025.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0026.png",
+      "filename": "synthetic_cgan_dislocation_0026.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0027.png",
+      "filename": "synthetic_cgan_dislocation_0027.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0028.png",
+      "filename": "synthetic_cgan_dislocation_0028.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0029.png",
+      "filename": "synthetic_cgan_dislocation_0029.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0030.png",
+      "filename": "synthetic_cgan_dislocation_0030.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0031.png",
+      "filename": "synthetic_cgan_dislocation_0031.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0032.png",
+      "filename": "synthetic_cgan_dislocation_0032.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0033.png",
+      "filename": "synthetic_cgan_dislocation_0033.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0034.png",
+      "filename": "synthetic_cgan_dislocation_0034.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0035.png",
+      "filename": "synthetic_cgan_dislocation_0035.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0036.png",
+      "filename": "synthetic_cgan_dislocation_0036.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0037.png",
+      "filename": "synthetic_cgan_dislocation_0037.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0038.png",
+      "filename": "synthetic_cgan_dislocation_0038.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0039.png",
+      "filename": "synthetic_cgan_dislocation_0039.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0040.png",
+      "filename": "synthetic_cgan_dislocation_0040.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0041.png",
+      "filename": "synthetic_cgan_dislocation_0041.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0042.png",
+      "filename": "synthetic_cgan_dislocation_0042.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0043.png",
+      "filename": "synthetic_cgan_dislocation_0043.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0044.png",
+      "filename": "synthetic_cgan_dislocation_0044.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0045.png",
+      "filename": "synthetic_cgan_dislocation_0045.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0046.png",
+      "filename": "synthetic_cgan_dislocation_0046.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0047.png",
+      "filename": "synthetic_cgan_dislocation_0047.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0048.png",
+      "filename": "synthetic_cgan_dislocation_0048.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0049.png",
+      "filename": "synthetic_cgan_dislocation_0049.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0050.png",
+      "filename": "synthetic_cgan_dislocation_0050.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0051.png",
+      "filename": "synthetic_cgan_dislocation_0051.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0052.png",
+      "filename": "synthetic_cgan_dislocation_0052.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0053.png",
+      "filename": "synthetic_cgan_dislocation_0053.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0054.png",
+      "filename": "synthetic_cgan_dislocation_0054.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0055.png",
+      "filename": "synthetic_cgan_dislocation_0055.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0056.png",
+      "filename": "synthetic_cgan_dislocation_0056.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0057.png",
+      "filename": "synthetic_cgan_dislocation_0057.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0058.png",
+      "filename": "synthetic_cgan_dislocation_0058.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0059.png",
+      "filename": "synthetic_cgan_dislocation_0059.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0060.png",
+      "filename": "synthetic_cgan_dislocation_0060.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0061.png",
+      "filename": "synthetic_cgan_dislocation_0061.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0062.png",
+      "filename": "synthetic_cgan_dislocation_0062.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0063.png",
+      "filename": "synthetic_cgan_dislocation_0063.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0064.png",
+      "filename": "synthetic_cgan_dislocation_0064.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0065.png",
+      "filename": "synthetic_cgan_dislocation_0065.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0066.png",
+      "filename": "synthetic_cgan_dislocation_0066.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0067.png",
+      "filename": "synthetic_cgan_dislocation_0067.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0068.png",
+      "filename": "synthetic_cgan_dislocation_0068.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0069.png",
+      "filename": "synthetic_cgan_dislocation_0069.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0070.png",
+      "filename": "synthetic_cgan_dislocation_0070.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0071.png",
+      "filename": "synthetic_cgan_dislocation_0071.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0072.png",
+      "filename": "synthetic_cgan_dislocation_0072.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0073.png",
+      "filename": "synthetic_cgan_dislocation_0073.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0074.png",
+      "filename": "synthetic_cgan_dislocation_0074.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_dislocation\\synthetic_cgan_dislocation_0075.png",
+      "filename": "synthetic_cgan_dislocation_0075.png",
+      "class_id": 9,
+      "class_name": "dislocation",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0001.png",
+      "filename": "synthetic_cgan_meterial_0001.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0002.png",
+      "filename": "synthetic_cgan_meterial_0002.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0003.png",
+      "filename": "synthetic_cgan_meterial_0003.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0004.png",
+      "filename": "synthetic_cgan_meterial_0004.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0005.png",
+      "filename": "synthetic_cgan_meterial_0005.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0006.png",
+      "filename": "synthetic_cgan_meterial_0006.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0007.png",
+      "filename": "synthetic_cgan_meterial_0007.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0008.png",
+      "filename": "synthetic_cgan_meterial_0008.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0009.png",
+      "filename": "synthetic_cgan_meterial_0009.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0010.png",
+      "filename": "synthetic_cgan_meterial_0010.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0011.png",
+      "filename": "synthetic_cgan_meterial_0011.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0012.png",
+      "filename": "synthetic_cgan_meterial_0012.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0013.png",
+      "filename": "synthetic_cgan_meterial_0013.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0014.png",
+      "filename": "synthetic_cgan_meterial_0014.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0015.png",
+      "filename": "synthetic_cgan_meterial_0015.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0016.png",
+      "filename": "synthetic_cgan_meterial_0016.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0017.png",
+      "filename": "synthetic_cgan_meterial_0017.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0018.png",
+      "filename": "synthetic_cgan_meterial_0018.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0019.png",
+      "filename": "synthetic_cgan_meterial_0019.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0020.png",
+      "filename": "synthetic_cgan_meterial_0020.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0021.png",
+      "filename": "synthetic_cgan_meterial_0021.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0022.png",
+      "filename": "synthetic_cgan_meterial_0022.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0023.png",
+      "filename": "synthetic_cgan_meterial_0023.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0024.png",
+      "filename": "synthetic_cgan_meterial_0024.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0025.png",
+      "filename": "synthetic_cgan_meterial_0025.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0026.png",
+      "filename": "synthetic_cgan_meterial_0026.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0027.png",
+      "filename": "synthetic_cgan_meterial_0027.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0028.png",
+      "filename": "synthetic_cgan_meterial_0028.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0029.png",
+      "filename": "synthetic_cgan_meterial_0029.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0030.png",
+      "filename": "synthetic_cgan_meterial_0030.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0031.png",
+      "filename": "synthetic_cgan_meterial_0031.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0032.png",
+      "filename": "synthetic_cgan_meterial_0032.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0033.png",
+      "filename": "synthetic_cgan_meterial_0033.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0034.png",
+      "filename": "synthetic_cgan_meterial_0034.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0035.png",
+      "filename": "synthetic_cgan_meterial_0035.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0036.png",
+      "filename": "synthetic_cgan_meterial_0036.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0037.png",
+      "filename": "synthetic_cgan_meterial_0037.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0038.png",
+      "filename": "synthetic_cgan_meterial_0038.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0039.png",
+      "filename": "synthetic_cgan_meterial_0039.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0040.png",
+      "filename": "synthetic_cgan_meterial_0040.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0041.png",
+      "filename": "synthetic_cgan_meterial_0041.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0042.png",
+      "filename": "synthetic_cgan_meterial_0042.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0043.png",
+      "filename": "synthetic_cgan_meterial_0043.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0044.png",
+      "filename": "synthetic_cgan_meterial_0044.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0045.png",
+      "filename": "synthetic_cgan_meterial_0045.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0046.png",
+      "filename": "synthetic_cgan_meterial_0046.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0047.png",
+      "filename": "synthetic_cgan_meterial_0047.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0048.png",
+      "filename": "synthetic_cgan_meterial_0048.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0049.png",
+      "filename": "synthetic_cgan_meterial_0049.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0050.png",
+      "filename": "synthetic_cgan_meterial_0050.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0051.png",
+      "filename": "synthetic_cgan_meterial_0051.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0052.png",
+      "filename": "synthetic_cgan_meterial_0052.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0053.png",
+      "filename": "synthetic_cgan_meterial_0053.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0054.png",
+      "filename": "synthetic_cgan_meterial_0054.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0055.png",
+      "filename": "synthetic_cgan_meterial_0055.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0056.png",
+      "filename": "synthetic_cgan_meterial_0056.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0057.png",
+      "filename": "synthetic_cgan_meterial_0057.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0058.png",
+      "filename": "synthetic_cgan_meterial_0058.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0059.png",
+      "filename": "synthetic_cgan_meterial_0059.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0060.png",
+      "filename": "synthetic_cgan_meterial_0060.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0061.png",
+      "filename": "synthetic_cgan_meterial_0061.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0062.png",
+      "filename": "synthetic_cgan_meterial_0062.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0063.png",
+      "filename": "synthetic_cgan_meterial_0063.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0064.png",
+      "filename": "synthetic_cgan_meterial_0064.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0065.png",
+      "filename": "synthetic_cgan_meterial_0065.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0066.png",
+      "filename": "synthetic_cgan_meterial_0066.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0067.png",
+      "filename": "synthetic_cgan_meterial_0067.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0068.png",
+      "filename": "synthetic_cgan_meterial_0068.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0069.png",
+      "filename": "synthetic_cgan_meterial_0069.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0070.png",
+      "filename": "synthetic_cgan_meterial_0070.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0071.png",
+      "filename": "synthetic_cgan_meterial_0071.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0072.png",
+      "filename": "synthetic_cgan_meterial_0072.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0073.png",
+      "filename": "synthetic_cgan_meterial_0073.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0074.png",
+      "filename": "synthetic_cgan_meterial_0074.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    },
+    {
+      "path": "d:/Amrita/7th sem/NN and DL/Project/gan_experiments/generated_images\\synthetic_meterial\\synthetic_cgan_meterial_0075.png",
+      "filename": "synthetic_cgan_meterial_0075.png",
+      "class_id": 10,
+      "class_name": "meterial",
+      "is_synthetic": true,
+      "generator_checkpoint": "cgan_generator.pth"
+    }
+  ]
+}

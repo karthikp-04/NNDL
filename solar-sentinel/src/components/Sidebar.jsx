@@ -1,13 +1,14 @@
 import { useApp } from '../context/AppContext'
 
 const navItems = [
-  { id: 'upload',    icon: '📤', label: 'Upload & Test',   section: 'ANALYSIS',   requiresResult: false },
-  { id: 'results',   icon: '📊', label: 'Results',         section: null,         requiresResult: true  },
-  { id: 'heatmap',   icon: '🔥', label: 'Grad-CAM',        section: null,         requiresResult: true  },
-  { id: 'compare',   icon: '⚖️', label: 'Model Benchmarks', section: 'BENCHMARKS', requiresResult: false },
-  { id: 'dashboard', icon: '📈', label: 'Dashboard',       section: 'MONITORING', requiresResult: false },
-  { id: 'history',   icon: '📜', label: 'History',         section: null,         requiresResult: false },
-  { id: 'about',     icon: 'ℹ️', label: 'About',            section: 'INFO',       requiresResult: false },
+  { id: 'upload',     icon: '📤', label: 'Upload & Test',    section: 'ANALYSIS',       requiresResult: false },
+  { id: 'results',    icon: '📊', label: 'Results',          section: null,             requiresResult: true  },
+  { id: 'heatmap',    icon: '🔥', label: 'Grad-CAM',         section: null,             requiresResult: true  },
+  { id: 'compare',    icon: '⚖️', label: 'Model Benchmarks',  section: 'BENCHMARKS',     requiresResult: false },
+  { id: 'gan-studio', icon: '🧪', label: 'cGAN Studio',      section: 'GENERATIVE AI',  requiresResult: false },
+  { id: 'dashboard',  icon: '📈', label: 'Dashboard',        section: 'MONITORING',     requiresResult: false },
+  { id: 'history',    icon: '📜', label: 'History',          section: null,             requiresResult: false },
+  { id: 'about',      icon: 'ℹ️', label: 'About',             section: 'INFO',           requiresResult: false },
 ]
 
 export default function Sidebar({ activePage, navigate, historyCount, hasResult }) {
@@ -63,7 +64,7 @@ export default function Sidebar({ activePage, navigate, historyCount, hasResult 
       <div className="sidebar-footer">
         <div className="model-status">
           <div className="status-dot"></div>
-          <span>3 CNN Models Ready · PVEL-AD v2</span>
+          <span>4 CNN & cGAN Models · PVEL-AD</span>
         </div>
       </div>
     </aside>

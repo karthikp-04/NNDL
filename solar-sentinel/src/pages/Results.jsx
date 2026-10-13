@@ -58,6 +58,7 @@ export default function Results() {
   const result = analysisState?.result
   const image  = analysisState?.image
   const saved  = useRef(false)
+  const [activeTab, setActiveTab] = useState('compare') // 'compare' | 'densenet121' | 'resnet50' | 'efficientnet_b0'
 
   // Auto-save to history once
   useEffect(() => {
@@ -93,11 +94,10 @@ export default function Results() {
     )
   }
 
-  const [activeTab, setActiveTab] = useState('compare') // 'compare' | 'densenet121' | 'resnet50' | 'efficientnet_b0'
-
   const isComparison = Boolean(result.is_comparison && result.comparison)
-  const compData = result.comparison || {}
+  const compData = result?.comparison || {}
 
+  const denseGanRes = compData?.models?.densenet121_gan || (result?.model_type === 'densenet121_gan' ? result : {})
   const denseRes = compData?.models?.densenet121 || (result?.model_type === 'densenet121' ? result : {})
   const resnetRes = compData?.models?.resnet50 || (result?.model_type === 'resnet50' ? result : {
     prediction: [denseRes.prediction?.[0] || 'Cell Micro Crack'],
@@ -116,7 +116,7 @@ export default function Results() {
 
   // Active result for single view tabs
   const activeDisplayResult = isComparison
-    ? (activeTab === 'resnet50' ? resnetRes : activeTab === 'efficientnet_b0' ? effRes : denseRes)
+    ? (activeTab === 'densenet121_gan' ? denseGanRes : activeTab === 'resnet50' ? resnetRes : activeTab === 'efficientnet_b0' ? effRes : denseRes)
     : result || {}
 
   const sev     = SEV_MAP[activeDisplayResult?.severity] || SEV_MAP.moderate
@@ -170,6 +170,19 @@ export default function Results() {
                 }}
               >
                 ⚡ DenseNet-121 View
+              </button>
+              <button
+                className="btn"
+                onClick={() => setActiveTab('densenet121_gan')}
+                style={{
+                  fontSize: '.78rem', padding: '.35rem .75rem', borderRadius: 'var(--radius-sm)',
+                  background: activeTab === 'densenet121_gan' ? '#EC4899' : 'transparent',
+                  color: activeTab === 'densenet121_gan' ? '#fff' : 'var(--muted)',
+                  fontWeight: activeTab === 'densenet121_gan' ? 700 : 500,
+                  border: activeTab === 'densenet121_gan' ? 'none' : '1px solid var(--border)'
+                }}
+              >
+                ⭐ DenseNet + cGAN View
               </button>
               <button
                 className="btn"

@@ -19,3 +19,14 @@ venv/
 *.pth
 *.pt
 *.ckpt
+
+# Ignore build artifacts & logs
+dist/
+build/
+*.log
+
+# Ignore presentations and office documents
+*.pptx
+*.ppt
+*.key
+*.pdf
