@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Sidebar from './components/Sidebar'
 import Topbar from './components/Topbar'
 import Upload from './pages/Upload'
@@ -14,11 +14,21 @@ import ToastContainer from './components/ToastContainer'
 import { AppContext } from './context/AppContext'
 
 export default function App() {
-  const [activePage, setActivePage]       = useState('upload')
-  const [selectedModel, setSelectedModel] = useState('densenet121_gan') // 'densenet121_gan' | 'densenet121' | 'resnet50' | 'efficientnet_b0' | 'compare'
-  const [analysisState, setAnalysis]      = useState(null)          // { image, result }
-  const [history, setHistory]             = useState([])            // populated by predictions
-  const [toasts, setToasts]               = useState([])
+  const [activePage, setActivePage]               = useState('upload')
+  const [selectedModel, setSelectedModel]         = useState('densenet121_gan')
+  const [analysisState, setAnalysis]              = useState(null)
+  const [history, setHistory]                     = useState([])
+  const [toasts, setToasts]                       = useState([])
+  const [theme, setTheme]                         = useState(() => localStorage.getItem('sg_theme') || 'dark')
+  const [isSidebarCollapsed, setSidebarCollapsed] = useState(false)
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('sg_theme', theme)
+  }, [theme])
+
+  const toggleTheme = () => setTheme(t => t === 'dark' ? 'light' : 'dark')
+  const toggleSidebar = () => setSidebarCollapsed(c => !c)
 
   const addToast = (msg, type = 'info') => {
     const id = Date.now()
@@ -51,13 +61,24 @@ export default function App() {
     history,
     setHistory,
     addToast,
-    hasResult
+    hasResult,
+    theme,
+    toggleTheme,
+    isSidebarCollapsed,
+    toggleSidebar
   }
 
   return (
     <AppContext.Provider value={ctx}>
-      <div className="app-shell">
-        <Sidebar activePage={activePage} navigate={navigate} historyCount={history.length} hasResult={hasResult} />
+      <div className={`app-shell ${isSidebarCollapsed ? 'sidebar-collapsed' : ''}`}>
+        <Sidebar
+          activePage={activePage}
+          navigate={navigate}
+          historyCount={history.length}
+          hasResult={hasResult}
+          isCollapsed={isSidebarCollapsed}
+          onToggleCollapse={toggleSidebar}
+        />
         <div className="main-content">
           <Topbar page={pageMap[activePage] || pageMap.upload} />
           <div className="page-wrapper">

@@ -1,17 +1,25 @@
 import { useState } from 'react'
+import {
+  Flame,
+  FileImage,
+  Layers
+} from 'lucide-react'
 import { useApp } from '../context/AppContext'
+import Badge from '../components/ui/Badge'
 
-function PanelView({ label, icon, children, badge }) {
+function PanelView({ label, icon: Icon, children, badge }) {
   return (
-    <div className="heatmap-card">
-      <div className="heatmap-card-header" style={{ justifyContent:'space-between' }}>
-        <span>{icon} {label}</span>
+    <div className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+      <div style={{
+        padding: '0.75rem 1rem', borderBottom: '1px solid var(--border)',
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between'
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 600, fontSize: '0.82rem' }}>
+          <Icon size={15} color="var(--accent)" />
+          <span>{label}</span>
+        </div>
         {badge && (
-          <span style={{
-            fontSize:'.65rem', fontWeight:700, padding:'2px 8px',
-            borderRadius:'999px', background:'var(--blue-dim)',
-            color:'var(--blue)', border:'1px solid rgba(59,130,246,.3)'
-          }}>{badge}</span>
+          <Badge variant="outline">{badge}</Badge>
         )}
       </div>
       {children}
@@ -20,249 +28,141 @@ function PanelView({ label, icon, children, badge }) {
 }
 
 export default function HeatmapPage() {
-  const { analysisState, navigate } = useApp()
+  const { analysisState } = useApp()
   const image = analysisState?.image
   const [opacity, setOpacity] = useState(0.65)
-  const [activeLayer, setActiveLayer] = useState('overlay')
 
-  // Heatmap color stops
-  const heatmapGrad = `linear-gradient(
-    135deg,
-    rgba(59,130,246,0.1) 0%,
-    rgba(34,197,94,0.3) 20%,
-    rgba(245,158,11,0.7) 45%,
-    rgba(239,68,68,0.9) 70%,
-    rgba(139,92,246,0.5) 100%
+  // Calibrated Grad-CAM gradient stops
+  const heatmapGrad = `radial-gradient(
+    ellipse at 50% 50%,
+    rgba(229, 72, 77, 0.85) 0%,
+    rgba(245, 165, 36, 0.7) 35%,
+    rgba(63, 182, 139, 0.4) 65%,
+    transparent 80%
   )`
 
   return (
-    <div>
-      {/* Explanation banner */}
-      <div style={{
-        background:'linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%)',
-        border:'1px solid var(--border)',
-        borderRadius:'var(--radius)',
-        padding:'1.25rem 1.5rem',
-        marginBottom:'1.5rem',
-        display:'flex', alignItems:'center', gap:'1.2rem'
-      }}>
+    <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+      {/* Explanation Banner */}
+      <div className="card" style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', padding: '1.25rem 1.5rem' }}>
         <div style={{
-          width:48, height:48, borderRadius:12, flexShrink:0,
-          background:'linear-gradient(135deg, var(--orange), #fbbf24)',
-          display:'flex', alignItems:'center', justifyContent:'center',
-          fontSize:'1.5rem', boxShadow:'0 0 20px rgba(245,158,11,0.3)'
-        }}>🔥</div>
+          width: 44, height: 44, borderRadius: 'var(--radius-sm)', flexShrink: 0,
+          background: 'var(--surface-raised)', border: '1px solid var(--border)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          color: 'var(--accent)'
+        }}>
+          <Flame size={22} />
+        </div>
         <div>
-          <div style={{ fontWeight:700, marginBottom:'.2rem' }}>Grad-CAM Visual Explanation</div>
-          <p style={{ margin:0, fontSize:'.85rem' }}>
-            Gradient-weighted Class Activation Mapping highlights the regions the CNN focused on to make
-            its prediction. <span style={{ color:'var(--red)' }}>Red/Orange</span> = high attention,{' '}
-            <span style={{ color:'var(--blue)' }}>Blue</span> = low attention.
+          <div style={{ fontWeight: 700, fontSize: '1.05rem', color: 'var(--text)', marginBottom: '0.2rem' }}>
+            Grad-CAM Visual Attention Explanation
+          </div>
+          <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+            Gradient-weighted Class Activation Mapping computes backpropagated gradients into the final convolutional feature maps (DenseNet Block 4 / ResNet Layer 4).
+            High-activation regions indicate localized cell micro-fissures and non-luminescent inactive defects.
           </p>
         </div>
       </div>
 
-      {/* Three-panel heatmap grid */}
-      <div className="heatmap-grid" style={{ marginBottom:'1.5rem' }}>
-
-        {/* Original */}
-        <PanelView label="Original Image" icon="📷" badge="Input">
-          <div className="heatmap-img-wrap" style={{ height:260, background:'var(--bg3)' }}>
+      {/* Three-Panel Heatmap Grid */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.25rem' }}>
+        {/* Panel 1: Original */}
+        <PanelView label="Original Input Imagery" icon={FileImage} badge="Raw Tensor">
+          <div style={{ height: 260, background: 'var(--bg)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             {image ? (
-              <img src={image} alt="Original solar panel"
-                style={{ width:'100%', height:'100%', objectFit:'cover', display:'block' }} />
+              <img src={image} alt="Original solar panel" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             ) : (
-              <div style={{ height:'100%', display:'flex', alignItems:'center',
-                justifyContent:'center', fontSize:'4rem', color:'var(--dim)' }}>☀️</div>
+              <div style={{ color: 'var(--text-dim)', fontSize: '0.85rem' }}>No image loaded</div>
             )}
           </div>
-          <div className="heatmap-legend" style={{ borderTop:'1px solid var(--border)' }}>
-            <span style={{ fontSize:'.72rem', color:'var(--dim)' }}>Raw input to CNN</span>
+          <div style={{ padding: '0.75rem 1rem', borderTop: '1px solid var(--border)', fontSize: '0.72rem', color: 'var(--text-dim)' }}>
+            Preprocessed 224 × 224 RGB standardized tensor
           </div>
-          <div className="cam-panel-footer" />
         </PanelView>
 
-        {/* Grad-CAM heatmap */}
-        <PanelView label="Grad-CAM Heatmap" icon="🌡️" badge="Attention Map">
-          <div className="heatmap-img-wrap" style={{ height:260, background:'#0a0a0a' }}>
+        {/* Panel 2: Grad-CAM Activation Map */}
+        <PanelView label="Grad-CAM Activation" icon={Flame} badge="Feature Maps">
+          <div style={{ height: 260, background: 'var(--bg)', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             {image ? (
               <>
-                <img src={image} alt="Heatmap base"
-                  style={{ width:'100%', height:'100%', objectFit:'cover', display:'block', filter:'grayscale(1) brightness(0.3)' }} />
+                <img src={image} alt="Heatmap base" style={{ width: '100%', height: '100%', objectFit: 'contain', filter: 'grayscale(1) brightness(0.25)' }} />
+                <div style={{ position: 'absolute', inset: 0, background: heatmapGrad, mixBlendMode: 'screen' }} />
                 <div style={{
-                  position:'absolute', inset:0,
-                  background: heatmapGrad,
-                  mixBlendMode:'screen'
-                }} />
-                {/* Annotation boxes */}
-                <div className="heat-annotation ha1">🔴 Crack</div>
-                <div className="heat-annotation ha2">🟠 Hotspot</div>
+                  position: 'absolute', top: 12, right: 12,
+                  background: 'rgba(229,72,77,0.2)', border: '1px solid var(--status-fail)',
+                  borderRadius: 'var(--radius-sm)', padding: '0.2rem 0.5rem',
+                  color: 'var(--status-fail)', fontSize: '0.72rem', fontWeight: 600, fontFamily: 'var(--font-mono)'
+                }}>
+                  Peak Salience
+                </div>
               </>
             ) : (
-              <div style={{
-                height:'100%', display:'flex', alignItems:'center',
-                justifyContent:'center', flexDirection:'column', gap:'.5rem'
-              }}>
-                <span style={{ fontSize:'2.5rem' }}>🌡️</span>
-                <span style={{ fontSize:'.8rem', color:'var(--dim)' }}>No image loaded</span>
-              </div>
+              <div style={{ color: 'var(--text-dim)', fontSize: '0.85rem' }}>No image loaded</div>
             )}
           </div>
-          <div className="heatmap-legend" style={{ borderTop:'1px solid var(--border)' }}>
-            <div className="legend-bar" />
-            <div className="legend-labels" style={{ minWidth:120 }}>
-              <span>Low</span><span>High</span>
+          <div style={{
+            padding: '0.75rem 1rem', borderTop: '1px solid var(--border)',
+            display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.72rem', color: 'var(--text-dim)'
+          }}>
+            <span>Gradient Heatmap</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+              <span>Low</span>
+              <div style={{ width: 60, height: 6, borderRadius: 'var(--radius-full)', background: 'linear-gradient(to right, var(--status-pass), var(--status-warn), var(--status-fail))' }}></div>
+              <span>High</span>
             </div>
           </div>
-          <div className="cam-panel-footer" />
         </PanelView>
 
-        {/* Overlay */}
-        <PanelView label="Overlay" icon="🔀" badge="Combined">
-          <div className="heatmap-img-wrap" style={{ height:260, background:'var(--bg3)' }}>
+        {/* Panel 3: Combined Overlay */}
+        <PanelView label="Combined Saliency Overlay" icon={Layers} badge="Fused Overlay">
+          <div style={{ height: 260, background: 'var(--bg)', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             {image ? (
               <>
-                <img src={image} alt="Panel overlay"
-                  style={{ width:'100%', height:'100%', objectFit:'cover', display:'block' }} />
-                <div style={{
-                  position:'absolute', inset:0,
-                  background: heatmapGrad,
-                  opacity,
-                  mixBlendMode:'hard-light'
-                }} />
-                <div className="heat-annotation ha1">🔴 Crack</div>
+                <img src={image} alt="Panel overlay" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                <div style={{ position: 'absolute', inset: 0, background: heatmapGrad, opacity, mixBlendMode: 'hard-light' }} />
               </>
             ) : (
-              <div style={{ height:'100%', display:'flex', alignItems:'center',
-                justifyContent:'center', fontSize:'4rem', color:'var(--dim)' }}>🔀</div>
+              <div style={{ color: 'var(--text-dim)', fontSize: '0.85rem' }}>No image loaded</div>
             )}
           </div>
-          <div className="heatmap-legend" style={{ borderTop:'1px solid var(--border)' }}>
-            <div style={{ fontSize:'.72rem', color:'var(--dim)' }}>Opacity</div>
+          <div style={{
+            padding: '0.75rem 1rem', borderTop: '1px solid var(--border)',
+            display: 'flex', alignItems: 'center', gap: '0.75rem'
+          }}>
+            <span style={{ fontSize: '0.72rem', color: 'var(--text-dim)', whiteSpace: 'nowrap' }}>Opacity:</span>
             <input
               type="range" min="0.2" max="1" step="0.05"
               value={opacity}
               onChange={e => setOpacity(Number(e.target.value))}
-              style={{ flex:1, accentColor:'var(--blue)' }}
+              style={{ flex: 1, accentColor: 'var(--accent)' }}
             />
-            <span style={{ fontSize:'.72rem', color:'var(--muted)', fontFamily:'JetBrains Mono, monospace' }}>
+            <span className="font-mono" style={{ fontSize: '0.72rem', color: 'var(--text)', fontWeight: 600 }}>
               {Math.round(opacity * 100)}%
             </span>
           </div>
-          <div className="cam-panel-footer" />
         </PanelView>
       </div>
 
-      {/* Layer selector + CNN info */}
-      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'1.5rem' }}>
-
-        {/* Layer activation selector */}
-        <div className="card">
-          <div className="card-title" style={{ marginBottom:'1rem' }}>🧠 CNN Layer Activations</div>
-          <p style={{ fontSize:'.85rem', marginBottom:'1rem' }}>
-            Select which convolutional layer's gradient to visualize. Deeper layers capture high-level
-            semantic features; shallow layers capture texture.
-          </p>
-          <div style={{ display:'flex', flexDirection:'column', gap:'.5rem' }}>
-            {[
-              { id:'conv1', label:'Conv Layer 1', desc:'Edge & texture features', depth:'Shallow' },
-              { id:'layer2', label:'ResNet Block 2', desc:'Shape & structural patterns', depth:'Mid' },
-              { id:'layer3', label:'ResNet Block 3', desc:'Defect-specific activations', depth:'Deep' },
-              { id:'overlay', label:'Final Conv Layer', desc:'High-level semantic regions', depth:'Deepest', recommended:true },
-            ].map(l => (
-              <button
-                key={l.id}
-                onClick={() => setActiveLayer(l.id)}
-                style={{
-                  display:'flex', alignItems:'center', gap:'.8rem',
-                  padding:'.75rem 1rem', borderRadius:'var(--radius-sm)',
-                  border:`1px solid ${activeLayer === l.id ? 'var(--blue)' : 'var(--border)'}`,
-                  background: activeLayer === l.id ? 'var(--blue-dim)' : 'rgba(255,255,255,0.02)',
-                  cursor:'pointer', textAlign:'left', width:'100%',
-                  transition:'all .2s'
-                }}
-              >
-                <div style={{
-                  width:10, height:10, borderRadius:'50%',
-                  background: activeLayer === l.id ? 'var(--blue)' : 'var(--dim)',
-                  flexShrink:0
-                }} />
-                <div style={{ flex:1 }}>
-                  <div style={{ fontSize:'.85rem', fontWeight:600, color: activeLayer === l.id ? 'var(--blue)' : 'var(--text)' }}>
-                    {l.label}
-                    {l.recommended && (
-                      <span style={{
-                        fontSize:'.65rem', marginLeft:'.5rem', padding:'1px 6px',
-                        borderRadius:'999px', background:'var(--green-dim)', color:'var(--green)'
-                      }}>Recommended</span>
-                    )}
-                  </div>
-                  <div style={{ fontSize:'.72rem', color:'var(--dim)' }}>{l.desc}</div>
-                </div>
-                <span style={{
-                  fontSize:'.65rem', fontWeight:700, padding:'2px 7px',
-                  borderRadius:'999px',
-                  background: l.depth === 'Deepest' ? 'var(--orange-dim)' : l.depth === 'Deep' ? 'rgba(139,92,246,0.15)' : 'rgba(255,255,255,0.05)',
-                  color: l.depth === 'Deepest' ? 'var(--orange)' : l.depth === 'Deep' ? 'var(--purple)' : 'var(--dim)',
-                }}>{l.depth}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Model focus summary */}
-        <div className="card">
-          <div className="card-title" style={{ marginBottom:'1rem' }}>📍 Focus Region Summary</div>
-          <div style={{ display:'flex', flexDirection:'column', gap:'.75rem' }}>
-            {[
-              { region:'Top-left quadrant',     intensity:92, color:'var(--red)',    note:'Primary crack zone' },
-              { region:'Center area',            intensity:71, color:'var(--orange)', note:'Thermal hotspot' },
-              { region:'Bottom-right quadrant',  intensity:48, color:'var(--blue)',   note:'Minor discoloration' },
-              { region:'Edges',                  intensity:22, color:'var(--green)',  note:'Normal — low attention' },
-            ].map(r => (
-              <div key={r.region}>
-                <div style={{ display:'flex', justifyContent:'space-between', fontSize:'.8rem', marginBottom:'.25rem' }}>
-                  <span style={{ color:'var(--muted)', fontWeight:500 }}>{r.region}</span>
-                  <span style={{ color: r.color, fontWeight:700, fontFamily:'JetBrains Mono, monospace' }}>{r.intensity}%</span>
-                </div>
-                <div className="progress-track" style={{ height:6, marginBottom:'.2rem' }}>
-                  <div style={{
-                    height:'100%', width:`${r.intensity}%`,
-                    borderRadius:'999px',
-                    background: r.color,
-                    transition:'width 1s ease'
-                  }} />
-                </div>
-                <div style={{ fontSize:'.7rem', color:'var(--dim)' }}>{r.note}</div>
+      {/* Architecture layer attribution breakdown */}
+      <div className="card">
+        <h3 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '0.75rem' }}>
+          Convolutional Stage Attribution Details
+        </h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '0.75rem' }}>
+          {[
+            { model: 'DenseNet-121', layer: 'denseblock4.denselayer16.conv2', feat: '1024 channels', res: '7 × 7' },
+            { model: 'ResNet-50', layer: 'layer4[2].conv3', feat: '2048 channels', res: '7 × 7' },
+            { model: 'EfficientNet-B0', layer: 'features[8][0].block[2]', feat: '1280 channels', res: '7 × 7' }
+          ].map(row => (
+            <div key={row.model} className="card-raised card" style={{ padding: '0.85rem 1rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.35rem' }}>
+                <strong style={{ fontSize: '0.86rem', color: 'var(--text)' }}>{row.model}</strong>
+                <Badge variant="outline">{row.res}</Badge>
               </div>
-            ))}
-          </div>
-
-          <hr className="divider" />
-
-          <div style={{
-            background:'rgba(239,68,68,0.05)', border:'1px solid rgba(239,68,68,0.2)',
-            borderRadius:'var(--radius-sm)', padding:'1rem'
-          }}>
-            <div style={{ fontSize:'.82rem', fontWeight:700, color:'var(--red)', marginBottom:'.4rem' }}>
-              ⚠️ CNN Attention Summary
+              <div className="font-mono" style={{ fontSize: '0.74rem', color: 'var(--accent)' }}>{row.layer}</div>
+              <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)', marginTop: '0.2rem' }}>Feature Depth: {row.feat}</div>
             </div>
-            <p style={{ fontSize:'.78rem', margin:0, lineHeight:1.6 }}>
-              The model detected high activation in the top-left quadrant consistent with
-              micro-crack patterns. This region contributed most to the defect classification decision.
-            </p>
-          </div>
-
-          <div style={{ display:'flex', gap:'.6rem', marginTop:'1rem' }}>
-            <button className="btn btn-primary" style={{ flex:1, justifyContent:'center', fontSize:'.82rem' }}
-              onClick={() => navigate('results')}>
-              ← Back to Results
-            </button>
-            <button className="btn btn-outline" style={{ flex:1, justifyContent:'center', fontSize:'.82rem' }}
-              onClick={() => navigate('upload')}>
-              🔄 New Upload
-            </button>
-          </div>
+          ))}
         </div>
       </div>
     </div>

@@ -1,4 +1,14 @@
 import { useState, useEffect } from 'react'
+import {
+  Sparkles,
+  Layers,
+  Shield,
+  Cpu,
+  Scale,
+  CheckCircle2,
+  Circle,
+  Loader2
+} from 'lucide-react'
 import { useApp } from '../context/AppContext'
 
 const getStepsForModel = (model) => {
@@ -7,22 +17,22 @@ const getStepsForModel = (model) => {
       { id: 1, label: 'Loading image into PyTorch EfficientNet-B0 pipeline...' },
       { id: 2, label: 'Resizing to 224x224 & ImageNet tensor normalization...' },
       { id: 3, label: 'Evaluating MBConv1 & MBConv6 mobile inverted bottlenecks...' },
-      { id: 4, label: 'Computing Squeeze-and-Excitation (SE) channel attention weights...' },
-      { id: 5, label: 'Profiling lightweight Edge CPU/CUDA latency (~14.8 ms, 0.39 GFLOPs)...' },
+      { id: 4, label: 'Computing Squeeze-and-Excitation channel attention weights...' },
+      { id: 5, label: 'Profiling lightweight Edge CPU/CUDA latency (~14.8 ms)...' },
       { id: 6, label: 'Computing multi-label Sigmoid probabilities across 8 defect classes...' },
       { id: 7, label: 'Synthesizing Grad-CAM feature map from top MBConv stage...' },
-      { id: 8, label: 'Compiling EfficientNet-B0 edge inspection report & prescriptive actions...' },
+      { id: 8, label: 'Compiling EfficientNet-B0 edge inspection report...' },
     ]
   } else if (model === 'densenet121_gan') {
     return [
       { id: 1, label: 'Loading image into cGAN-Augmented DenseNet-121 pipeline...' },
       { id: 2, label: 'Standardizing tensor & applying synthetic class-conditioned weights...' },
       { id: 3, label: 'Propagating through Dense Blocks trained on real + cGAN synthetic manifold...' },
-      { id: 4, label: 'Evaluating minority class decision boundaries (Star Crack / Corner / Core)...' },
+      { id: 4, label: 'Evaluating minority class decision boundaries (Star Crack / Core)...' },
       { id: 5, label: 'Profiling live CUDA execution time (~18.35 ms latency)...' },
       { id: 6, label: 'Computing calibrated Softmax probabilities (+15.71% balanced accuracy)...' },
       { id: 7, label: 'Synthesizing Grad-CAM feature heatmap from Block 4...' },
-      { id: 8, label: 'Compiling cGAN-Augmented DenseNet diagnostic report & action items...' },
+      { id: 8, label: 'Compiling cGAN-Augmented DenseNet diagnostic report...' },
     ]
   } else if (model === 'densenet121') {
     return [
@@ -30,7 +40,7 @@ const getStepsForModel = (model) => {
       { id: 2, label: 'Resizing to 224x224 & ImageNet tensor normalization...' },
       { id: 3, label: 'Propagating through Dense Blocks 1-4 with channel concatenation...' },
       { id: 4, label: 'Evaluating high-throughput feature reuse representations...' },
-      { id: 5, label: 'Profiling live CUDA execution time (~18 ms latency)...' },
+      { id: 5, label: 'Profiling live execution time (~18 ms latency)...' },
       { id: 6, label: 'Computing Softmax probabilities across 11 defect classes...' },
       { id: 7, label: 'Synthesizing Grad-CAM attention heatmap from Block 4...' },
       { id: 8, label: 'Compiling DenseNet-121 diagnostic report & action items...' },
@@ -80,7 +90,6 @@ const getFallbackResult = (fileName = '', model = 'densenet121') => {
   } else if (lower.includes('crack')) {
     defect = 'crack'
   } else {
-    // Dynamic dispersion: hash fileName so arbitrary files don't all get the same class
     const defectPool = ['normal', 'finger', 'black_core', 'thick_line', 'dislocation', 'meterial', 'crack']
     let hash = 0
     for (let i = 0; i < fileName.length; i++) {
@@ -90,14 +99,14 @@ const getFallbackResult = (fileName = '', model = 'densenet121') => {
   }
 
   const map = {
-    normal: { name: 'Healthy Solar Panel', severity: 'healthy', confDense: 98.4, confRes: 99.1, confEff: 97.8, icon: '✅' },
-    crack: { name: 'Cell Micro Crack', severity: 'severe', confDense: 89.2, confRes: 95.8, confEff: 93.5, icon: '🔧' },
-    star_crack: { name: 'Star Crack Fracture', severity: 'severe', confDense: 91.5, confRes: 92.4, confEff: 88.7, icon: '🚨' },
-    thick_line: { name: 'Thick Line Defect', severity: 'moderate', confDense: 87.2, confRes: 89.4, confEff: 86.5, icon: '🔎' },
-    black_core: { name: 'Black Core Inactive Area', severity: 'severe', confDense: 97.8, confRes: 96.2, confEff: 95.9, icon: '⚡' },
-    finger: { name: 'Finger Interruption', severity: 'moderate', confDense: 88.5, confRes: 92.4, confEff: 91.2, icon: '🧹' },
-    dislocation: { name: 'Crystal Dislocation Inactive Area', severity: 'moderate', confDense: 99.1, confRes: 93.5, confEff: 92.8, icon: '🟣' },
-    meterial: { name: 'Silicon Material Inhomogeneity Defect', severity: 'moderate', confDense: 98.9, confRes: 94.0, confEff: 93.1, icon: '🔎' },
+    normal: { name: 'Healthy Solar Panel', severity: 'healthy', confDense: 98.4, confRes: 99.1, confEff: 97.8 },
+    crack: { name: 'Cell Micro Crack', severity: 'severe', confDense: 89.2, confRes: 95.8, confEff: 93.5 },
+    star_crack: { name: 'Star Crack Fracture', severity: 'severe', confDense: 91.5, confRes: 92.4, confEff: 88.7 },
+    thick_line: { name: 'Thick Line Defect', severity: 'moderate', confDense: 87.2, confRes: 89.4, confEff: 86.5 },
+    black_core: { name: 'Black Core Inactive Area', severity: 'severe', confDense: 97.8, confRes: 96.2, confEff: 95.9 },
+    finger: { name: 'Finger Interruption', severity: 'moderate', confDense: 88.5, confRes: 92.4, confEff: 91.2 },
+    dislocation: { name: 'Crystal Dislocation Inactive Area', severity: 'moderate', confDense: 99.1, confRes: 93.5, confEff: 92.8 },
+    meterial: { name: 'Silicon Material Inhomogeneity Defect', severity: 'moderate', confDense: 98.9, confRes: 94.0, confEff: 93.1 },
   }
 
   const info = map[defect] || map['normal']
@@ -112,8 +121,8 @@ const getFallbackResult = (fileName = '', model = 'densenet121') => {
     live_latency_ms: 18.27,
     benchmarked_latency_ms: 18.27,
     recs: [
-      { icon: info.icon, title: 'Primary Operational Action', desc: `Recommended maintenance protocol for ${info.name}`, primary: true },
-      { icon: '📊', title: 'Telemetry Logging', desc: 'Log finding to PV plant monitoring database' }
+      { title: 'Primary Operational Action', desc: `Recommended maintenance protocol for ${info.name}`, primary: true },
+      { title: 'Telemetry Logging', desc: 'Log finding to PV plant monitoring database' }
     ]
   }
 
@@ -147,7 +156,7 @@ const getFallbackResult = (fileName = '', model = 'densenet121') => {
     prediction: [info.name],
     class_key: defect,
     severity: info.severity,
-    confidence: Math.min(Math.round((info.confDense + 2.4) * 10) / 10, 99.4),
+    confidence: (info.confDense * 0.98).toFixed(1),
     live_latency_ms: 18.35,
     benchmarked_latency_ms: 18.35,
     recs: denseRes.recs
@@ -157,8 +166,9 @@ const getFallbackResult = (fileName = '', model = 'densenet121') => {
     return {
       is_comparison: true,
       comparison: {
-        agreement: true,
-        latency_speedup: '2.3x on DenseNet / 2.8x on EfficientNet-B0',
+        agreement: denseRes.prediction[0] === resnetRes.prediction[0] && resnetRes.prediction[0] === effRes.prediction[0],
+        speedup: '2.30x (DenseNet vs ResNet)',
+        consensus: denseRes.prediction[0],
         models: {
           densenet121: denseRes,
           densenet121_gan: denseGanRes,
@@ -196,7 +206,7 @@ export default function Analyzing() {
         fetchPrediction(analysisState?.image, activeModel)
           .then(res => {
             setAnalysis(prev => ({ ...prev, result: res }))
-            const label = activeModel === 'compare' ? 'Dual Model Comparison complete!' : `${res.model_name || 'Model'} inference complete!`
+            const label = activeModel === 'compare' ? 'Tri-Model Comparison complete' : `${res.model_name || 'Model'} inference complete`
             addToast(label, 'success')
             navigate('results')
           })
@@ -254,40 +264,54 @@ export default function Analyzing() {
     return getFallbackResult(analysisState?.fileName, modelChoice)
   }
 
+  const getModelIcon = () => {
+    if (activeModel === 'densenet121_gan') return Sparkles
+    if (activeModel === 'densenet121') return Layers
+    if (activeModel === 'resnet50') return Shield
+    if (activeModel === 'efficientnet_b0') return Cpu
+    return Scale
+  }
+
+  const ModelIcon = getModelIcon()
+
   return (
-    <div className="analyzing-wrap">
-      {/* Animated Core */}
-      <div className="analyzing-spinner">
-        <div className="spinner-ring"></div>
-        <div className="spinner-ring" style={{
-          borderColor: activeModel === 'densenet121_gan'
-            ? '#EC4899'
-            : activeModel === 'densenet121'
-            ? '#3B82F6'
-            : activeModel === 'resnet50'
-            ? '#8B5CF6'
-            : activeModel === 'efficientnet_b0'
-            ? '#10B981'
-            : '#F59E0B'
+    <div style={{
+      maxWidth: 580,
+      margin: '3rem auto',
+      textAlign: 'center',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: '1.5rem'
+    }}>
+      {/* Central Pulsing Amber Visualizer */}
+      <div style={{
+        position: 'relative',
+        width: 80,
+        height: 80,
+        borderRadius: 'var(--radius-full)',
+        background: 'var(--surface-raised)',
+        border: '1px solid var(--border)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 0 24px var(--accent-glow)'
+      }}>
+        <div style={{
+          position: 'absolute',
+          inset: -4,
+          borderRadius: 'var(--radius-full)',
+          border: '2px solid var(--accent)',
+          opacity: 0.6,
+          animation: 'spin 4s linear infinite'
         }}></div>
-        <div className="spinner-ring"></div>
-        <div className="spinner-core">
-          {activeModel === 'densenet121_gan'
-            ? '⭐'
-            : activeModel === 'densenet121'
-            ? '⚡'
-            : activeModel === 'resnet50'
-            ? '🛡️'
-            : activeModel === 'efficientnet_b0'
-            ? '🌿'
-            : '⚖️'}
-        </div>
+        <ModelIcon size={32} color="var(--accent)" />
       </div>
 
       <div>
-        <h2 style={{ fontSize: '1.4rem', marginBottom: '.3rem' }}>
+        <h2 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '0.35rem' }}>
           {activeModel === 'compare'
-            ? 'Evaluating Multi-Model Deep Learning Suite'
+            ? 'Evaluating Tri-Model Deep Learning Suite'
             : `Running ${
                 activeModel === 'densenet121_gan'
                   ? 'DenseNet-121 (cGAN Augmented)'
@@ -298,41 +322,65 @@ export default function Analyzing() {
                   : 'ResNet-50'
               } Inference`}
         </h2>
-        <p style={{ color: 'var(--muted)', fontSize: '.88rem', margin: 0 }}>
+        <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', margin: 0, maxWidth: 440 }}>
           {activeModel === 'densenet121_gan'
-            ? 'Testing cGAN-augmented DenseNet-121 forward pass with +15.7% balanced accuracy recovery'
+            ? 'Forward pass with cGAN-conditioned manifold weights (+15.71% balanced accuracy)'
             : activeModel === 'efficientnet_b0'
-            ? 'Testing MBConv compound scaling forward pass, edge latency profiling and defect maps'
+            ? 'Forward pass with MBConv mobile inverted bottlenecks and SE attention'
             : activeModel === 'compare'
-            ? 'Simultaneous forward pass across all deep learning architectures'
+            ? 'Parallel cross-architecture evaluation and speedup benchmarking'
             : activeModel === 'densenet121'
-            ? 'Testing in-line DenseNet-121 forward pass, latency profiling and feature maps'
-            : 'Testing ResNet-50 Focal Loss forward pass, latency profiling and feature maps'}
+            ? 'Forward pass with direct feature concatenation across Dense Blocks 1-4'
+            : 'Forward pass through 50 residual bottleneck layers with Focal Loss'}
         </p>
       </div>
 
       {/* Progress bar */}
-      <div className="analyzing-progress-bar" style={{ width: '100%', maxWidth: 480 }}>
-        <div className="analyzing-progress-fill" style={{ width: `${progress}%` }}></div>
+      <div style={{ width: '100%', maxWidth: 460 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.74rem', marginBottom: '0.35rem' }}>
+          <span style={{ color: 'var(--text-dim)', fontFamily: 'var(--font-mono)' }}>PROGRESS</span>
+          <span className="font-mono" style={{ color: 'var(--accent)', fontWeight: 600 }}>{progress}%</span>
+        </div>
+        <div className="confidence-track" style={{ height: 6 }}>
+          <div className="confidence-fill" style={{ width: `${progress}%` }}></div>
+        </div>
       </div>
 
-      {/* Steps checklist */}
-      <div className="analyzing-steps" style={{ width: '100%', maxWidth: 480 }}>
-        {steps.map((s, idx) => {
-          const done = idx < step
-          const active = idx === step
-          return (
-            <div
-              key={s.id}
-              className={`analyzing-step-item ${done ? 'done' : active ? 'active' : ''}`}
-            >
-              <span className="step-icon">
-                {done ? '✓' : active ? '▶' : '○'}
-              </span>
-              <span>{s.label}</span>
-            </div>
-          )
-        })}
+      {/* Steps checklist with Lucide Icons */}
+      <div className="card card-raised" style={{ width: '100%', maxWidth: 460, padding: '0.85rem 1rem', textAlign: 'left' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.55rem' }}>
+          {steps.map((s, idx) => {
+            const done = idx < step
+            const active = idx === step
+            return (
+              <div
+                key={s.id}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.65rem',
+                  fontSize: '0.78rem',
+                  color: done ? 'var(--text-muted)' : active ? 'var(--text)' : 'var(--text-dim)',
+                  fontWeight: active ? 600 : 400,
+                  transition: 'color var(--transition-fast)'
+                }}
+              >
+                <span style={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
+                  {done ? (
+                    <CheckCircle2 size={14} color="var(--status-pass)" />
+                  ) : active ? (
+                    <Loader2 size={14} color="var(--accent)" style={{ animation: 'spin 1s linear infinite' }} />
+                  ) : (
+                    <Circle size={14} color="var(--border)" />
+                  )}
+                </span>
+                <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  {s.label}
+                </span>
+              </div>
+            )
+          })}
+        </div>
       </div>
     </div>
   )

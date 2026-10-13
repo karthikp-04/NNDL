@@ -1,27 +1,52 @@
-import { useApp } from '../context/AppContext'
+import {
+  UploadCloud,
+  FileCheck2,
+  Flame,
+  Scale,
+  FlaskConical,
+  LayoutDashboard,
+  History as HistoryIcon,
+  Info,
+  Lock,
+  ChevronLeft,
+  ChevronRight,
+  SunMedium
+} from 'lucide-react'
 
 const navItems = [
-  { id: 'upload',     icon: '📤', label: 'Upload & Test',    section: 'ANALYSIS',       requiresResult: false },
-  { id: 'results',    icon: '📊', label: 'Results',          section: null,             requiresResult: true  },
-  { id: 'heatmap',    icon: '🔥', label: 'Grad-CAM',         section: null,             requiresResult: true  },
-  { id: 'compare',    icon: '⚖️', label: 'Model Benchmarks',  section: 'BENCHMARKS',     requiresResult: false },
-  { id: 'gan-studio', icon: '🧪', label: 'cGAN Studio',      section: 'GENERATIVE AI',  requiresResult: false },
-  { id: 'dashboard',  icon: '📈', label: 'Dashboard',        section: 'MONITORING',     requiresResult: false },
-  { id: 'history',    icon: '📜', label: 'History',          section: null,             requiresResult: false },
-  { id: 'about',      icon: 'ℹ️', label: 'About',             section: 'INFO',           requiresResult: false },
+  { id: 'upload',     icon: UploadCloud,   label: 'Upload & Test',    section: 'ANALYSIS',       requiresResult: false },
+  { id: 'results',    icon: FileCheck2,    label: 'Results',          section: null,             requiresResult: true  },
+  { id: 'heatmap',    icon: Flame,         label: 'Grad-CAM',         section: null,             requiresResult: true  },
+  { id: 'compare',    icon: Scale,         label: 'Model Benchmarks', section: 'BENCHMARKS',     requiresResult: false },
+  { id: 'gan-studio', icon: FlaskConical,  label: 'cGAN Studio',      section: 'GENERATIVE AI',  requiresResult: false },
+  { id: 'dashboard',  icon: LayoutDashboard, label: 'Dashboard',      section: 'MONITORING',     requiresResult: false },
+  { id: 'history',    icon: HistoryIcon,   label: 'History',          section: null,             requiresResult: false },
+  { id: 'about',      icon: Info,          label: 'About',            section: 'INFO',           requiresResult: false },
 ]
 
-export default function Sidebar({ activePage, navigate, historyCount, hasResult }) {
+export default function Sidebar({ activePage, navigate, historyCount, hasResult, isCollapsed, onToggleCollapse }) {
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${isCollapsed ? 'collapsed' : ''}`} aria-label="Main Navigation">
       <div className="sidebar-logo">
         <div className="brand">
-          <div className="sun-icon">☀️</div>
-          <div>
-            <div>SolarGuard <em style={{ fontStyle:'italic', color:'#F59E0B' }}>AI</em></div>
-            <div className="tagline">See decay before it costs you power</div>
+          <div className="logo-mark" title="SolarGuard AI">
+            <SunMedium size={18} strokeWidth={2.2} />
           </div>
+          {!isCollapsed && (
+            <div className="brand-text">
+              <div className="brand-title">SolarGuard <span>AI</span></div>
+              <div className="brand-sub">PV Defect Diagnostics</div>
+            </div>
+          )}
         </div>
+        <button
+          className="collapse-btn"
+          onClick={onToggleCollapse}
+          aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+          title={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+        >
+          {isCollapsed ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}
+        </button>
       </div>
 
       <nav className="sidebar-nav">
@@ -29,9 +54,11 @@ export default function Sidebar({ activePage, navigate, historyCount, hasResult 
           const prevItem = navItems[i - 1]
           const showSection = item.section && (!prevItem || prevItem.section !== item.section)
           const locked = item.requiresResult && !hasResult
+          const Icon = item.icon
+
           return (
             <div key={item.id}>
-              {showSection && (
+              {showSection && !isCollapsed && (
                 <div className="nav-section-title">{item.section}</div>
               )}
               <button
@@ -41,19 +68,24 @@ export default function Sidebar({ activePage, navigate, historyCount, hasResult 
                   navigate(item.id)
                 }}
                 id={`nav-${item.id}`}
-                title={locked ? 'Upload and analyze an image first' : item.label}
-                style={{ opacity: locked ? 0.4 : 1, cursor: locked ? 'not-allowed' : 'pointer' }}
+                title={locked ? 'Run inference on an image first' : item.label}
+                aria-disabled={locked}
               >
-                <span className="nav-icon">{item.icon}</span>
-                {item.label}
-                {item.id === 'history' && historyCount > 0 && (
-                  <span className="nav-badge">{historyCount}</span>
-                )}
-                {locked && (
-                  <span style={{
-                    marginLeft: 'auto', fontSize: '.62rem', color: 'var(--dim)',
-                    fontWeight: 600, letterSpacing: '.04em'
-                  }}>🔒</span>
+                <span className="nav-icon">
+                  <Icon size={17} strokeWidth={1.9} />
+                </span>
+                {!isCollapsed && (
+                  <>
+                    <span className="nav-label">{item.label}</span>
+                    {item.id === 'history' && historyCount > 0 && (
+                      <span className="nav-badge">{historyCount}</span>
+                    )}
+                    {locked && (
+                      <span title="Locked until analysis completes" style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center' }}>
+                        <Lock size={12} color="var(--text-dim)" />
+                      </span>
+                    )}
+                  </>
                 )}
               </button>
             </div>
@@ -62,9 +94,9 @@ export default function Sidebar({ activePage, navigate, historyCount, hasResult 
       </nav>
 
       <div className="sidebar-footer">
-        <div className="model-status">
-          <div className="status-dot"></div>
-          <span>4 CNN & cGAN Models · PVEL-AD</span>
+        <div className="model-status" title="4 CNN & cGAN Architectures · PVEL-AD Dataset">
+          <span className="status-dot online"></span>
+          {!isCollapsed && <span>4 DL Models · PVEL-AD</span>}
         </div>
       </div>
     </aside>
