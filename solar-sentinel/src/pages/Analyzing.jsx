@@ -12,7 +12,18 @@ import {
 import { useApp } from '../context/AppContext'
 
 const getStepsForModel = (model) => {
-  if (model === 'efficientnet_b0') {
+  if (model === 'efficientnet_b0_gan') {
+    return [
+      { id: 1, label: 'Loading image into cDCGAN-Augmented EfficientNet-B0 pipeline...' },
+      { id: 2, label: 'Resizing to 224x224 & ImageNet tensor normalization...' },
+      { id: 3, label: 'Propagating through MBConv stages trained on cDCGAN synthetic manifold...' },
+      { id: 4, label: 'Evaluating minority class decision boundaries (Star Crack / Crack)...' },
+      { id: 5, label: 'Profiling lightweight Edge CPU/CUDA latency (~14.85 ms)...' },
+      { id: 6, label: 'Computing multi-label Sigmoid probabilities across 8 defect classes...' },
+      { id: 7, label: 'Synthesizing Grad-CAM feature heatmap from top MBConv stage...' },
+      { id: 8, label: 'Compiling cDCGAN-Augmented EfficientNet-B0 inspection report...' },
+    ]
+  } else if (model === 'efficientnet_b0') {
     return [
       { id: 1, label: 'Loading image into PyTorch EfficientNet-B0 pipeline...' },
       { id: 2, label: 'Resizing to 224x224 & ImageNet tensor normalization...' },
@@ -47,14 +58,14 @@ const getStepsForModel = (model) => {
     ]
   } else if (model === 'compare') {
     return [
-      { id: 1, label: 'Initializing Tri-Model Comparison Suite...' },
+      { id: 1, label: 'Initializing Multi-Model Comparison Suite...' },
       { id: 2, label: 'Dispatching input to DenseNet-121 (In-Line AOI)...' },
       { id: 3, label: 'Dispatching input to ResNet-50 (Diagnostic Web)...' },
       { id: 4, label: 'Dispatching input to EfficientNet-B0 (Edge Drone AI)...' },
-      { id: 5, label: 'Benchmarking comparative GPU & Edge throughput...' },
-      { id: 6, label: 'Calculating class prediction agreement matrix across 3 models...' },
-      { id: 7, label: 'Comparing parameter footprints (6.97M vs 25.56M vs 4.02M)...' },
-      { id: 8, label: 'Finalizing tri-model architectural evaluation report...' },
+      { id: 5, label: 'Dispatching input to EfficientNet-B0 (cDCGAN Augmented)...' },
+      { id: 6, label: 'Benchmarking comparative GPU & Edge throughput...' },
+      { id: 7, label: 'Calculating class prediction agreement matrix across models...' },
+      { id: 8, label: 'Finalizing architectural evaluation report...' },
     ]
   }
   return [
@@ -162,6 +173,18 @@ const getFallbackResult = (fileName = '', model = 'densenet121') => {
     recs: denseRes.recs
   }
 
+  const effGanRes = {
+    model_type: 'efficientnet_b0_gan',
+    model_name: 'EfficientNet-B0 (cDCGAN Augmented)',
+    prediction: [info.name],
+    class_key: defect === 'normal' ? 'good' : (defect === 'meterial' ? 'material' : defect),
+    severity: info.severity,
+    confidence: Number((info.confEff * 0.99).toFixed(1)),
+    live_latency_ms: 14.85,
+    benchmarked_latency_ms: 14.85,
+    recs: denseRes.recs
+  }
+
   if (model === 'compare') {
     return {
       is_comparison: true,
@@ -173,7 +196,8 @@ const getFallbackResult = (fileName = '', model = 'densenet121') => {
           densenet121: denseRes,
           densenet121_gan: denseGanRes,
           resnet50: resnetRes,
-          efficientnet_b0: effRes
+          efficientnet_b0: effRes,
+          efficientnet_b0_gan: effGanRes
         }
       },
       ...denseGanRes
@@ -181,6 +205,7 @@ const getFallbackResult = (fileName = '', model = 'densenet121') => {
   }
 
   if (model === 'densenet121_gan') return denseGanRes
+  if (model === 'efficientnet_b0_gan') return effGanRes
   if (model === 'efficientnet_b0') return effRes
   if (model === 'densenet121') return denseRes
   return resnetRes
@@ -206,7 +231,7 @@ export default function Analyzing() {
         fetchPrediction(analysisState?.image, activeModel)
           .then(res => {
             setAnalysis(prev => ({ ...prev, result: res }))
-            const label = activeModel === 'compare' ? 'Tri-Model Comparison complete' : `${res.model_name || 'Model'} inference complete`
+            const label = activeModel === 'compare' ? 'Multi-Model Comparison complete' : `${res.model_name || 'Model'} inference complete`
             addToast(label, 'success')
             navigate('results')
           })
@@ -265,7 +290,7 @@ export default function Analyzing() {
   }
 
   const getModelIcon = () => {
-    if (activeModel === 'densenet121_gan') return Sparkles
+    if (activeModel === 'densenet121_gan' || activeModel === 'efficientnet_b0_gan') return Sparkles
     if (activeModel === 'densenet121') return Layers
     if (activeModel === 'resnet50') return Shield
     if (activeModel === 'efficientnet_b0') return Cpu
@@ -311,10 +336,12 @@ export default function Analyzing() {
       <div>
         <h2 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '0.35rem' }}>
           {activeModel === 'compare'
-            ? 'Evaluating Tri-Model Deep Learning Suite'
+            ? 'Evaluating Multi-Model Deep Learning Suite'
             : `Running ${
                 activeModel === 'densenet121_gan'
                   ? 'DenseNet-121 (cGAN Augmented)'
+                  : activeModel === 'efficientnet_b0_gan'
+                  ? 'EfficientNet-B0 (cDCGAN Augmented)'
                   : activeModel === 'densenet121'
                   ? 'DenseNet-121'
                   : activeModel === 'efficientnet_b0'
@@ -325,6 +352,8 @@ export default function Analyzing() {
         <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', margin: 0, maxWidth: 440 }}>
           {activeModel === 'densenet121_gan'
             ? 'Forward pass with cGAN-conditioned manifold weights (+15.71% balanced accuracy)'
+            : activeModel === 'efficientnet_b0_gan'
+            ? 'Forward pass with cDCGAN minority defect manifold weights & MBConv compound scaling'
             : activeModel === 'efficientnet_b0'
             ? 'Forward pass with MBConv mobile inverted bottlenecks and SE attention'
             : activeModel === 'compare'

@@ -38,6 +38,17 @@ export const MODEL_CONFIGS = [
     icon: Shield
   },
   {
+    id: 'efficientnet_b0_gan',
+    name: 'EfficientNet-B0 (cDCGAN)',
+    badge: 'cDCGAN BALANCED',
+    desc: 'Trained on real + cDCGAN synthesized minority defect patterns',
+    params: '4.02M',
+    latency: '14.85 ms',
+    metricLabel: 'Accuracy',
+    metricValue: '85.69%',
+    icon: Sparkles
+  },
+  {
     id: 'efficientnet_b0',
     name: 'EfficientNet-B0',
     badge: 'EDGE DRONE',
@@ -50,13 +61,13 @@ export const MODEL_CONFIGS = [
   },
   {
     id: 'compare',
-    name: 'Tri-Model Compare',
+    name: 'Multi-Model Compare',
     badge: 'EVALUATION',
     desc: 'Simultaneous cross-network consensus and speedup benchmarking',
     params: '36.55M',
     latency: '75.17 ms',
     metricLabel: 'Coverage',
-    metricValue: '3 Models',
+    metricValue: '5 Models',
     icon: Scale
   }
 ]
@@ -103,5 +114,12 @@ export const PRESET_SAMPLES = [
     icon: Sparkles,
     file: 'synthetic_cgan_star_crack_0001.png',
     tag: 'Synthetic'
+  },
+  {
+    id: 'cdcgan_sample',
+    name: 'cDCGAN Synthetic Star Crack',
+    icon: Sparkles,
+    file: 'syn_star_crack_0000.png',
+    tag: 'cDCGAN Synthetic'
   }
 ]

@@ -31,7 +31,8 @@ const MODEL_FACTS = [
   { label: 'DenseNet-121 (cGAN)', value: '18.35 ms · 48.47% Balanced Acc (+15.71% gain)' },
   { label: 'DenseNet-121 (Baseline)', value: '18.27 ms (54.7 FPS on CUDA) · 6.97M params' },
   { label: 'ResNet-50 (Diagnostic)', value: '42.10 ms · 91.71% Overall Acc · 25.56M params' },
-  { label: 'EfficientNet-B0 (Edge Drone)', value: '14.80 ms (67.5 FPS) · 4.02M params · 0.39 GFLOPs' },
+  { label: 'EfficientNet-B0 (cDCGAN)', value: '14.85 ms (67.3 FPS) · 85.69% Acc · 82.13% Balanced Acc' },
+  { label: 'EfficientNet-B0 (Baseline)', value: '14.80 ms (67.5 FPS) · 4.02M params · 0.39 GFLOPs' },
   { label: 'Standard Input Shape', value: '224 × 224 × 3 normalized tensor' },
   { label: 'PVEL-AD Test Split Size', value: '2,881 Stratified Evaluation Images' },
 ]

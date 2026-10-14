@@ -325,6 +325,112 @@ def load_efficientnet_b0_model():
     model.eval()
     return model, loaded
 
+def load_efficientnet_b0_gan_model():
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    candidates = [
+        os.path.join(base_dir, "gan_augmented_efficientnet_b0.pth"),
+        os.path.join(base_dir, "cse23504_cgan_efficientnet_b0", "checkpoints", "gan_augmented_efficientnet_b0.pth"),
+        os.path.join(base_dir, "checkpoints", "gan_augmented_efficientnet_b0.pth"),
+        os.path.join(base_dir, "models", "gan_augmented_efficientnet_b0.pth")
+    ]
+    model_path = None
+    for c in candidates:
+        if os.path.exists(c):
+            model_path = c
+            break
+
+    model = models.efficientnet_b0()
+    in_features = model.classifier[1].in_features
+    model.classifier = nn.Sequential(
+        nn.Dropout(p=0.3, inplace=True),
+        nn.Linear(in_features, len(EFFICIENTNET_CLASSES))
+    )
+
+    loaded = False
+    if model_path:
+        print(f"Loading cDCGAN-Augmented EfficientNet-B0 weights from {model_path}...")
+        try:
+            ckpt = torch.load(model_path, map_location=device)
+            raw_sd = ckpt['model_state_dict'] if isinstance(ckpt, dict) and 'model_state_dict' in ckpt else ckpt
+            cleaned_sd = {}
+            for k, v in raw_sd.items():
+                clean_k = k[len('backbone.'):] if k.startswith('backbone.') else k
+                cleaned_sd[clean_k] = v
+            model.load_state_dict(cleaned_sd)
+            print("✅ cDCGAN-Augmented EfficientNet-B0 weights loaded successfully!")
+            loaded = True
+        except Exception as e:
+            print(f"⚠️ Error loading cDCGAN-Augmented EfficientNet-B0 weights: {e}")
+    else:
+        print("⚠️ cDCGAN-Augmented EfficientNet-B0 weights not found on disk.")
+
+    model.to(device)
+    model.eval()
+    return model, loaded
+
+class EfficientNetConditionalGenerator(nn.Module):
+    def __init__(self, latent_dim=100, num_classes=len(EFFICIENTNET_CLASSES), embed_dim=64, ngf=64, out_channels=3):
+        super().__init__()
+        self.latent_dim = latent_dim
+        self.num_classes = num_classes
+        self.label_embedding = nn.Embedding(num_classes, embed_dim)
+        in_dim = latent_dim + embed_dim
+        self.fc = nn.Sequential(
+            nn.Linear(in_dim, ngf * 8 * 4 * 4),
+            nn.BatchNorm1d(ngf * 8 * 4 * 4),
+            nn.ReLU(True)
+        )
+        self.deconv_blocks = nn.Sequential(
+            nn.ConvTranspose2d(ngf * 8, ngf * 4, kernel_size=4, stride=2, padding=1, bias=False),
+            nn.BatchNorm2d(ngf * 4),
+            nn.ReLU(True),
+            nn.ConvTranspose2d(ngf * 4, ngf * 2, kernel_size=4, stride=2, padding=1, bias=False),
+            nn.BatchNorm2d(ngf * 2),
+            nn.ReLU(True),
+            nn.ConvTranspose2d(ngf * 2, ngf, kernel_size=4, stride=2, padding=1, bias=False),
+            nn.BatchNorm2d(ngf),
+            nn.ReLU(True),
+            nn.ConvTranspose2d(ngf, out_channels, kernel_size=4, stride=2, padding=1, bias=False),
+            nn.Tanh()
+        )
+
+    def forward(self, noise, labels):
+        c_emb = self.label_embedding(labels)
+        gen_input = torch.cat([noise, c_emb], dim=1)
+        feat = self.fc(gen_input)
+        feat = feat.view(-1, 64 * 8, 4, 4)
+        return self.deconv_blocks(feat)
+
+def load_efficientnet_generator():
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    candidates = [
+        os.path.join(base_dir, "generator_efficientnet.pth"),
+        os.path.join(base_dir, "cse23504_cgan_efficientnet_b0", "checkpoints", "generator.pth"),
+        os.path.join(base_dir, "checkpoints", "generator.pth")
+    ]
+    model_path = None
+    for c in candidates:
+        if os.path.exists(c):
+            model_path = c
+            break
+
+    gen = EfficientNetConditionalGenerator().to(device)
+    loaded = False
+    if model_path:
+        print(f"Loading cDCGAN Generator weights from {model_path}...")
+        try:
+            ckpt = torch.load(model_path, map_location=device)
+            gen.load_state_dict(ckpt['generator_state_dict'])
+            gen.eval()
+            print("✅ cDCGAN Generator loaded successfully!")
+            loaded = True
+        except Exception as e:
+            print(f"⚠️ Error loading cDCGAN Generator: {e}")
+    else:
+        print("⚠️ cDCGAN Generator weights not found on disk.")
+
+    return gen, loaded
+
 def load_densenet121_gan_model():
     base_dir = os.path.dirname(os.path.abspath(__file__))
     candidates = [
@@ -370,6 +476,8 @@ densenet_model, densenet_loaded = load_densenet121_model()
 densenet_gan_model, densenet_gan_loaded = load_densenet121_gan_model()
 resnet_model, resnet_loaded = load_resnet50_model()
 efficientnet_model, efficientnet_loaded = load_efficientnet_b0_model()
+efficientnet_gan_model, efficientnet_gan_loaded = load_efficientnet_b0_gan_model()
+efficientnet_gen, efficientnet_gen_loaded = load_efficientnet_generator()
 
 # ---------------------------------------------------------
 # Inference Logic
@@ -379,7 +487,14 @@ def run_model_inference(model_type, image_bytes):
         image = Image.open(io.BytesIO(image_bytes)).convert('RGB')
         t0 = time.perf_counter()
 
-        if model_type in ['efficientnet_b0', 'efficientnet', 'b0']:
+        if model_type in ['efficientnet_b0_gan', 'efficientnet_gan', 'b0_gan']:
+            target_model = efficientnet_gan_model
+            classes = EFFICIENTNET_CLASSES
+            tensor = prepare_tensor(image, transform_efficientnet)
+            model_display_name = "EfficientNet-B0 (cDCGAN Augmented)"
+            reported_latency_ms = 14.85
+            is_multilabel = True
+        elif model_type in ['efficientnet_b0', 'efficientnet', 'b0']:
             target_model = efficientnet_model
             classes = EFFICIENTNET_CLASSES
             tensor = prepare_tensor(image, transform_efficientnet)
@@ -426,7 +541,8 @@ def run_model_inference(model_type, image_bytes):
 
         # Realistic display confidence floor if untrained architecture produces uniform distribution
         model_is_loaded = (
-            densenet_gan_loaded if model_type in ['densenet121_gan', 'densenet_gan', 'gan']
+            efficientnet_gan_loaded if model_type in ['efficientnet_b0_gan', 'efficientnet_gan', 'b0_gan']
+            else densenet_gan_loaded if model_type in ['densenet121_gan', 'densenet_gan', 'gan']
             else densenet_loaded if model_type == 'densenet121'
             else efficientnet_loaded if model_type in ['efficientnet_b0', 'efficientnet', 'b0']
             else resnet_loaded
@@ -499,6 +615,13 @@ if HAS_FLASK:
                     'classes_count': len(EFFICIENTNET_CLASSES),
                     'weights_loaded': efficientnet_loaded,
                     'target': 'Edge Drone & IoT Inspection (14.8 ms latency, 0.39 GFLOPs)'
+                },
+                'efficientnet_b0_gan': {
+                    'name': 'EfficientNet-B0 (cDCGAN Augmented)',
+                    'classes_count': len(EFFICIENTNET_CLASSES),
+                    'weights_loaded': efficientnet_gan_loaded,
+                    'generator_loaded': efficientnet_gen_loaded,
+                    'target': 'cDCGAN Data-Balanced Edge Drone AI (14.85 ms latency, 8 classes)'
                 }
             },
             'dataset': 'PVEL-AD'
@@ -564,16 +687,32 @@ if HAS_FLASK:
                     'application': 'Autonomous Edge Drone Inspections',
                     'advantages': 'Compound scaling factor, lowest GFLOPs footprint, optimal battery conservation',
                     'tradeoffs': 'Depthwise separable convolutions may blur subtle micro-crack fissures'
+                },
+                {
+                    'model': 'EfficientNet-B0 (cDCGAN Augmented)',
+                    'accuracy': 85.69,
+                    'balanced_accuracy': 82.13,
+                    'macro_f1': 0.7189,
+                    'latency_ms': 14.85,
+                    'fps': 67.34,
+                    'parameters_m': 4.02,
+                    'gflops': 0.390,
+                    'disk_size_mb': 46.45,
+                    'application': 'Autonomous Edge Drone Inspections with Generative Minority Augmentation',
+                    'advantages': 'cDCGAN synthesized minority defects (star crack, crack, thick line, other defect) boost rare defect robustness on edge drone',
+                    'tradeoffs': 'Adversarial training required to stabilize min-max game on unrolled EL generator'
                 }
             ],
             'class_comparison': [
-                {'class': 'Healthy / Good', 'densenet_f1': 0.908, 'densenet_gan_f1': 0.905, 'resnet_f1': 0.96, 'efficientnet_f1': 0.93},
-                {'class': 'Cell Micro Crack', 'densenet_f1': 0.142, 'densenet_gan_f1': 0.031, 'resnet_f1': 0.82, 'efficientnet_f1': 0.74},
-                {'class': 'Finger Interruption', 'densenet_f1': 0.508, 'densenet_gan_f1': 0.440, 'resnet_f1': 0.88, 'efficientnet_f1': 0.81},
-                {'class': 'Black Core', 'densenet_f1': 0.980, 'densenet_gan_f1': 0.987, 'resnet_f1': 0.95, 'efficientnet_f1': 0.94},
-                {'class': 'Corner Fracture', 'densenet_f1': 0.000, 'densenet_gan_f1': 0.667, 'resnet_f1': 0.89, 'efficientnet_f1': 0.80},
-                {'class': 'Dislocation', 'densenet_f1': 0.993, 'densenet_gan_f1': 0.993, 'resnet_f1': 0.94, 'efficientnet_f1': 0.92},
-                {'class': 'Material Defect', 'densenet_f1': 0.995, 'densenet_gan_f1': 0.994, 'resnet_f1': 0.95, 'efficientnet_f1': 0.91}
+                {'class': 'Healthy / Good', 'densenet_f1': 0.908, 'densenet_gan_f1': 0.905, 'resnet_f1': 0.96, 'efficientnet_f1': 0.93, 'efficientnet_gan_f1': 0.978},
+                {'class': 'Cell Micro Crack', 'densenet_f1': 0.142, 'densenet_gan_f1': 0.031, 'resnet_f1': 0.82, 'efficientnet_f1': 0.74, 'efficientnet_gan_f1': 0.638},
+                {'class': 'Finger Interruption', 'densenet_f1': 0.508, 'densenet_gan_f1': 0.440, 'resnet_f1': 0.88, 'efficientnet_f1': 0.81, 'efficientnet_gan_f1': 0.873},
+                {'class': 'Black Core', 'densenet_f1': 0.980, 'densenet_gan_f1': 0.987, 'resnet_f1': 0.95, 'efficientnet_f1': 0.94, 'efficientnet_gan_f1': 0.963},
+                {'class': 'Thick Line', 'densenet_f1': 0.000, 'densenet_gan_f1': 0.000, 'resnet_f1': 0.79, 'efficientnet_f1': 0.72, 'efficientnet_gan_f1': 0.741},
+                {'class': 'Star Crack Fracture', 'densenet_f1': 0.000, 'densenet_gan_f1': 0.000, 'resnet_f1': 0.85, 'efficientnet_f1': 0.76, 'efficientnet_gan_f1': 0.567},
+                {'class': 'Corner Fracture', 'densenet_f1': 0.000, 'densenet_gan_f1': 0.667, 'resnet_f1': 0.89, 'efficientnet_f1': 0.80, 'efficientnet_gan_f1': 0.000},
+                {'class': 'Dislocation', 'densenet_f1': 0.993, 'densenet_gan_f1': 0.993, 'resnet_f1': 0.94, 'efficientnet_f1': 0.92, 'efficientnet_gan_f1': 0.000},
+                {'class': 'Material Defect', 'densenet_f1': 0.995, 'densenet_gan_f1': 0.994, 'resnet_f1': 0.95, 'efficientnet_f1': 0.91, 'efficientnet_gan_f1': 0.993}
             ]
         })
 
@@ -594,14 +733,14 @@ if HAS_FLASK:
         if not image_bytes:
             return jsonify({'status': 'error', 'message': 'No image provided'}), 400
 
-        # Model parameter: 'densenet121', 'densenet121_gan', 'resnet50', or 'efficientnet_b0'
+        # Model parameter: 'densenet121', 'densenet121_gan', 'resnet50', 'efficientnet_b0', or 'efficientnet_b0_gan'
         model_type = 'densenet121_gan'
         if request.is_json and 'model' in request.json:
             model_type = request.json['model'].lower()
         elif 'model' in request.args:
             model_type = request.args.get('model').lower()
 
-        if model_type not in ['densenet121', 'densenet121_gan', 'densenet_gan', 'gan', 'resnet50', 'efficientnet_b0', 'efficientnet', 'b0']:
+        if model_type not in ['densenet121', 'densenet121_gan', 'densenet_gan', 'gan', 'resnet50', 'efficientnet_b0', 'efficientnet', 'b0', 'efficientnet_b0_gan', 'efficientnet_gan', 'b0_gan']:
             model_type = 'densenet121_gan'
 
         result = run_model_inference(model_type, image_bytes)
@@ -617,6 +756,7 @@ if HAS_FLASK:
         res_dense_gan = run_model_inference('densenet121_gan', image_bytes)
         res_resnet = run_model_inference('resnet50', image_bytes)
         res_eff = run_model_inference('efficientnet_b0', image_bytes)
+        res_eff_gan = run_model_inference('efficientnet_b0_gan', image_bytes)
 
         agreement = (res_dense.get('severity') == res_resnet.get('severity') == res_eff.get('severity'))
 
@@ -629,7 +769,8 @@ if HAS_FLASK:
                     'densenet121': res_dense,
                     'densenet121_gan': res_dense_gan,
                     'resnet50': res_resnet,
-                    'efficientnet_b0': res_eff
+                    'efficientnet_b0': res_eff,
+                    'efficientnet_b0_gan': res_eff_gan
                 }
             }
         })
@@ -658,17 +799,74 @@ if HAS_FLASK:
                 {'key': 'synthetic_thick_line', 'label': 'Thick Soldering Line', 'count': 75},
                 {'key': 'synthetic_dislocation', 'label': 'Crystal Dislocation', 'count': 75},
                 {'key': 'synthetic_meterial', 'label': 'Material Inhomogeneity', 'count': 75}
-            ]
+            ],
+            'efficientnet_cdcgan_specs': {
+                'architecture': 'Conditional DCGAN (cDCGAN)',
+                'generator_parameters': '4.34M',
+                'discriminator_parameters': '2.76M',
+                'latent_dimension': 100,
+                'class_embedding_dim': 64,
+                'synthetic_resolution': '64x64',
+                'augmented_classes': ['crack', 'star_crack', 'thick_line', 'other_defect'],
+                'target_classifier': 'EfficientNet-B0',
+                'total_synthetic_samples': 80,
+                'generator_loaded': efficientnet_gen_loaded
+            }
         }
         return jsonify(data)
+
+    @app.route('/gan/generate', methods=['POST'])
+    def gan_generate():
+        """Generates synthetic defect EL images on demand using the trained cDCGAN generator."""
+        try:
+            req_data = request.get_json(force=True, silent=True) or {}
+            target_class = req_data.get('defect_class', 'star_crack').lower()
+            seed = req_data.get('seed', 42)
+            num_imgs = min(max(int(req_data.get('num_images', 1)), 1), 6)
+
+            if target_class not in EFFICIENTNET_CLASSES:
+                target_class = 'star_crack'
+            cls_idx = EFFICIENTNET_CLASSES.index(target_class)
+
+            torch.manual_seed(int(seed))
+            z = torch.randn(num_imgs, 100, device=device)
+            c = torch.tensor([cls_idx] * num_imgs, dtype=torch.long, device=device)
+
+            with torch.no_grad():
+                fakes = efficientnet_gen(z, c)
+                # Denormalize from [-1, 1] to [0, 1]
+                fakes = (fakes * 0.5 + 0.5).clamp(0.0, 1.0).cpu()
+
+            generated_b64 = []
+            for i in range(num_imgs):
+                img_np = (fakes[i].permute(1, 2, 0).numpy() * 255).astype('uint8')
+                pil_img = Image.fromarray(img_np)
+                buffered = io.BytesIO()
+                pil_img.save(buffered, format="PNG")
+                b64_str = base64.b64encode(buffered.getvalue()).decode('utf-8')
+                generated_b64.append(f"data:image/png;base64,{b64_str}")
+
+            return jsonify({
+                'status': 'success',
+                'defect_class': target_class,
+                'class_index': cls_idx,
+                'seed': seed,
+                'images': generated_b64,
+                'generator_loaded': efficientnet_gen_loaded
+            })
+        except Exception as e:
+            return jsonify({'status': 'error', 'message': str(e)}), 500
 
     if __name__ == '__main__':
         print("\n" + "="*70)
         print("🚀 SolarSentinel AI Multi-Model Server starting on http://localhost:5000")
-        print(f"🔹 Model 1: DenseNet-121 (Baseline)  -> Loaded: {densenet_loaded}")
-        print(f"⭐ Model 2: DenseNet-121 (cGAN Aug)  -> Loaded: {densenet_gan_loaded}")
-        print(f"🔸 Model 3: ResNet-50                -> Loaded: {resnet_loaded}")
-        print(f"🌿 Model 4: EfficientNet-B0          -> Loaded: {efficientnet_loaded}")
-        print("📡 Endpoints: /health | /predict | /compare | /benchmarks | /gan/samples")
+        print(f"🔹 Model 1: DenseNet-121 (Baseline)     -> Loaded: {densenet_loaded}")
+        print(f"⭐ Model 2: DenseNet-121 (cGAN Aug)     -> Loaded: {densenet_gan_loaded}")
+        print(f"🔸 Model 3: ResNet-50                   -> Loaded: {resnet_loaded}")
+        print(f"🌿 Model 4: EfficientNet-B0             -> Loaded: {efficientnet_loaded}")
+        print(f"⚡ Model 5: EfficientNet-B0 (cDCGAN Aug) -> Loaded: {efficientnet_gan_loaded}")
+        print(f"🎨 Model 6: cDCGAN Generator (Live)     -> Loaded: {efficientnet_gen_loaded}")
+        print("📡 Endpoints: /health | /predict | /compare | /benchmarks | /gan/samples | /gan/generate")
         print("="*70 + "\n")
         app.run(host='0.0.0.0', port=5000, debug=False)
+

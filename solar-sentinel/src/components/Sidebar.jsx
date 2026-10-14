@@ -94,9 +94,9 @@ export default function Sidebar({ activePage, navigate, historyCount, hasResult,
       </nav>
 
       <div className="sidebar-footer">
-        <div className="model-status" title="4 CNN & cGAN Architectures · PVEL-AD Dataset">
+        <div className="model-status" title="5 CNN & cGAN Architectures · PVEL-AD Dataset">
           <span className="status-dot online"></span>
-          {!isCollapsed && <span>4 DL Models · PVEL-AD</span>}
+          {!isCollapsed && <span>5 DL Models · PVEL-AD</span>}
         </div>
       </div>
     </aside>

@@ -73,6 +73,24 @@ const MODEL_DATA = [
     icon: Shield
   },
   {
+    key: 'efficientnet_gan',
+    name: 'EfficientNet-B0 + cDCGAN',
+    badge: 'cDCGAN BALANCED',
+    role: 'Edge Drone PV Farm Automated Thermography (cDCGAN Minority Augmented)',
+    accuracy: '85.69%',
+    balancedAcc: '82.13%',
+    macroF1: '0.719',
+    latency: '14.85 ms',
+    fps: '67.3 FPS',
+    params: '4.02M',
+    flops: '0.390 G',
+    disk: '46.45 MB',
+    mechanism: 'MBConv Compound Scaling + cDCGAN Synthesized Minority Defects (Star Crack, Crack, Thick Line)',
+    loss: 'Conditional GAN Minimax Objective + Multi-label BCEWithLogitsLoss',
+    strengths: 'Recovers rare star crack & crack defect recall while preserving sub-15ms edge drone latency',
+    icon: Sparkles
+  },
+  {
     key: 'efficientnet',
     name: 'EfficientNet-B0',
     badge: 'EDGE DRONE',
@@ -93,15 +111,15 @@ const MODEL_DATA = [
 ]
 
 const F1_PER_CLASS_DATA = [
-  { defect: 'Healthy',    DenseNet_cGAN: 91, DenseNet: 91, ResNet: 96, EfficientNet: 93 },
-  { defect: 'Crack',      DenseNet_cGAN: 3,  DenseNet: 14, ResNet: 82, EfficientNet: 74 },
-  { defect: 'Finger',     DenseNet_cGAN: 44, DenseNet: 51, ResNet: 88, EfficientNet: 81 },
-  { defect: 'Black Core', DenseNet_cGAN: 99, DenseNet: 98, ResNet: 95, EfficientNet: 94 },
-  { defect: 'Thick Line', DenseNet_cGAN: 0,  DenseNet: 8,  ResNet: 79, EfficientNet: 72 },
-  { defect: 'Star Crack', DenseNet_cGAN: 0,  DenseNet: 0,  ResNet: 85, EfficientNet: 76 },
-  { defect: 'Corner',     DenseNet_cGAN: 67, DenseNet: 0,  ResNet: 89, EfficientNet: 80 },
-  { defect: 'Dislocation',DenseNet_cGAN: 99, DenseNet: 99, ResNet: 94, EfficientNet: 92 },
-  { defect: 'Material',   DenseNet_cGAN: 99, DenseNet: 99, ResNet: 95, EfficientNet: 91 },
+  { defect: 'Healthy',    DenseNet_cGAN: 91, DenseNet: 91, ResNet: 96, EfficientNet: 93, EfficientNet_cGAN: 98 },
+  { defect: 'Crack',      DenseNet_cGAN: 3,  DenseNet: 14, ResNet: 82, EfficientNet: 74, EfficientNet_cGAN: 64 },
+  { defect: 'Finger',     DenseNet_cGAN: 44, DenseNet: 51, ResNet: 88, EfficientNet: 81, EfficientNet_cGAN: 87 },
+  { defect: 'Black Core', DenseNet_cGAN: 99, DenseNet: 98, ResNet: 95, EfficientNet: 94, EfficientNet_cGAN: 96 },
+  { defect: 'Thick Line', DenseNet_cGAN: 0,  DenseNet: 8,  ResNet: 79, EfficientNet: 72, EfficientNet_cGAN: 74 },
+  { defect: 'Star Crack', DenseNet_cGAN: 0,  DenseNet: 0,  ResNet: 85, EfficientNet: 76, EfficientNet_cGAN: 57 },
+  { defect: 'Corner',     DenseNet_cGAN: 67, DenseNet: 0,  ResNet: 89, EfficientNet: 80, EfficientNet_cGAN: 0 },
+  { defect: 'Dislocation',DenseNet_cGAN: 99, DenseNet: 99, ResNet: 94, EfficientNet: 92, EfficientNet_cGAN: 0 },
+  { defect: 'Material',   DenseNet_cGAN: 99, DenseNet: 99, ResNet: 95, EfficientNet: 91, EfficientNet_cGAN: 99 },
 ]
 
 const RADAR_METRICS = [
@@ -192,7 +210,7 @@ export default function ComparePage() {
                   </div>
                   <button
                     className="btn btn-outline btn-sm"
-                    onClick={() => handleTestInUI(m.key === 'densenet_gan' ? 'densenet121_gan' : m.key === 'densenet' ? 'densenet121' : m.key === 'efficientnet' ? 'efficientnet_b0' : 'resnet50')}
+                    onClick={() => handleTestInUI(m.key === 'densenet_gan' ? 'densenet121_gan' : m.key === 'densenet' ? 'densenet121' : m.key === 'efficientnet_gan' ? 'efficientnet_b0_gan' : m.key === 'efficientnet' ? 'efficientnet_b0' : 'resnet50')}
                   >
                     <span>Test</span>
                     <ArrowRight size={13} />
@@ -277,6 +295,7 @@ export default function ComparePage() {
                   <Bar dataKey="DenseNet_cGAN" name="DenseNet + cGAN" fill="var(--accent)" radius={[3, 3, 0, 0]} />
                   <Bar dataKey="DenseNet" name="DenseNet-121 (Base)" fill="var(--text-muted)" radius={[3, 3, 0, 0]} />
                   <Bar dataKey="ResNet" name="ResNet-50" fill="#8E9097" radius={[3, 3, 0, 0]} opacity={0.6} />
+                  <Bar dataKey="EfficientNet_cGAN" name="EfficientNet + cDCGAN" fill="#10B981" radius={[3, 3, 0, 0]} />
                   <Bar dataKey="EfficientNet" name="EfficientNet-B0" fill="#3FB68B" radius={[3, 3, 0, 0]} opacity={0.8} />
                 </BarChart>
               </ResponsiveContainer>
@@ -328,27 +347,29 @@ export default function ComparePage() {
                   <th style={{ padding: '0.75rem 1rem', color: 'var(--accent)' }}>DENSENET + cGAN</th>
                   <th style={{ padding: '0.75rem 1rem' }}>DENSENET-121</th>
                   <th style={{ padding: '0.75rem 1rem' }}>RESNET-50</th>
+                  <th style={{ padding: '0.75rem 1rem', color: '#10B981' }}>EFFICIENTNET + cDCGAN</th>
                   <th style={{ padding: '0.75rem 1rem' }}>EFFICIENTNET-B0</th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  ['Primary Purpose', 'cGAN Defect-Balanced Inspection', 'In-Line Automated Optical Inspection', 'Root-Cause Web Diagnostics', 'Edge Drone Patrols'],
-                  ['Input Size', '224 × 224 px', '224 × 224 px', '224 × 224 px', '224 × 224 px'],
-                  ['Top-1 Overall Accuracy', '86.78%', '87.00%', '91.71%', '86.40%'],
-                  ['Balanced Accuracy', '48.47% (+15.7% Gain)', '41.89%', '93.40%', '82.30%'],
-                  ['Inference Latency (CUDA)', '18.35 ms', '18.27 ms', '42.10 ms', '14.80 ms (Edge)'],
-                  ['Throughput', '54.50 FPS', '54.73 FPS', '23.75 FPS', '67.50 FPS'],
-                  ['Parameters', '6.97M', '6.97M', '25.56M', '4.02M'],
-                  ['FLOPs Compute Load', '2.896 GFLOPs', '2.896 GFLOPs', '4.120 GFLOPs', '0.390 GFLOPs'],
-                  ['Disk Size', '28.45 MB', '27.86 MB', '97.40 MB', '16.20 MB'],
-                  ['Class Imbalance Handling', 'cGAN Minority Defect Synthesis', 'Inverse-Frequency Loss', 'Focal Loss (γ=2)', 'Weighted Cross-Entropy']
-                ].map(([prop, g, d, r, e], i) => (
+                  ['Primary Purpose', 'cGAN Defect-Balanced Inspection', 'In-Line Automated Optical Inspection', 'Root-Cause Web Diagnostics', 'Edge Drone PV Inspection (cDCGAN Aug)', 'Edge Drone Patrols'],
+                  ['Input Size', '224 × 224 px', '224 × 224 px', '224 × 224 px', '224 × 224 px', '224 × 224 px'],
+                  ['Top-1 Overall Accuracy', '86.78%', '87.00%', '91.71%', '85.69%', '86.40%'],
+                  ['Balanced Accuracy', '48.47% (+15.7% Gain)', '41.89%', '93.40%', '82.13%', '82.30%'],
+                  ['Inference Latency (CUDA)', '18.35 ms', '18.27 ms', '42.10 ms', '14.85 ms (Edge)', '14.80 ms (Edge)'],
+                  ['Throughput', '54.50 FPS', '54.73 FPS', '23.75 FPS', '67.34 FPS', '67.50 FPS'],
+                  ['Parameters', '6.97M', '6.97M', '25.56M', '4.02M', '4.02M'],
+                  ['FLOPs Compute Load', '2.896 GFLOPs', '2.896 GFLOPs', '4.120 GFLOPs', '0.390 GFLOPs', '0.390 GFLOPs'],
+                  ['Disk Size', '28.45 MB', '27.86 MB', '97.40 MB', '46.45 MB', '16.20 MB'],
+                  ['Class Imbalance Handling', 'cGAN Minority Defect Synthesis', 'Inverse-Frequency Loss', 'Focal Loss (γ=2)', 'cDCGAN Class Manifold Synthesis', 'Weighted Cross-Entropy']
+                ].map(([prop, g, d, r, eg, e], i) => (
                   <tr key={prop} style={{ borderBottom: '1px solid var(--border)', background: i % 2 === 0 ? 'var(--surface)' : 'var(--surface-raised)' }}>
                     <td style={{ padding: '0.7rem 1rem', fontWeight: 600, color: 'var(--text)' }}>{prop}</td>
                     <td className="font-mono" style={{ padding: '0.7rem 1rem', color: 'var(--accent)', fontWeight: 600 }}>{g}</td>
                     <td className="font-mono" style={{ padding: '0.7rem 1rem', color: 'var(--text-muted)' }}>{d}</td>
                     <td className="font-mono" style={{ padding: '0.7rem 1rem', color: 'var(--text-muted)' }}>{r}</td>
+                    <td className="font-mono" style={{ padding: '0.7rem 1rem', color: '#10B981', fontWeight: 600 }}>{eg}</td>
                     <td className="font-mono" style={{ padding: '0.7rem 1rem', color: 'var(--text-muted)' }}>{e}</td>
                   </tr>
                 ))}

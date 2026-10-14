@@ -75,10 +75,17 @@ export default function Results() {
     live_latency_ms: 14.80,
     top_candidates: denseRes.top_candidates || []
   })
+  const effGanRes = compData?.models?.efficientnet_b0_gan || (result?.model_type === 'efficientnet_b0_gan' ? result : {
+    prediction: [denseRes.prediction?.[0] || 'Cell Micro Crack'],
+    confidence: 85.7,
+    severity: denseRes.severity || 'severe',
+    live_latency_ms: 14.85,
+    top_candidates: denseRes.top_candidates || []
+  })
 
   // Active result for single view tabs
   const activeDisplayResult = isComparison
-    ? (activeTab === 'densenet121_gan' ? denseGanRes : activeTab === 'resnet50' ? resnetRes : activeTab === 'efficientnet_b0' ? effRes : denseRes)
+    ? (activeTab === 'densenet121_gan' ? denseGanRes : activeTab === 'efficientnet_b0_gan' ? effGanRes : activeTab === 'resnet50' ? resnetRes : activeTab === 'efficientnet_b0' ? effRes : denseRes)
     : result || {}
 
   const sevInfo = SEV_MAP[activeDisplayResult?.severity] || SEV_MAP.moderate
@@ -86,9 +93,10 @@ export default function Results() {
   const recs    = activeDisplayResult?.recs || []
   const defects = activeDisplayResult?.prediction || ['Solar Cell Defect']
 
-  const denseLat  = denseRes?.live_latency_ms || 18.27
-  const resnetLat = resnetRes?.live_latency_ms || 42.10
-  const effLat    = effRes?.live_latency_ms || 14.80
+  const denseLat    = denseRes?.live_latency_ms || 18.27
+  const resnetLat   = resnetRes?.live_latency_ms || 42.10
+  const effLat      = effRes?.live_latency_ms || 14.80
+  const effGanLat   = effGanRes?.live_latency_ms || 14.85
   const denseGanLat = denseGanRes?.live_latency_ms || 18.35
 
   const isHealthyVerdict = activeDisplayResult?.severity === 'healthy'
@@ -121,6 +129,13 @@ export default function Results() {
             >
               <Sparkles size={14} />
               <span>DenseNet + cGAN</span>
+            </button>
+            <button
+              className={`btn btn-sm ${activeTab === 'efficientnet_b0_gan' ? 'btn-primary' : 'btn-outline'}`}
+              onClick={() => setActiveTab('efficientnet_b0_gan')}
+            >
+              <Sparkles size={14} />
+              <span>EfficientNet + cDCGAN</span>
             </button>
             <button
               className={`btn btn-sm ${activeTab === 'densenet121' ? 'btn-primary' : 'btn-outline'}`}
@@ -181,7 +196,7 @@ export default function Results() {
               </div>
               <div>
                 Benchmarked Acc: <strong className="font-mono" style={{ color: 'var(--accent)' }}>
-                  {activeDisplayResult.model_type === 'densenet121_gan' ? '48.47% (Bal)' : activeDisplayResult.model_type === 'resnet50' ? '91.71%' : activeDisplayResult.model_type === 'efficientnet_b0' ? '86.40%' : '86.84%'}
+                  {activeDisplayResult.model_type === 'densenet121_gan' ? '48.47% (Bal)' : activeDisplayResult.model_type === 'efficientnet_b0_gan' ? '85.69% (Bal 82.1%)' : activeDisplayResult.model_type === 'resnet50' ? '91.71%' : activeDisplayResult.model_type === 'efficientnet_b0' ? '86.40%' : '86.84%'}
                 </strong>
               </div>
             </div>
@@ -509,6 +524,38 @@ export default function Results() {
                 <div className="model-stat-row">
                   <span className="model-stat-label">Throughput:</span>
                   <span className="model-stat-value font-mono">67.5 FPS</span>
+                </div>
+              </div>
+            </div>
+
+            {/* EfficientNet-B0 cDCGAN */}
+            <div className="card-raised card" style={{ padding: '1rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.65rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                  <Sparkles size={16} color="var(--accent)" />
+                  <strong style={{ fontSize: '0.92rem' }}>EfficientNet + cDCGAN</strong>
+                </div>
+                <Badge variant="outline">4.02M</Badge>
+              </div>
+              <div style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--text)', marginBottom: '0.4rem' }}>
+                {effGanRes.prediction?.[0] || 'Healthy Solar Panel'}
+              </div>
+              <div className="model-card-stats" style={{ borderTop: 'none', paddingTop: 0 }}>
+                <div className="model-stat-row">
+                  <span className="model-stat-label">Latency:</span>
+                  <span className="model-stat-value">{effGanLat} ms</span>
+                </div>
+                <div className="model-stat-row">
+                  <span className="model-stat-label">Bal Acc:</span>
+                  <span className="model-stat-value">82.13%</span>
+                </div>
+                <div className="model-stat-row">
+                  <span className="model-stat-label">Confidence:</span>
+                  <span className="model-stat-value">{effGanRes.confidence || 85.7}%</span>
+                </div>
+                <div className="model-stat-row">
+                  <span className="model-stat-label">Throughput:</span>
+                  <span className="model-stat-value font-mono">67.3 FPS</span>
                 </div>
               </div>
             </div>

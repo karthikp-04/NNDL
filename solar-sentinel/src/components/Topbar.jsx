@@ -30,13 +30,15 @@ export default function Topbar({ page }) {
     setSelectedModel(val)
     const label = val === 'densenet121_gan'
       ? 'DenseNet-121 (cGAN Aug)'
+      : val === 'efficientnet_b0_gan'
+      ? 'EfficientNet-B0 (cDCGAN Aug)'
       : val === 'densenet121'
       ? 'DenseNet-121 (Baseline)'
       : val === 'resnet50'
       ? 'ResNet-50'
       : val === 'efficientnet_b0'
       ? 'EfficientNet-B0'
-      : 'Tri-Model Compare'
+      : 'Multi-Model Compare'
     addToast(`Architecture switched to ${label}`, 'info')
   }
 
@@ -60,10 +62,11 @@ export default function Topbar({ page }) {
             aria-label="Target Architecture Selector"
           >
             <option value="densenet121_gan" style={{ background: '#17191D', color: '#ECE9E2' }}>DenseNet-121 (cGAN Aug)</option>
+            <option value="efficientnet_b0_gan" style={{ background: '#17191D', color: '#ECE9E2' }}>EfficientNet-B0 (cDCGAN Aug)</option>
             <option value="densenet121" style={{ background: '#17191D', color: '#ECE9E2' }}>DenseNet-121 (Baseline)</option>
             <option value="resnet50" style={{ background: '#17191D', color: '#ECE9E2' }}>ResNet-50</option>
             <option value="efficientnet_b0" style={{ background: '#17191D', color: '#ECE9E2' }}>EfficientNet-B0 (Edge)</option>
-            <option value="compare" style={{ background: '#17191D', color: '#ECE9E2' }}>Tri-Model Compare</option>
+            <option value="compare" style={{ background: '#17191D', color: '#ECE9E2' }}>Multi-Model Compare</option>
           </select>
           <ChevronDown size={14} color="var(--text-muted)" style={{ pointerEvents: 'none' }} />
         </div>
