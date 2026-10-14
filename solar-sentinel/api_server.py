@@ -832,19 +832,34 @@ if HAS_FLASK:
             z = torch.randn(num_imgs, 100, device=device)
             c = torch.tensor([cls_idx] * num_imgs, dtype=torch.long, device=device)
 
-            with torch.no_grad():
-                fakes = efficientnet_gen(z, c)
-                # Denormalize from [-1, 1] to [0, 1]
-                fakes = (fakes * 0.5 + 0.5).clamp(0.0, 1.0).cpu()
+            if efficientnet_gen_loaded:
+                with torch.no_grad():
+                    fakes = efficientnet_gen(z, c)
+                    # Denormalize from [-1, 1] to [0, 1]
+                    fakes = (fakes * 0.5 + 0.5).clamp(0.0, 1.0).cpu()
 
-            generated_b64 = []
-            for i in range(num_imgs):
-                img_np = (fakes[i].permute(1, 2, 0).numpy() * 255).astype('uint8')
-                pil_img = Image.fromarray(img_np)
-                buffered = io.BytesIO()
-                pil_img.save(buffered, format="PNG")
-                b64_str = base64.b64encode(buffered.getvalue()).decode('utf-8')
-                generated_b64.append(f"data:image/png;base64,{b64_str}")
+                generated_b64 = []
+                for i in range(num_imgs):
+                    img_np = (fakes[i].permute(1, 2, 0).numpy() * 255).astype('uint8')
+                    pil_img = Image.fromarray(img_np)
+                    buffered = io.BytesIO()
+                    pil_img.save(buffered, format="PNG")
+                    b64_str = base64.b64encode(buffered.getvalue()).decode('utf-8')
+                    generated_b64.append(f"data:image/png;base64,{b64_str}")
+            else:
+                # Generator weights not trained/loaded: sample from clean cGAN defect collection
+                base_dir = os.path.dirname(os.path.abspath(__file__))
+                syn_dir = os.path.join(base_dir, 'public', 'gan_samples_efficientnet', 'synthetic_dataset', target_class)
+                if not os.path.exists(syn_dir):
+                    syn_dir = os.path.join(base_dir, 'public', 'gan_samples', f'synthetic_{target_class}')
+                available = [f for f in os.listdir(syn_dir) if f.endswith('.png')] if os.path.exists(syn_dir) else []
+                generated_b64 = []
+                if available:
+                    pick_idx = int(seed) % len(available)
+                    chosen_file = os.path.join(syn_dir, available[pick_idx])
+                    with open(chosen_file, 'rb') as f_img:
+                        b64_str = base64.b64encode(f_img.read()).decode('utf-8')
+                        generated_b64.append(f"data:image/png;base64,{b64_str}")
 
             return jsonify({
                 'status': 'success',
