@@ -2,7 +2,7 @@ import { CheckCircle2, AlertCircle, Info } from 'lucide-react'
 
 export default function ToastContainer({ toasts }) {
   return (
-    <div className="toast-wrap" role="status" aria-live="polite">
+    <div className="toast-container" role="status" aria-live="polite">
       {toasts.map(t => (
         <div key={t.id} className={`toast ${t.type}`}>
           <span style={{ display: 'inline-flex', alignItems: 'center' }}>
